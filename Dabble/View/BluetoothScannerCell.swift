@@ -6,4 +6,11 @@
 //  Copyright © 2019 Vivek Rai. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class BluetoothScannerCell: UITableViewCell {
+    
+    @IBOutlet weak var deviceLabel: UILabel!
+    @IBOutlet weak var connectionLabel: UILabel!
+    
+}

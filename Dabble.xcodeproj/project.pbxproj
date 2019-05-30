@@ -7,21 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8EB11214FF828B72AD1D9C /* Pods_Dabble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54DB855C89EFC3F985C53DB4 /* Pods_Dabble.framework */; };
+		8002993E229BE08900C8F947 /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002993D229BE08900C8F947 /* BluetoothSerial.swift */; };
+		80029940229BE18500C8F947 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002993F229BE18500C8F947 /* Extensions.swift */; };
+		80029942229BE27F00C8F947 /* TerminalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029941229BE27F00C8F947 /* TerminalVC.swift */; };
+		80029944229BE2B200C8F947 /* BluetoothScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */; };
+		80029946229BE45300C8F947 /* BluetoothScannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029945229BE45300C8F947 /* BluetoothScannerCell.swift */; };
+		808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543A229D20E30029CA3A /* TerminalCell.swift */; };
+		808A543D229D35D00029CA3A /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543C229D35D00029CA3A /* Terminal.swift */; };
 		809C505F2296C3D4003F0E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C505E2296C3D4003F0E2A /* AppDelegate.swift */; };
-		809C50612296C3D4003F0E2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C50602296C3D4003F0E2A /* ViewController.swift */; };
+		809C50612296C3D4003F0E2A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C50602296C3D4003F0E2A /* HomeVC.swift */; };
 		809C50642296C3D4003F0E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809C50622296C3D4003F0E2A /* Main.storyboard */; };
 		809C50662296C3D5003F0E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809C50652296C3D5003F0E2A /* Assets.xcassets */; };
 		809C50692296C3D5003F0E2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809C50672296C3D5003F0E2A /* LaunchScreen.storyboard */; };
+		809C50772296C793003F0E2A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C50762296C793003F0E2A /* HomeCell.swift */; };
+		80C1EFF92297B67600320E15 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFF82297B67600320E15 /* Components.swift */; };
+		80C1EFFB2297B77300320E15 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFA2297B77300320E15 /* DataService.swift */; };
+		80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFC2297C2F700320E15 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5263FCBDBE10DA0D8F0DB58E /* Pods-Dabble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dabble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dabble/Pods-Dabble.release.xcconfig"; sourceTree = "<group>"; };
+		54DB855C89EFC3F985C53DB4 /* Pods_Dabble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dabble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C7653E87B9C4C198388E08 /* Pods-Dabble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dabble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dabble/Pods-Dabble.debug.xcconfig"; sourceTree = "<group>"; };
+		8002993D229BE08900C8F947 /* BluetoothSerial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		8002993F229BE18500C8F947 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		80029941229BE27F00C8F947 /* TerminalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalVC.swift; sourceTree = "<group>"; };
+		80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerVC.swift; sourceTree = "<group>"; };
+		80029945229BE45300C8F947 /* BluetoothScannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerCell.swift; sourceTree = "<group>"; };
+		808A543A229D20E30029CA3A /* TerminalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalCell.swift; sourceTree = "<group>"; };
+		808A543C229D35D00029CA3A /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
 		809C505B2296C3D4003F0E2A /* Dabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		809C505E2296C3D4003F0E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		809C50602296C3D4003F0E2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		809C50602296C3D4003F0E2A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		809C50632296C3D4003F0E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		809C50652296C3D5003F0E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		809C50682296C3D5003F0E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		809C506A2296C3D5003F0E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		809C50762296C793003F0E2A /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		80C1EFF82297B67600320E15 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		80C1EFFA2297B77300320E15 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		80C1EFFC2297C2F700320E15 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D8EB11214FF828B72AD1D9C /* Pods_Dabble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77937877C13A11AA3973DB11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71C7653E87B9C4C198388E08 /* Pods-Dabble.debug.xcconfig */,
+				5263FCBDBE10DA0D8F0DB58E /* Pods-Dabble.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		809C50522296C3D4003F0E2A = {
 			isa = PBXGroup;
 			children = (
 				809C505D2296C3D4003F0E2A /* Dabble */,
 				809C505C2296C3D4003F0E2A /* Products */,
+				77937877C13A11AA3973DB11 /* Pods */,
+				B28D5A056AC5C1839CA12531 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +92,73 @@
 		809C505D2296C3D4003F0E2A /* Dabble */ = {
 			isa = PBXGroup;
 			children = (
+				809C50742296C75B003F0E2A /* SupportingFiles */,
+				809C50732296C754003F0E2A /* Extensions */,
+				809C50722296C74E003F0E2A /* Model */,
+				809C50712296C748003F0E2A /* View */,
+				809C50702296C73E003F0E2A /* Controller */,
 				809C505E2296C3D4003F0E2A /* AppDelegate.swift */,
-				809C50602296C3D4003F0E2A /* ViewController.swift */,
 				809C50622296C3D4003F0E2A /* Main.storyboard */,
 				809C50652296C3D5003F0E2A /* Assets.xcassets */,
 				809C50672296C3D5003F0E2A /* LaunchScreen.storyboard */,
 				809C506A2296C3D5003F0E2A /* Info.plist */,
 			);
 			path = Dabble;
+			sourceTree = "<group>";
+		};
+		809C50702296C73E003F0E2A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				809C50602296C3D4003F0E2A /* HomeVC.swift */,
+				80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */,
+				80029941229BE27F00C8F947 /* TerminalVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		809C50712296C748003F0E2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				809C50762296C793003F0E2A /* HomeCell.swift */,
+				80C1EFFC2297C2F700320E15 /* GradientView.swift */,
+				80029945229BE45300C8F947 /* BluetoothScannerCell.swift */,
+				808A543A229D20E30029CA3A /* TerminalCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		809C50722296C74E003F0E2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80C1EFF82297B67600320E15 /* Components.swift */,
+				808A543C229D35D00029CA3A /* Terminal.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		809C50732296C754003F0E2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8002993F229BE18500C8F947 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		809C50742296C75B003F0E2A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8002993D229BE08900C8F947 /* BluetoothSerial.swift */,
+				80C1EFFA2297B77300320E15 /* DataService.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B28D5A056AC5C1839CA12531 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54DB855C89EFC3F985C53DB4 /* Pods_Dabble.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabble" */;
 			buildPhases = (
+				5BCE6B7FC3674DCC97C2653F /* [CP] Check Pods Manifest.lock */,
 				809C50572296C3D4003F0E2A /* Sources */,
 				809C50582296C3D4003F0E2A /* Frameworks */,
 				809C50592296C3D4003F0E2A /* Resources */,
+				980A308D07A8D6359EF8D37F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +229,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5BCE6B7FC3674DCC97C2653F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dabble-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		980A308D07A8D6359EF8D37F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dabble/Pods-Dabble-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dabble/Pods-Dabble-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		809C50572296C3D4003F0E2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				809C50612296C3D4003F0E2A /* ViewController.swift in Sources */,
+				809C50612296C3D4003F0E2A /* HomeVC.swift in Sources */,
+				808A543D229D35D00029CA3A /* Terminal.swift in Sources */,
+				80029942229BE27F00C8F947 /* TerminalVC.swift in Sources */,
+				80029946229BE45300C8F947 /* BluetoothScannerCell.swift in Sources */,
+				80029944229BE2B200C8F947 /* BluetoothScannerVC.swift in Sources */,
+				80C1EFF92297B67600320E15 /* Components.swift in Sources */,
+				80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */,
+				80029940229BE18500C8F947 /* Extensions.swift in Sources */,
+				809C50772296C793003F0E2A /* HomeCell.swift in Sources */,
 				809C505F2296C3D4003F0E2A /* AppDelegate.swift in Sources */,
+				808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */,
+				8002993E229BE08900C8F947 /* BluetoothSerial.swift in Sources */,
+				80C1EFFB2297B77300320E15 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +431,7 @@
 		};
 		809C506E2296C3D5003F0E2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71C7653E87B9C4C198388E08 /* Pods-Dabble.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -289,15 +441,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vivekrai.-TextFieldMoveUP.Dabble";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vivekrai.haptikassignment.BluetoothConnectivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		809C506F2296C3D5003F0E2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5263FCBDBE10DA0D8F0DB58E /* Pods-Dabble.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,9 +460,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vivekrai.-TextFieldMoveUP.Dabble";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vivekrai.haptikassignment.BluetoothConnectivity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

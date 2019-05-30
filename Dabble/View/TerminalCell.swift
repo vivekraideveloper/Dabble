@@ -9,16 +9,11 @@
 import UIKit
 
 class TerminalCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var phoneTimeStamp: UILabel!
+    @IBOutlet weak var eviveLabel: UILabel!
+    @IBOutlet weak var eviveTimeStamp: UILabel!
+    
 
 }
