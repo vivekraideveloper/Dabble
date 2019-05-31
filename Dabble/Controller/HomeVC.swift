@@ -32,7 +32,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // init serial
         serial = BluetoothSerial(delegate: self)
         
@@ -56,7 +55,11 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         connectButton.tintColor = UIColor.white
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -125,8 +128,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return HomeCell()
     }
     
-    
-    
     override func viewWillLayoutSubviews() {
         guard let collectionView = homeCollectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         let marginsAndInsets = flowLayout.sectionInset.left + flowLayout.sectionInset.right + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + flowLayout.minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
@@ -142,6 +143,10 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 1{
             performSegue(withIdentifier: "terminal", sender: self)
+        }
+        if indexPath.row == 2{
+            let next = self.storyboard?.instantiateViewController(withIdentifier: "gamePad") as! GamePadVC
+            self.present(next, animated: true, completion: nil)
         }
 
     }

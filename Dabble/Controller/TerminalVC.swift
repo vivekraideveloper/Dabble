@@ -174,53 +174,59 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     
     func serialDidReceiveBytes(_ bytes: [UInt8]) {
         print(bytes)
+        
         var str: String = ""
-        let length: Int = Int(bytes[4]) + 5
-        //        print(bytes[length])
-        print(length)
-        var i = 5
-        while i < length{
-            str += String(Character(UnicodeScalar(bytes[i])))
-            i += 1
-        }
-        
-        
-        if dataType == "ASCII"{
-            str += ""
-        }
-        if dataType == "Binary"{
-            let binaryData = Data(str.utf8)
-            let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
-                acc + String(byte, radix: 2)
+        if let length: Int = Int(bytes[4]) + 5{
+            print(length)
+            if length < 16{
+                var i = 5
+                while i < length{
+                    str += String(Character(UnicodeScalar(bytes[i])))
+                    i += 1
+                }
+                
+                
+                if dataType == "ASCII"{
+                    str += ""
+                }
+                if dataType == "Binary"{
+                    let binaryData = Data(str.utf8)
+                    let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
+                        acc + String(byte, radix: 2)
+                    }
+                    str = stringOf01
+                }
+                if dataType == "Decimal"{
+                    let formatter = NumberFormatter()
+                    formatter.generatesDecimalNumbers = true
+                    formatter.numberStyle = NumberFormatter.Style.decimal
+                    let xa2 : NSNumber? = formatter.number(from: str)
+                    print(xa2 as Any)
+                }
+                if dataType == "Hexadecimal"{
+                    let data = Data(str.utf8)
+                    let hexString = data.map{ String(format:"%02x", $0) }.joined()
+                    str = "\(hexString)"
+                }
+                
+                let formatter = DateFormatter()
+                formatter.locale = Locale(identifier: "en_US_POSIX")
+                formatter.dateFormat = "h:mm:ss a',' MMMM dd, yyyy"
+                formatter.amSymbol = "AM"
+                formatter.pmSymbol = "PM"
+                let dateString = formatter.string(from: Date())
+                let data = Terminal(phoneText: "", eviveText: str, phoneTime: "", eviveTime: dateString)
+                chatArray.append(data)
+                chatTableView.reloadData()
+                if scrollOff == false{
+                    chatTableView.reloadData()
+                    scrollToBottom()
+                }
             }
-            str = stringOf01
         }
-        if dataType == "Decimal"{
-            let formatter = NumberFormatter()
-            formatter.generatesDecimalNumbers = true
-            formatter.numberStyle = NumberFormatter.Style.decimal
-            let xa2 : NSNumber? = formatter.number(from: str)
-            print(xa2 as Any)
-        }
-        if dataType == "Hexadecimal"{
-            let data = Data(str.utf8)
-            let hexString = data.map{ String(format:"%02x", $0) }.joined()
-            str = "\(hexString)"
-        }
+        //        print(bytes[length])
         
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "h:mm:ss a',' MMMM dd, yyyy"
-        formatter.amSymbol = "AM"
-        formatter.pmSymbol = "PM"
-        let dateString = formatter.string(from: Date())
-        let data = Terminal(phoneText: "", eviveText: str, phoneTime: "", eviveTime: dateString)
-        chatArray.append(data)
-        chatTableView.reloadData()
-        if scrollOff == false{
-            chatTableView.reloadData()
-            scrollToBottom()
-        }
+        
     }
     
     // string to byte Array conversion

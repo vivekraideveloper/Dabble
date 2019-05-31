@@ -24,6 +24,7 @@
 		80C1EFF92297B67600320E15 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFF82297B67600320E15 /* Components.swift */; };
 		80C1EFFB2297B77300320E15 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFA2297B77300320E15 /* DataService.swift */; };
 		80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFC2297C2F700320E15 /* GradientView.swift */; };
+		80D7FB3D22A0F1EF00B9988C /* GamePadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		80C1EFF82297B67600320E15 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		80C1EFFA2297B77300320E15 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		80C1EFFC2297C2F700320E15 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePadVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				809C50602296C3D4003F0E2A /* HomeVC.swift */,
 				80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */,
 				80029941229BE27F00C8F947 /* TerminalVC.swift */,
+				80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				80C1EFF92297B67600320E15 /* Components.swift in Sources */,
 				80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */,
 				80029940229BE18500C8F947 /* Extensions.swift in Sources */,
+				80D7FB3D22A0F1EF00B9988C /* GamePadVC.swift in Sources */,
 				809C50772296C793003F0E2A /* HomeCell.swift in Sources */,
 				809C505F2296C3D4003F0E2A /* AppDelegate.swift in Sources */,
 				808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */,
