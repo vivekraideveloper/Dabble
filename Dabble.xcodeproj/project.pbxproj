@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				809C50742296C75B003F0E2A /* SupportingFiles */,
-				809C50732296C754003F0E2A /* Extensions */,
+				809C50732296C754003F0E2A /* Utils */,
 				809C50722296C74E003F0E2A /* Model */,
 				809C50712296C748003F0E2A /* View */,
 				809C50702296C73E003F0E2A /* Controller */,
@@ -139,12 +139,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		809C50732296C754003F0E2A /* Extensions */ = {
+		809C50732296C754003F0E2A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				8002993F229BE18500C8F947 /* Extensions.swift */,
 			);
-			path = Extensions;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		809C50742296C75B003F0E2A /* SupportingFiles */ = {

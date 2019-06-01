@@ -32,6 +32,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // init serial
         serial = BluetoothSerial(delegate: self)
         
@@ -55,11 +56,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         connectButton.tintColor = UIColor.white
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
