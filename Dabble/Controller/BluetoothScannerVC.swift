@@ -189,6 +189,10 @@ class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewData
             dismiss(animated: true, completion: nil)
         }
     }
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        serial.stopScan()
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func tryAgainButtonPressed(_ sender: Any) {
         // empty array an start again

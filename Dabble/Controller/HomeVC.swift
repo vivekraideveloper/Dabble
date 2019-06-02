@@ -91,6 +91,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+    
     func collectionViewSetUp(){
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -171,7 +172,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     @IBAction func settingsButtonPressed(_ sender: Any) {
-        
+        performSegue(withIdentifier: "settings", sender: self)
     }
     
     

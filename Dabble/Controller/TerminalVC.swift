@@ -18,6 +18,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     var stringArray: [String] = []
     var dataType = "ASCII"
     var autoSendText = false
+    
     //    MARK: IBOutlets here
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var textView: UITextView!
@@ -390,11 +391,19 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
             stringFormatted = stringOf01
         }
         if dataType == "Decimal"{
-//            let formatter = NumberFormatter()
-//            formatter.generatesDecimalNumbers = true
-//            formatter.numberStyle = NumberFormatter.Style.decimal
-//            let xa2 : NSNumber? = formatter.number(from: stringFormatted)
-//            print(xa2 as Any)
+            print("***************************")
+            let binaryData = Data(stringFormatted.utf8)
+            let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
+                acc + String(byte, radix: 2)
+            }
+            stringFormatted = stringOf01
+            for i in stringFormatted{
+                let number = strtoul("\(i)", nil, 10)
+                print(number)
+            }
+            print("***************************")
+            
+            
             
         }
         if dataType == "Hexadecimal"{

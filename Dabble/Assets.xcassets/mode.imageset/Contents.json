@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Top-Right_1x-2.png",
+      "filename" : "Gamepad_Modes-Icon_1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Top-Right_2x-2.png",
+      "filename" : "Gamepad_Modes-Icon_2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Top-Right_3x-2.png",
+      "filename" : "Gamepad_Modes-Icon_3x.png",
       "scale" : "3x"
     }
   ],

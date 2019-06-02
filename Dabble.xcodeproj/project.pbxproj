@@ -21,6 +21,7 @@
 		809C50662296C3D5003F0E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 809C50652296C3D5003F0E2A /* Assets.xcassets */; };
 		809C50692296C3D5003F0E2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809C50672296C3D5003F0E2A /* LaunchScreen.storyboard */; };
 		809C50772296C793003F0E2A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C50762296C793003F0E2A /* HomeCell.swift */; };
+		80C0E0B522A287C20018B043 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0E0B422A287C20018B043 /* SettingsVC.swift */; };
 		80C1EFF92297B67600320E15 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFF82297B67600320E15 /* Components.swift */; };
 		80C1EFFB2297B77300320E15 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFA2297B77300320E15 /* DataService.swift */; };
 		80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFC2297C2F700320E15 /* GradientView.swift */; };
@@ -46,6 +47,7 @@
 		809C50682296C3D5003F0E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		809C506A2296C3D5003F0E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		809C50762296C793003F0E2A /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		80C0E0B422A287C20018B043 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		80C1EFF82297B67600320E15 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		80C1EFFA2297B77300320E15 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		80C1EFFC2297C2F700320E15 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */,
 				80029941229BE27F00C8F947 /* TerminalVC.swift */,
 				80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */,
+				80C0E0B422A287C20018B043 /* SettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -260,11 +263,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dabble/Pods-Dabble-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -292,6 +297,7 @@
 				808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */,
 				8002993E229BE08900C8F947 /* BluetoothSerial.swift in Sources */,
 				80C1EFFB2297B77300320E15 /* DataService.swift in Sources */,
+				80C0E0B522A287C20018B043 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

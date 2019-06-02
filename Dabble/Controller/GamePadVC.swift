@@ -11,6 +11,7 @@ import AudioToolbox
 import CoreBluetooth
 import QuartzCore
 import MBProgressHUD
+import SCLAlertView
 
 class GamePadVC: UIViewController, BluetoothSerialDelegate {
   
@@ -286,6 +287,17 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate {
         return result
     }
     
+    @objc func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        serial.stopScan()
+        // Go back to the previous ViewController
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func digitalMode(){
+        print("Digital Mode selected")
+    }
+    
     //    MARK: Back button pressed
     @IBAction func buttonPressed(_ sender: Any) {
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
@@ -294,6 +306,10 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate {
 //    @objc func canRotate() -> Void {}
     
     @IBAction func connectButtonPressed(_ sender: Any) {
+        let newBackButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: self, action:#selector(GamePadVC.back(sender:)))
+        self.navigationItem.backBarButtonItem = newBackButton
+        connectButton.tintColor = UIColor.white
+        
         if serial.connectedPeripheral == nil {
             performSegue(withIdentifier: "showBluetoothScanner", sender: self)
         } else if serial.connectedPeripheral != nil {
@@ -302,6 +318,21 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate {
         }
     }
     @IBAction func modeButtonPressed(_ sender: Any) {
+        let appearance = SCLAlertView.SCLAppearance(
+            showCircularIcon: true
+        )
+        let alertView = SCLAlertView(appearance: appearance)
+       
+        alertView.addButton("Digital Mode", target:self, selector:Selector("digitalMode"))
+        alertView.addButton("Joystick Mode") {
+            print("Joystick button tapped")
+        }
+        alertView.addButton("Accelerometer Mode") {
+            print("Accelerometer button tapped")
+        }
+         alertView.showTitle("Switch Mode", subTitle: "", style: .info)
+        
+        
     }
     
 }
