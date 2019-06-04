@@ -198,11 +198,18 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
                     str = stringOf01
                 }
                 if dataType == "Decimal"{
-                    let formatter = NumberFormatter()
-                    formatter.generatesDecimalNumbers = true
-                    formatter.numberStyle = NumberFormatter.Style.decimal
-                    let xa2 : NSNumber? = formatter.number(from: str)
-                    print(xa2 as Any)
+//                    let formatter = NumberFormatter()
+//                    formatter.generatesDecimalNumbers = true
+//                    formatter.numberStyle = NumberFormatter.Style.decimal
+//                    let xa2 : NSNumber? = formatter.number(from: str)
+//                    print(xa2 as Any)
+                    
+                    let binaryData = Data(str.utf8)
+                    let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
+                        acc + String(byte, radix: 10)
+                    }
+                    print(stringOf01)
+                    str = stringOf01
                 }
                 if dataType == "Hexadecimal"{
                     let data = Data(str.utf8)
@@ -249,6 +256,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         
         return result
     }
+   
     
     func string_Bytes(str: String) -> [UInt8] {
         let buf: [UInt8] = Array(str.utf8)
@@ -308,11 +316,12 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
             stringFormatted = stringOf01
         }
         if dataType == "Decimal"{
-            //            let formatter = NumberFormatter()
-            //            formatter.generatesDecimalNumbers = true
-            //            formatter.numberStyle = NumberFormatter.Style.decimal
-            //            let xa2 : NSNumber? = formatter.number(from: stringFormatted)
-            //            print(xa2 as Any)
+            let binaryData = Data(stringFormatted.utf8)
+            let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
+                acc + String(byte, radix: 10)
+            }
+            print(stringOf01)
+            stringFormatted = stringOf01
             
         }
         if dataType == "Hexadecimal"{
@@ -368,94 +377,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
-        if !serial.isReady {
-            let alert = UIAlertController(title: "Not connected", message: "Where I am supposed to send this ?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: { action -> Void in self.dismiss(animated: true, completion: nil) }))
-            present(alert, animated: true, completion: nil)
-            textView.resignFirstResponder()
-            return
-        }
-        if scrollOff == false{
-            chatTableView.reloadData()
-            scrollToBottom()
-        }
-        var stringFormatted = textView.text!
-        if dataType == "ASCII"{
-            stringFormatted += ""
-        }
-        if dataType == "Binary"{
-            let binaryData = Data(stringFormatted.utf8)
-            let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
-                acc + String(byte, radix: 2)
-            }
-            stringFormatted = stringOf01
-        }
-        if dataType == "Decimal"{
-            print("***************************")
-            let binaryData = Data(stringFormatted.utf8)
-            let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
-                acc + String(byte, radix: 2)
-            }
-            stringFormatted = stringOf01
-            for i in stringFormatted{
-                let number = strtoul("\(i)", nil, 10)
-                print(number)
-            }
-            print("***************************")
-            
-            
-            
-        }
-        if dataType == "Hexadecimal"{
-            let data = Data(stringFormatted.utf8)
-            let hexString = data.map{ String(format:"%02x", $0) }.joined()
-            stringFormatted = "\(hexString)"
-        }
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "h:mm:ss a',' MMMM dd, yyyy"
-        formatter.amSymbol = "AM"
-        formatter.pmSymbol = "PM"
-        let dateString = formatter.string(from: Date())
-        
-        let data = Terminal(phoneText: stringFormatted, eviveText: "", phoneTime: dateString, eviveTime: "")
-        chatArray.append(data)
-        chatTableView.reloadData()
-        var phoneToEviveByteArray: [UInt8] = []
-        let phoneToEviveString: String = "FF0201"
-        phoneToEviveByteArray.append(contentsOf: toByteArray(phoneToEviveString))
-
-        phoneToEviveByteArray.append(contentsOf: toByteArray("0\(numberOfLines(textView: textView))"))
-        
-       var str: String = ""
-        for i in textView.text!{
-            if i == "\n"{
-                stringArray.append(str)
-                str = ""
-            }else{
-                str += String(i)
-            }
-        }
-        if str.count > 0{
-            stringArray.append(str)
-            str = ""
-        }
-        
-        print(stringArray)
-        for i in stringArray{
-            phoneToEviveByteArray.append(contentsOf: toByteArray(String(format:"%02X", i.count)))
-            phoneToEviveByteArray.append(contentsOf: string_Bytes(str: i))
-        }
-        
-     
-        phoneToEviveByteArray.append(contentsOf: toByteArray("00"))
-        print(phoneToEviveByteArray)
-        serial.sendBytesToDevice(phoneToEviveByteArray)
-        textView.text = ""
-        stringArray.removeAll()
-        textView.resignFirstResponder()
-        return
+       sendMessagePhoneToEvive()
     }
     
     
@@ -489,20 +411,48 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         
         let ascii = UIAlertAction(title: "ASCII", style: .destructive) { (buttonTapped) in
             self.dataType = "ASCII"
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.label.text = "ASCII"
+            hud.hide(animated: true, afterDelay: 1.0)
         }
         let binary = UIAlertAction(title: "Binary", style: .destructive) { (buttonTapped) in
             self.dataType = "Binary"
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.label.text = "Binary"
+            hud.hide(animated: true, afterDelay: 1.0)
         }
         let decimal = UIAlertAction(title: "Decimal", style: .destructive) { (buttonTapped) in
             self.dataType = "Decimal"
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.label.text = "Decimal"
+            hud.hide(animated: true, afterDelay: 1.0)
         }
         let hex = UIAlertAction(title: "Hexadecimal", style: .destructive) { (buttonTapped) in
             self.dataType = "Hexadecimal"
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.label.text = "Hexadecimal"
+            hud.hide(animated: true, afterDelay: 1.0)
             
         }
         let autoSend = UIAlertAction(title: "Auto Send (2 sec)", style: .destructive) { (buttonTapped) in
+            if !self.autoSendText{
+                self.autoSendText = true
+                let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+                hud.mode = MBProgressHUDMode.text
+                hud.label.text = "AutoSend Turned On"
+                hud.hide(animated: true, afterDelay: 2.0)
+            }else{
+                self.autoSendText = false
+                let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+                hud.mode = MBProgressHUDMode.text
+                hud.label.text = "AutoSend Turned Off"
+                hud.hide(animated: true, afterDelay: 2.0)
+            }
             
-            self.autoSendText = true
         }
         let help = UIAlertAction(title: "Help", style: .destructive) { (buttonTapped) in
             let alertVC = UIAlertController(title: "Terminal", message: "This module allows you to both send and receive data from a device with this module.\n\nYou can send both textual and voice commands to the device eg. turning it ON or OFF. The messages are displayed with a timestamp.\n\nYou can publish data sent by the device on the app.\n\nThe data can be displayed in 4 formats: ASCII, Binary, Decimal and Hexadecimal.", preferredStyle: .alert)

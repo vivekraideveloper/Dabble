@@ -74,141 +74,141 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate {
     
    
     @objc func trianglePressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102040000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func triangleReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func squarePressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102200000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func squareReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func circlePressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102080000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func circleReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func crossPressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102100000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func crossReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func startPressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
-        let string: String = "FF01010102000800"
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        let string: String = "FF01010102010000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func startReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func selectPressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
-        let string: String = "FF01010102000800"
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        let string: String = "FF01010102020000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func selectReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func upPressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000100"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func upReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func downPressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000200"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func downReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func leftPressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000400"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func leftReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func rightPressed(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Pressed")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000800"
         serial.sendBytesToDevice(toByteArray(string))
     }
     
     @objc func rightReleased(){
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        print("Released")
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         let string: String = "FF01010102000000"
         serial.sendBytesToDevice(toByteArray(string))
     }
@@ -294,10 +294,6 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func digitalMode(){
-        print("Digital Mode selected")
-    }
-    
     //    MARK: Back button pressed
     @IBAction func buttonPressed(_ sender: Any) {
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
@@ -319,16 +315,29 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate {
     }
     @IBAction func modeButtonPressed(_ sender: Any) {
         let appearance = SCLAlertView.SCLAppearance(
-            showCircularIcon: true
+            showCloseButton: false, showCircularIcon: true
         )
         let alertView = SCLAlertView(appearance: appearance)
        
-        alertView.addButton("Digital Mode", target:self, selector:Selector("digitalMode"))
+        alertView.addButton("Digital Mode"){
+            self.upButton.isHidden = false
+            self.downButton.isHidden = false
+            self.leftButton.isHidden = false
+            self.rightButton.isHidden = false
+        }
         alertView.addButton("Joystick Mode") {
             print("Joystick button tapped")
+            self.upButton.isHidden = true
+            self.downButton.isHidden = true
+            self.leftButton.isHidden = true
+            self.rightButton.isHidden = true
         }
         alertView.addButton("Accelerometer Mode") {
             print("Accelerometer button tapped")
+            self.upButton.isHidden = true
+            self.downButton.isHidden = true
+            self.leftButton.isHidden = true
+            self.rightButton.isHidden = true
         }
          alertView.showTitle("Switch Mode", subTitle: "", style: .info)
         
