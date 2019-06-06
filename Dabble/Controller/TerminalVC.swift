@@ -18,7 +18,9 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     var stringArray: [String] = []
     var dataType = "ASCII"
     var autoSendText = false
-    
+    var eviveToPhoneMessage = ""
+    var removeUnnecessaryCharcters: Bool = true
+    var checkFramesIncomingBool: Bool = false
     //    MARK: IBOutlets here
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var textView: UITextView!
@@ -125,6 +127,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TerminalCell{
+            
             cell.phoneLabel.text = chatArray[indexPath.row].phoneText
             cell.phoneTimeStamp.text = chatArray[indexPath.row].phoneTime
             cell.eviveLabel.text = chatArray[indexPath.row].eviveText
@@ -173,68 +176,80 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         }
     }
     
+    func serialDidReceiveData(_ data: Data) {
+        print(data.count)
+        
+    }
+    
+    
     func serialDidReceiveBytes(_ bytes: [UInt8]) {
         print(bytes)
+        var i = 0
+        while i < bytes.count {
+            eviveToPhoneMessage += String(Character(UnicodeScalar(bytes[i])))
+            if bytes[i] == UInt8("0"){
+                print("I succeeded")
+                checkFramesIncomingBool = true
+            }
+            i += 1
+        }
+//        if removeUnnecessaryCharcters{
+//            eviveToPhoneMessage.removeFirst()
+//            eviveToPhoneMessage.removeFirst()
+//            eviveToPhoneMessage.removeFirst()
+//            removeUnnecessaryCharcters = false
+//        }
         
-        var str: String = ""
-        if let length: Int = Int(bytes[4]) + 5{
-            print(length)
-            if length < 16{
-                var i = 5
-                while i < length{
-                    str += String(Character(UnicodeScalar(bytes[i])))
-                    i += 1
+        print(eviveToPhoneMessage)
+        
+        
+        
+        
+        
+        if checkFramesIncomingBool{
+            eviveToPhoneMessage.removeFirst()
+            if dataType == "ASCII"{
+                eviveToPhoneMessage += ""
+            }
+            if dataType == "Binary"{
+                let binaryData = Data(eviveToPhoneMessage.utf8)
+                let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
+                    acc + String(byte, radix: 2)
                 }
-                
-                
-                if dataType == "ASCII"{
-                    str += ""
+                eviveToPhoneMessage = stringOf01
+            }
+            if dataType == "Decimal"{
+                let binaryData = Data(eviveToPhoneMessage.utf8)
+                let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
+                    acc + String(byte, radix: 10)
                 }
-                if dataType == "Binary"{
-                    let binaryData = Data(str.utf8)
-                    let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
-                        acc + String(byte, radix: 2)
-                    }
-                    str = stringOf01
-                }
-                if dataType == "Decimal"{
-//                    let formatter = NumberFormatter()
-//                    formatter.generatesDecimalNumbers = true
-//                    formatter.numberStyle = NumberFormatter.Style.decimal
-//                    let xa2 : NSNumber? = formatter.number(from: str)
-//                    print(xa2 as Any)
-                    
-                    let binaryData = Data(str.utf8)
-                    let stringOf01 = binaryData.reduce("") { (acc, byte) -> String in
-                        acc + String(byte, radix: 10)
-                    }
-                    print(stringOf01)
-                    str = stringOf01
-                }
-                if dataType == "Hexadecimal"{
-                    let data = Data(str.utf8)
-                    let hexString = data.map{ String(format:"%02x", $0) }.joined()
-                    str = "\(hexString)"
-                }
-                
-                let formatter = DateFormatter()
-                formatter.locale = Locale(identifier: "en_US_POSIX")
-                formatter.dateFormat = "h:mm:ss a',' MMMM dd, yyyy"
-                formatter.amSymbol = "AM"
-                formatter.pmSymbol = "PM"
-                let dateString = formatter.string(from: Date())
-                let data = Terminal(phoneText: "", eviveText: str, phoneTime: "", eviveTime: dateString)
-                chatArray.append(data)
+                print(stringOf01)
+                eviveToPhoneMessage = stringOf01
+            }
+            if dataType == "Hexadecimal"{
+                let data = Data(eviveToPhoneMessage.utf8)
+                let hexString = data.map{ String(format:"%02x", $0) }.joined()
+                eviveToPhoneMessage = "\(hexString)"
+            }
+            
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.dateFormat = "h:mm:ss a',' MMMM dd, yyyy"
+            formatter.amSymbol = "AM"
+            formatter.pmSymbol = "PM"
+            let dateString = formatter.string(from: Date())
+            let data = Terminal(phoneText: "", eviveText: eviveToPhoneMessage, phoneTime: "", eviveTime: dateString)
+            chatArray.append(data)
+            chatTableView.reloadData()
+            eviveToPhoneMessage = ""
+            checkFramesIncomingBool = false
+            if scrollOff == false{
                 chatTableView.reloadData()
-                if scrollOff == false{
-                    chatTableView.reloadData()
-                    scrollToBottom()
-                }
+                scrollToBottom()
             }
         }
-        //        print(bytes[length])
-        
-        
+       
+    
     }
     
     // string to byte Array conversion

@@ -13,6 +13,7 @@
 		80029942229BE27F00C8F947 /* TerminalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029941229BE27F00C8F947 /* TerminalVC.swift */; };
 		80029944229BE2B200C8F947 /* BluetoothScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */; };
 		80029946229BE45300C8F947 /* BluetoothScannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029945229BE45300C8F947 /* BluetoothScannerCell.swift */; };
+		805C5FBC22A63B2B0091AF25 /* KZJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C5FBB22A63B2B0091AF25 /* KZJoystickView.swift */; };
 		808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543A229D20E30029CA3A /* TerminalCell.swift */; };
 		808A543D229D35D00029CA3A /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543C229D35D00029CA3A /* Terminal.swift */; };
 		809C505F2296C3D4003F0E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C505E2296C3D4003F0E2A /* AppDelegate.swift */; };
@@ -37,9 +38,10 @@
 		80029941229BE27F00C8F947 /* TerminalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalVC.swift; sourceTree = "<group>"; };
 		80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerVC.swift; sourceTree = "<group>"; };
 		80029945229BE45300C8F947 /* BluetoothScannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerCell.swift; sourceTree = "<group>"; };
+		805C5FBB22A63B2B0091AF25 /* KZJoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KZJoystickView.swift; sourceTree = "<group>"; };
 		808A543A229D20E30029CA3A /* TerminalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalCell.swift; sourceTree = "<group>"; };
 		808A543C229D35D00029CA3A /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
-		809C505B2296C3D4003F0E2A /* Dabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		809C505B2296C3D4003F0E2A /* Dabbleabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dabbleabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		809C505E2296C3D4003F0E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		809C50602296C3D4003F0E2A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		809C50632296C3D4003F0E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		809C505C2296C3D4003F0E2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				809C505B2296C3D4003F0E2A /* Dabble.app */,
+				809C505B2296C3D4003F0E2A /* Dabbleabble.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 				80C1EFFC2297C2F700320E15 /* GradientView.swift */,
 				80029945229BE45300C8F947 /* BluetoothScannerCell.swift */,
 				808A543A229D20E30029CA3A /* TerminalCell.swift */,
+				805C5FBB22A63B2B0091AF25 /* KZJoystickView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		809C505A2296C3D4003F0E2A /* Dabble */ = {
+		809C505A2296C3D4003F0E2A /* Dabbleabble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabble" */;
+			buildConfigurationList = 809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabbleabble" */;
 			buildPhases = (
 				5BCE6B7FC3674DCC97C2653F /* [CP] Check Pods Manifest.lock */,
 				809C50572296C3D4003F0E2A /* Sources */,
@@ -184,9 +187,9 @@
 			);
 			dependencies = (
 			);
-			name = Dabble;
+			name = Dabbleabble;
 			productName = Dabble;
-			productReference = 809C505B2296C3D4003F0E2A /* Dabble.app */;
+			productReference = 809C505B2296C3D4003F0E2A /* Dabbleabble.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +220,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				809C505A2296C3D4003F0E2A /* Dabble */,
+				809C505A2296C3D4003F0E2A /* Dabbleabble */,
 			);
 		};
 /* End PBXProject section */
@@ -298,6 +301,7 @@
 				8002993E229BE08900C8F947 /* BluetoothSerial.swift in Sources */,
 				80C1EFFB2297B77300320E15 /* DataService.swift in Sources */,
 				80C0E0B522A287C20018B043 /* SettingsVC.swift in Sources */,
+				805C5FBC22A63B2B0091AF25 /* KZJoystickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +493,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabble" */ = {
+		809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabbleabble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				809C506E2296C3D5003F0E2A /* Debug */,
