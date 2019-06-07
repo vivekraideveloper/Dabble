@@ -38,9 +38,9 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
 //    Variables to check whether frames repeats or not
     var checkAngleFrameRepeat: String = ""
     var checkRadiusFrameRepeat: String = ""
-    
     var motionManager: CMMotionManager!
-    
+    var accelInnerX: CGFloat?
+    var accelInnerY: CGFloat?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,9 +55,12 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         accelOuter.isHidden = true
         accelInner.isHidden = true
         
+        accelInnerX = accelInner.frame.origin.x
+        accelInnerY = accelInner.frame.origin.y
+        
         // Handling Core Motion
         motionManager = CMMotionManager()
-        motionManager.startAccelerometerUpdates(to: .main, withHandler: updateLabels)
+        self.motionManager.stopAccelerometerUpdates()
         
         
     }
@@ -314,7 +317,8 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
     
     func joystickView(_ joystickView: KZJoystickView, didMoveto angle: Int, distance: Float) {
         //        label.text = "angle: " + String(angle) + " distance: " + String(distance)
-       
+        print(distance)
+        print(joystickView.thumbView.frame.origin.x, joystickView.thumbView.frame.origin.y )
         let frame: String = "FF0102010200"
         let finalRadius = Int((distance*7))
         let fangle: Int = 0
@@ -360,28 +364,32 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         formatter.minimumFractionDigits = 1
         formatter.maximumFractionDigits = 2
         
-        let x = formatter.string(for: accelorometerData.acceleration.x)
-        let y = formatter.string(for: accelorometerData.acceleration.y)
-        let z = formatter.string(for: accelorometerData.acceleration.z)
-        print(x,y,z)
+        let x = accelorometerData.acceleration.x
+        let y = accelorometerData.acceleration.y
+        let z = accelorometerData.acceleration.z
+//        print(x,y,z)
         print(view.frame.origin.x, view.frame.origin.y)
         print(view.frame.maxX, view.frame.maxY)
         var frm: CGRect = accelInner.frame
-
-        if frm.origin.x < 300{
+        print(frm.origin.x, frm.origin.y)
+        if frm.origin.x < 170 && frm.origin.x > 20{
             if accelorometerData.acceleration.x > 0{
                 frm.origin.y = frm.origin.y - CGFloat(accelorometerData.acceleration.x*5)
-                print("+x")
             }
             if accelorometerData.acceleration.x < 0{
                 frm.origin.y = frm.origin.y - CGFloat(accelorometerData.acceleration.x*5)
-                print("-x")
             }
         }
-        if frm.origin.x >= 300{
-            frm.origin.x = 300 - 5
+        if frm.origin.x >= 170 {
+            frm.origin.x = frm.origin.x - 10
         }
-        if frm.origin.y < 300{
+        
+        if frm.origin.x <= 20{
+            frm.origin.x = frm.origin.x + 10
+        }
+        
+        
+        if frm.origin.y < 170 && frm.origin.y > 20{
             if accelorometerData.acceleration.y > 0{
                 frm.origin.x = frm.origin.x - CGFloat(accelorometerData.acceleration.y*5)
             }
@@ -389,8 +397,12 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
                 frm.origin.x = frm.origin.x - CGFloat(accelorometerData.acceleration.y*5)
             }
         }
-        if frm.origin.y >= 300{
-            frm.origin.y = 300 - 5
+        if frm.origin.y >= 170{
+            frm.origin.y = frm.origin.y - 10
+        }
+        
+        if frm.origin.y <= 20{
+            frm.origin.y = frm.origin.y + 10
         }
         accelInner.frame = frm
         
@@ -429,6 +441,7 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
             self.joystickView.isHidden = true
             self.accelInner.isHidden = true
             self.accelOuter.isHidden = true
+            self.motionManager.stopAccelerometerUpdates()
 
         }
         alertView.addButton("Joystick Mode") {
@@ -442,6 +455,7 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
             self.accelOuter.isHidden = true
             self.joystickView.backgroundView.isHidden = false
             self.joystickView.thumbView.isHidden = false
+            self.motionManager.stopAccelerometerUpdates()
 
         }
         alertView.addButton("Accelerometer Mode") {
@@ -455,6 +469,8 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
             self.joystickView.thumbView.isHidden = true
             self.accelInner.isHidden = false
             self.accelOuter.isHidden = false
+            self.motionManager.startAccelerometerUpdates(to: .main, withHandler: self.updateLabels)
+            
 
         }
          alertView.showTitle("Switch Mode", subTitle: "", style: .info)
