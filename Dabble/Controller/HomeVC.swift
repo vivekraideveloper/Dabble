@@ -146,6 +146,9 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             let next = self.storyboard?.instantiateViewController(withIdentifier: "gamePad") as! GamePadVC
             self.present(next, animated: true, completion: nil)
         }
+        if indexPath.row == 7{
+            performSegue(withIdentifier: "phoneSensor", sender: self)
+        }
 
     }
     
@@ -185,4 +188,22 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+}
+
+
+
+extension HomeVC: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: self.homeCollectionView.bounds.width/2, height: self.homeCollectionView.bounds.height/4)
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
 }

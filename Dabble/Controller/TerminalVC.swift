@@ -311,6 +311,9 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         if !serial.isReady {
             let alert = UIAlertController(title: "Not connected", message: "Where I am supposed to send this ?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: { action -> Void in self.dismiss(animated: true, completion: nil) }))
+            alert.addAction(UIAlertAction(title: "Connect", style: UIAlertAction.Style.default, handler: { (action) in
+                self.performSegue(withIdentifier: "showBluetoothScanner", sender: self)
+            }))
             present(alert, animated: true, completion: nil)
             textView.resignFirstResponder()
             return

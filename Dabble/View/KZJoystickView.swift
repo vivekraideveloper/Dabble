@@ -13,7 +13,6 @@ protocol JoystickViewDelegate: class {
     //angle [0 ~ 180, 0 ~ -180] distance:[0.0 - 1.0]
     func joystickView(_ joystickView:KZJoystickView,didMoveto angle: Int, distance: Float)
     func joystickViewDidEndMoving(_ joystickView:KZJoystickView)
-    func joystickAccelerometerMode(_ joystickView:KZJoystickView,didMoveto angle: Int, distance: Float)
 }
 
 enum JoystickForm {
@@ -171,7 +170,7 @@ class KZJoystickView: UIView {
     private func didMove(distance: Float){
         let angle: Int = (Int)(-180 * atan2(Double(yValue), Double(xValue)) / Double.pi)
         delegate?.joystickView(self, didMoveto: angle, distance: distance)
-        delegate?.joystickAccelerometerMode(self, didMoveto: angle, distance: distance)
+        
     }
 }
 

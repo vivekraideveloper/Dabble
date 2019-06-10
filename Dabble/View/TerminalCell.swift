@@ -15,5 +15,4 @@ class TerminalCell: UITableViewCell {
     @IBOutlet weak var eviveLabel: UILabel!
     @IBOutlet weak var eviveTimeStamp: UILabel!
     
-
 }

@@ -13,6 +13,7 @@ import QuartzCore
 import MBProgressHUD
 import SCLAlertView
 import CoreMotion
+import AVFoundation
 
 class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate {
     
@@ -41,6 +42,11 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
     var motionManager: CMMotionManager!
     var accelInnerX: CGFloat?
     var accelInnerY: CGFloat?
+    
+//    Var for accelerometer
+    var accelInnerLastX: CGFloat = 0.0
+    var accelInnerLastY: CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,9 +67,9 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         // Handling Core Motion
         motionManager = CMMotionManager()
         self.motionManager.stopAccelerometerUpdates()
-        
-        
     }
+    
+   
     
     func gamePadButtonsPressed(){
         
@@ -333,11 +339,11 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         }
         
         
-        print(finalRadius)
+//        print(finalRadius)
         let angleFrame = frame + "0\(fangle)" + "00"
         let radiusFrame = frame + "0\(finalRadius)" + "00"
-        print(angleFrame)
-        print(radiusFrame)
+//        print(angleFrame)
+//        print(radiusFrame)
         
         if checkAngleFrameRepeat != angleFrame || checkRadiusFrameRepeat != radiusFrame{
             serial.sendBytesToDevice(toByteArray(angleFrame))
@@ -349,13 +355,6 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         
     }
     
-    func joystickAccelerometerMode(_ joystickView: KZJoystickView, didMoveto angle: Int, distance: Float) {
-        print(angle)
-        print(distance)
-    }
-    
-    
-    
     // Core Motion functioning
     func updateLabels(data: CMAccelerometerData?, error: Error?){
         guard let accelorometerData = data else { return }
@@ -366,45 +365,57 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         
         let x = accelorometerData.acceleration.x
         let y = accelorometerData.acceleration.y
-        let z = accelorometerData.acceleration.z
-//        print(x,y,z)
-        print(view.frame.origin.x, view.frame.origin.y)
-        print(view.frame.maxX, view.frame.maxY)
+
         var frm: CGRect = accelInner.frame
-        print(frm.origin.x, frm.origin.y)
-        if frm.origin.x < 170 && frm.origin.x > 20{
-            if accelorometerData.acceleration.x > 0{
-                frm.origin.y = frm.origin.y - CGFloat(accelorometerData.acceleration.x*5)
-            }
-            if accelorometerData.acceleration.x < 0{
-                frm.origin.y = frm.origin.y - CGFloat(accelorometerData.acceleration.x*5)
-            }
-        }
-        if frm.origin.x >= 170 {
-            frm.origin.x = frm.origin.x - 10
-        }
         
-        if frm.origin.x <= 20{
-            frm.origin.x = frm.origin.x + 10
+        var pos = frm.origin.y - CGFloat(x*5)
+        if pos < 180 && pos != accelInnerLastX && pos > 20{
+            frm.origin.y = pos
+            accelInnerLastX = pos
         }
-        
-        
-        if frm.origin.y < 170 && frm.origin.y > 20{
-            if accelorometerData.acceleration.y > 0{
-                frm.origin.x = frm.origin.x - CGFloat(accelorometerData.acceleration.y*5)
-            }
-            if accelorometerData.acceleration.y < 0{
-                frm.origin.x = frm.origin.x - CGFloat(accelorometerData.acceleration.y*5)
-            }
-        }
-        if frm.origin.y >= 170{
-            frm.origin.y = frm.origin.y - 10
-        }
-        
-        if frm.origin.y <= 20{
-            frm.origin.y = frm.origin.y + 10
+        pos = frm.origin.x - CGFloat(y*5)
+            if pos < 180 && pos != accelInnerLastY && pos > 20{
+            frm.origin.x = pos
+            accelInnerLastY = pos
         }
         accelInner.frame = frm
+        
+//        Send data to Evive
+        
+        let distance = hypot(frm.origin.x - accelInnerX!, frm.origin.y - accelInnerY!)
+        print("Distance---\(distance)")
+        
+        let v1 = CGVector(dx: accelInnerX!, dy: accelInnerY!)
+        let v2 = CGVector(dx: frm.origin.x, dy: frm.origin.y)
+        let angle = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
+        var deg = angle * CGFloat(180.0 / Double.pi)
+        if deg < 0 {
+            deg += 360.0
+            print("Angle---\(deg)")
+        }else{
+            print("Angle---\(deg)")
+        }
+        
+        let frame: String = "FF0103010200"
+        let finalRadius = Int((distance*7))
+        
+        let fangle = Int((24/360)*Float(deg))
+        print(fangle)
+        
+        
+        //        print(finalRadius)
+        let angleFrame = frame + "0\(fangle)" + "00"
+        let radiusFrame = frame + "0\(finalRadius)" + "00"
+        //        print(angleFrame)
+        //        print(radiusFrame)
+        
+//        if checkAngleFrameRepeat != angleFrame || checkRadiusFrameRepeat != radiusFrame{
+//            serial.sendBytesToDevice(toByteArray(angleFrame))
+//            serial.sendBytesToDevice(toByteArray(radiusFrame))
+//        }
+        
+//        checkAngleFrameRepeat = angleFrame
+//        checkRadiusFrameRepeat = radiusFrame
         
     }
     
