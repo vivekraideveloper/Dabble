@@ -11,7 +11,6 @@ import Foundation
 class DataService {
     
     static let instance = DataService()
-    
     private let components = [
         Components(title: "LED Controller", imageName: "ledController", color1: 0x35ad4a, color2: 0x0e7a3d),
         Components(title: "Terminal", imageName: "terminal", color1: 0x3f4a9e, color2: 0x201d58),
@@ -39,17 +38,14 @@ class DataService {
         SensorComponents(sensorName: " Gyroscope", firstLabel: "X-axis", secondLabel: "Y-axis", thirdLabel: "Z-axis", firstUnit: "rad/s", secondUnit: "rad/s", thirdUnit: "rad/s", sensorImage: "gyroscope"),
         SensorComponents(sensorName: " Magnetometer", firstLabel: "X-axis", secondLabel: "Y-axis", thirdLabel: "Z-axis", firstUnit: "μT", secondUnit: "μT", thirdUnit: "μT", sensorImage: "magnetometer"),
         SensorComponents(sensorName: " Proximity Meter", firstLabel: "", secondLabel: "Distance", thirdLabel: "", firstUnit: "", secondUnit: "CM", thirdUnit: "", sensorImage: "proximity"),
-        SensorComponents(sensorName: " Light Meter", firstLabel: "Intensity", secondLabel: "", thirdLabel: "", firstUnit: "Lux", secondUnit: "", thirdUnit: "", sensorImage: "light"),
-        SensorComponents(sensorName: " Sound Meter", firstLabel: "Intensity", secondLabel: "", thirdLabel: "", firstUnit: "dB", secondUnit: "", thirdUnit: "", sensorImage: "soundMeter"),
+        SensorComponents(sensorName: " Sound Meter", firstLabel: "", secondLabel: "Intensity", thirdLabel: "", firstUnit: "", secondUnit: "dB", thirdUnit: "", sensorImage: "soundMeter"),
         SensorComponents(sensorName: " Location", firstLabel: "Longitude", secondLabel: "Latitude", thirdLabel: "", firstUnit: "", secondUnit: "", thirdUnit: "", sensorImage: "location"),
-        SensorComponents(sensorName: " Temperature", firstLabel: "", secondLabel: "", thirdLabel: "", firstUnit: "", secondUnit: "", thirdUnit: "", sensorImage: "temperature"),
-        SensorComponents(sensorName: " Barometer", firstLabel: "", secondLabel: "", thirdLabel: "", firstUnit: "", secondUnit: "", thirdUnit: "", sensorImage: "barometer")
+        SensorComponents(sensorName: " Barometer", firstLabel: "", secondLabel: "Pressure", thirdLabel: "", firstUnit: "", secondUnit: "Kpa", thirdUnit: "", sensorImage: "barometer")
     ]
     
     func getSensorComponents() -> [SensorComponents]{
         return sensorComponents
     }
-    
     
 }
 

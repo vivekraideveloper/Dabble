@@ -39,6 +39,5 @@ class PhoneSensorCell: UITableViewCell {
         phoneSensorView.backgroundColor = UIColor.white
         sensorNameLabel.layer.cornerRadius = 10
         
-    }
-
+    }    
 }

@@ -147,7 +147,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             self.present(next, animated: true, completion: nil)
         }
         if indexPath.row == 7{
-            performSegue(withIdentifier: "phoneSensor", sender: self)
+            performSegue(withIdentifier: "phoneSensors", sender: self)
         }
 
     }
@@ -199,7 +199,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: self.homeCollectionView.bounds.width/2, height: self.homeCollectionView.bounds.height/4)
+        return CGSize(width: self.homeCollectionView.bounds.width/2, height: self.homeCollectionView.bounds.height/5)
     }
     
 

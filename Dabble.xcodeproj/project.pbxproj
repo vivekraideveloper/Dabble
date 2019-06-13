@@ -13,6 +13,7 @@
 		80029942229BE27F00C8F947 /* TerminalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029941229BE27F00C8F947 /* TerminalVC.swift */; };
 		80029944229BE2B200C8F947 /* BluetoothScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */; };
 		80029946229BE45300C8F947 /* BluetoothScannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029945229BE45300C8F947 /* BluetoothScannerCell.swift */; };
+		801F0D0B22B22D1C0005FDA9 /* PhoneSensorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F0D0A22B22D1C0005FDA9 /* PhoneSensorsVC.swift */; };
 		805C5FBC22A63B2B0091AF25 /* KZJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C5FBB22A63B2B0091AF25 /* KZJoystickView.swift */; };
 		808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543A229D20E30029CA3A /* TerminalCell.swift */; };
 		808A543D229D35D00029CA3A /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543C229D35D00029CA3A /* Terminal.swift */; };
@@ -41,6 +42,7 @@
 		80029941229BE27F00C8F947 /* TerminalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalVC.swift; sourceTree = "<group>"; };
 		80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerVC.swift; sourceTree = "<group>"; };
 		80029945229BE45300C8F947 /* BluetoothScannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerCell.swift; sourceTree = "<group>"; };
+		801F0D0A22B22D1C0005FDA9 /* PhoneSensorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorsVC.swift; sourceTree = "<group>"; };
 		805C5FBB22A63B2B0091AF25 /* KZJoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KZJoystickView.swift; sourceTree = "<group>"; };
 		808A543A229D20E30029CA3A /* TerminalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalCell.swift; sourceTree = "<group>"; };
 		808A543C229D35D00029CA3A /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				80029941229BE27F00C8F947 /* TerminalVC.swift */,
 				80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */,
 				80F5304322AB82D50048324E /* PhoneSensorVC.swift */,
+				801F0D0A22B22D1C0005FDA9 /* PhoneSensorsVC.swift */,
 				80C0E0B422A287C20018B043 /* SettingsVC.swift */,
 			);
 			path = Controller;
@@ -314,6 +317,7 @@
 				80C1EFFB2297B77300320E15 /* DataService.swift in Sources */,
 				80C0E0B522A287C20018B043 /* SettingsVC.swift in Sources */,
 				805C5FBC22A63B2B0091AF25 /* KZJoystickView.swift in Sources */,
+				801F0D0B22B22D1C0005FDA9 /* PhoneSensorsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
