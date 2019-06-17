@@ -2,12 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Dabble wants to use your Microphone</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Dabble wants to use your location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Dabble wants to recognize your speech</string>
 	<key>CFBundleDisplayName</key>
 	<string>Dabble</string>
 	<key>CFBundleExecutable</key>
@@ -30,6 +28,12 @@
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This app uses bluetooth to send and receive data from HM10 devices.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Dabble wants to use your location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Dabble wants to use your Microphone</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Allow access to Siri</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

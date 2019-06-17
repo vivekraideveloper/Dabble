@@ -16,8 +16,8 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     //    MARK:  IB Outlets here
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var dabbleIcon: UIBarButtonItem!
     @IBOutlet weak var connectButton: UIBarButtonItem!
-    
     //    MARK: Variables here
     
     private(set) public var components = [Components]()
@@ -55,11 +55,14 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             self.navigationItem.backBarButtonItem = newBackButton
         connectButton.tintColor = UIColor.white
         
+//       navigationSliderFromLeft
+        
+
     }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
     
     // NavController back button action
     
@@ -77,19 +80,47 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         serial.delegate = self
         
         if serial.isReady {
+            //            navItem.title = serial.connectedPeripheral!.name
             connectButton.title = "Disconnect"
             connectButton.image = UIImage(named: "connect")
             connectButton.isEnabled = true
         } else if serial.centralManager.state == .poweredOn {
+            //            navItem.title = "Bluetooth Serial"
             connectButton.image = UIImage(named: "disconnect")
             connectButton.tintColor = UIColor.white
             connectButton.isEnabled = true
         } else {
+            //            navItem.title = "Bluetooth Serial"
             connectButton.image = UIImage(named: "disconnect")
             connectButton.tintColor = UIColor.white
             connectButton.isEnabled = false
         }
     }
+    
+    
+    //MARK: BluetoothSerialDelegate
+    
+    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
+        print("Heheheheheheheeh")
+        reloadView()
+        //        dismissKeyboard()
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Disconnected"
+        hud.hide(animated: true, afterDelay: 1.0)
+    }
+    
+    func serialDidChangeState() {
+        reloadView()
+        if serial.centralManager.state != .poweredOn {
+            //            dismissKeyboard()
+            let hud = MBProgressHUD.showAdded(to: view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.label.text = "Bluetooth turned off"
+            hud.hide(animated: true, afterDelay: 1.0)
+        }
+    }
+    
     
     
     func collectionViewSetUp(){
@@ -139,6 +170,9 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0{
+            performSegue(withIdentifier: "ledControl", sender: self)
+        }
         if indexPath.row == 1{
             performSegue(withIdentifier: "terminal", sender: self)
         }
@@ -152,33 +186,14 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     }
     
-    //    MARK: Bluetooth Serial delegate methods
-    
-    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
-        reloadView()
-        //        dismissKeyboard()
-        let hud = MBProgressHUD.showAdded(to: view, animated: true)
-        hud.mode = MBProgressHUDMode.text
-        hud.label.text = "Disconnected"
-        hud.hide(animated: true, afterDelay: 1.0)
-    }
-    
-    func serialDidChangeState() {
-        reloadView()
-        if serial.centralManager.state != .poweredOn {
-            //            dismissKeyboard()
-            let hud = MBProgressHUD.showAdded(to: view, animated: true)
-            hud.mode = MBProgressHUDMode.text
-            hud.label.text = "Bluetooth turned off"
-            hud.hide(animated: true, afterDelay: 1.0)
-        }
-    }
+   
     
     @IBAction func settingsButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "settings", sender: self)
     }
     
     
+   
     @IBAction func connectButtonPressed(_ sender: Any) {
         if serial.connectedPeripheral == nil {
             performSegue(withIdentifier: "showBluetoothScanner", sender: self)
@@ -187,7 +202,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             reloadView()
         }
     }
-    
 }
 
 

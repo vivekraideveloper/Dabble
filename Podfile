@@ -9,5 +9,6 @@ target 'Dabble' do
 pod 'ChameleonFramework/Swift'
 pod 'MBProgressHUD'
 pod 'SCLAlertView'
+pod 'NavigationDrawer'
 
 end

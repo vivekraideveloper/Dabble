@@ -14,9 +14,12 @@
 		80029944229BE2B200C8F947 /* BluetoothScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */; };
 		80029946229BE45300C8F947 /* BluetoothScannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80029945229BE45300C8F947 /* BluetoothScannerCell.swift */; };
 		801F0D0B22B22D1C0005FDA9 /* PhoneSensorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F0D0A22B22D1C0005FDA9 /* PhoneSensorsVC.swift */; };
+		801F0D0D22B37D620005FDA9 /* LedControlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F0D0C22B37D610005FDA9 /* LedControlVC.swift */; };
+		801F0D1322B3FA0E0005FDA9 /* NavDrawerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F0D1222B3FA0E0005FDA9 /* NavDrawerVC.swift */; };
 		805C5FBC22A63B2B0091AF25 /* KZJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C5FBB22A63B2B0091AF25 /* KZJoystickView.swift */; };
 		808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543A229D20E30029CA3A /* TerminalCell.swift */; };
 		808A543D229D35D00029CA3A /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A543C229D35D00029CA3A /* Terminal.swift */; };
+		8091FFF322B4FECB007B345B /* VivekCircularRingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091FFF222B4FECB007B345B /* VivekCircularRingSlider.swift */; };
 		809C505F2296C3D4003F0E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C505E2296C3D4003F0E2A /* AppDelegate.swift */; };
 		809C50612296C3D4003F0E2A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C50602296C3D4003F0E2A /* HomeVC.swift */; };
 		809C50642296C3D4003F0E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809C50622296C3D4003F0E2A /* Main.storyboard */; };
@@ -28,10 +31,22 @@
 		80C1EFFB2297B77300320E15 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFA2297B77300320E15 /* DataService.swift */; };
 		80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1EFFC2297C2F700320E15 /* GradientView.swift */; };
 		80D7FB3D22A0F1EF00B9988C /* GamePadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */; };
-		80F5304422AB82D50048324E /* PhoneSensorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5304322AB82D50048324E /* PhoneSensorVC.swift */; };
 		80F5304622AB82F90048324E /* PhoneSensorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5304522AB82F90048324E /* PhoneSensorCell.swift */; };
 		80F5304822AB8CDC0048324E /* SensorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5304722AB8CDC0048324E /* SensorComponents.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		80C15C9222B79E6A00B96BE0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5263FCBDBE10DA0D8F0DB58E /* Pods-Dabble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dabble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dabble/Pods-Dabble.release.xcconfig"; sourceTree = "<group>"; };
@@ -42,11 +57,15 @@
 		80029941229BE27F00C8F947 /* TerminalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalVC.swift; sourceTree = "<group>"; };
 		80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerVC.swift; sourceTree = "<group>"; };
 		80029945229BE45300C8F947 /* BluetoothScannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScannerCell.swift; sourceTree = "<group>"; };
+		8006959622B76BA000ACBB6D /* Dabble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dabble.entitlements; sourceTree = "<group>"; };
 		801F0D0A22B22D1C0005FDA9 /* PhoneSensorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorsVC.swift; sourceTree = "<group>"; };
+		801F0D0C22B37D610005FDA9 /* LedControlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedControlVC.swift; sourceTree = "<group>"; };
+		801F0D1222B3FA0E0005FDA9 /* NavDrawerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavDrawerVC.swift; sourceTree = "<group>"; };
 		805C5FBB22A63B2B0091AF25 /* KZJoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KZJoystickView.swift; sourceTree = "<group>"; };
 		808A543A229D20E30029CA3A /* TerminalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalCell.swift; sourceTree = "<group>"; };
 		808A543C229D35D00029CA3A /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
-		809C505B2296C3D4003F0E2A /* Dabbleabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dabbleabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8091FFF222B4FECB007B345B /* VivekCircularRingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VivekCircularRingSlider.swift; sourceTree = "<group>"; };
+		809C505B2296C3D4003F0E2A /* Dabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		809C505E2296C3D4003F0E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		809C50602296C3D4003F0E2A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		809C50632296C3D4003F0E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,7 +78,6 @@
 		80C1EFFA2297B77300320E15 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		80C1EFFC2297C2F700320E15 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePadVC.swift; sourceTree = "<group>"; };
-		80F5304322AB82D50048324E /* PhoneSensorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorVC.swift; sourceTree = "<group>"; };
 		80F5304522AB82F90048324E /* PhoneSensorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorCell.swift; sourceTree = "<group>"; };
 		80F5304722AB8CDC0048324E /* SensorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +116,7 @@
 		809C505C2296C3D4003F0E2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				809C505B2296C3D4003F0E2A /* Dabbleabble.app */,
+				809C505B2296C3D4003F0E2A /* Dabble.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +124,7 @@
 		809C505D2296C3D4003F0E2A /* Dabble */ = {
 			isa = PBXGroup;
 			children = (
+				8006959622B76BA000ACBB6D /* Dabble.entitlements */,
 				809C50742296C75B003F0E2A /* SupportingFiles */,
 				809C50732296C754003F0E2A /* Utils */,
 				809C50722296C74E003F0E2A /* Model */,
@@ -127,9 +146,10 @@
 				80029943229BE2B200C8F947 /* BluetoothScannerVC.swift */,
 				80029941229BE27F00C8F947 /* TerminalVC.swift */,
 				80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */,
-				80F5304322AB82D50048324E /* PhoneSensorVC.swift */,
 				801F0D0A22B22D1C0005FDA9 /* PhoneSensorsVC.swift */,
 				80C0E0B422A287C20018B043 /* SettingsVC.swift */,
+				801F0D0C22B37D610005FDA9 /* LedControlVC.swift */,
+				801F0D1222B3FA0E0005FDA9 /* NavDrawerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +190,7 @@
 			children = (
 				8002993D229BE08900C8F947 /* BluetoothSerial.swift */,
 				80C1EFFA2297B77300320E15 /* DataService.swift */,
+				8091FFF222B4FECB007B345B /* VivekCircularRingSlider.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -185,23 +206,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		809C505A2296C3D4003F0E2A /* Dabbleabble */ = {
+		809C505A2296C3D4003F0E2A /* Dabble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabbleabble" */;
+			buildConfigurationList = 809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabble" */;
 			buildPhases = (
 				5BCE6B7FC3674DCC97C2653F /* [CP] Check Pods Manifest.lock */,
 				809C50572296C3D4003F0E2A /* Sources */,
 				809C50582296C3D4003F0E2A /* Frameworks */,
 				809C50592296C3D4003F0E2A /* Resources */,
 				980A308D07A8D6359EF8D37F /* [CP] Embed Pods Frameworks */,
+				80C15C9222B79E6A00B96BE0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Dabbleabble;
+			name = Dabble;
 			productName = Dabble;
-			productReference = 809C505B2296C3D4003F0E2A /* Dabbleabble.app */;
+			productReference = 809C505B2296C3D4003F0E2A /* Dabble.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -216,6 +238,12 @@
 				TargetAttributes = {
 					809C505A2296C3D4003F0E2A = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -232,7 +260,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				809C505A2296C3D4003F0E2A /* Dabbleabble */,
+				809C505A2296C3D4003F0E2A /* Dabble */,
 			);
 		};
 /* End PBXProject section */
@@ -278,12 +306,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dabble/Pods-Dabble-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/NavigationDrawer/NavigationDrawer.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NavigationDrawer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,21 +332,23 @@
 				808A543D229D35D00029CA3A /* Terminal.swift in Sources */,
 				80029942229BE27F00C8F947 /* TerminalVC.swift in Sources */,
 				80029946229BE45300C8F947 /* BluetoothScannerCell.swift in Sources */,
-				80F5304422AB82D50048324E /* PhoneSensorVC.swift in Sources */,
 				80029944229BE2B200C8F947 /* BluetoothScannerVC.swift in Sources */,
 				80F5304822AB8CDC0048324E /* SensorComponents.swift in Sources */,
 				80C1EFF92297B67600320E15 /* Components.swift in Sources */,
 				80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */,
 				80029940229BE18500C8F947 /* Extensions.swift in Sources */,
+				8091FFF322B4FECB007B345B /* VivekCircularRingSlider.swift in Sources */,
 				80D7FB3D22A0F1EF00B9988C /* GamePadVC.swift in Sources */,
 				809C50772296C793003F0E2A /* HomeCell.swift in Sources */,
 				809C505F2296C3D4003F0E2A /* AppDelegate.swift in Sources */,
 				80F5304622AB82F90048324E /* PhoneSensorCell.swift in Sources */,
+				801F0D1322B3FA0E0005FDA9 /* NavDrawerVC.swift in Sources */,
 				808A543B229D20E30029CA3A /* TerminalCell.swift in Sources */,
 				8002993E229BE08900C8F947 /* BluetoothSerial.swift in Sources */,
 				80C1EFFB2297B77300320E15 /* DataService.swift in Sources */,
 				80C0E0B522A287C20018B043 /* SettingsVC.swift in Sources */,
 				805C5FBC22A63B2B0091AF25 /* KZJoystickView.swift in Sources */,
+				801F0D0D22B37D620005FDA9 /* LedControlVC.swift in Sources */,
 				801F0D0B22B22D1C0005FDA9 /* PhoneSensorsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,17 +496,22 @@
 			baseConfigurationReference = 71C7653E87B9C4C198388E08 /* Pods-Dabble.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Dabble/Dabble.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X9VVW4ZPQS;
+				DEVELOPMENT_TEAM = PSJA9D6H53;
 				INFOPLIST_FILE = Dabble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vivekrai.haptikassignment.BluetoothConnectivity;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.dabbleapp;
+				PRODUCT_NAME = Dabble;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -483,17 +520,21 @@
 			baseConfigurationReference = 5263FCBDBE10DA0D8F0DB58E /* Pods-Dabble.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Dabble/Dabble.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X9VVW4ZPQS;
+				DEVELOPMENT_TEAM = PSJA9D6H53;
 				INFOPLIST_FILE = Dabble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vivekrai.haptikassignment.BluetoothConnectivity;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.dabbleapp;
+				PRODUCT_NAME = Dabble;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -509,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabbleabble" */ = {
+		809C506D2296C3D5003F0E2A /* Build configuration list for PBXNativeTarget "Dabble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				809C506E2296C3D5003F0E2A /* Debug */,

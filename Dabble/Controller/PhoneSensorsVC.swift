@@ -133,7 +133,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
         super.viewDidLoad()
         
         reloadView()
-        NotificationCenter.default.addObserver(self, selector: #selector(PhoneSensorVC.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PhoneSensorsVC.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
         
         
         
@@ -174,15 +174,6 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 self.pressureValue = Float(data!.pressure)
             }
         }
-        
-        
-//        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(sensorTimer), userInfo: nil, repeats: true)
-        
-      
-        
-            
-        
-        
     }
     
     func updateAccelerometer(data: CMAccelerometerData?, error: Error?){
@@ -262,7 +253,6 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
         recorder.record()
         
         levelTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(levelTimerCallback), userInfo: nil, repeats: true)
-        
     }
     
     func locationUpdate(){
@@ -507,7 +497,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
     }
     
     @IBAction func connectButtonPressed(_ sender: Any) {
-        let newBackButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: self, action:#selector(PhoneSensorVC.back(sender:)))
+        let newBackButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: self, action:#selector(PhoneSensorsVC.back(sender:)))
         self.navigationItem.backBarButtonItem = newBackButton
         connectButton.tintColor = UIColor.white
         
