@@ -292,4 +292,5 @@ final class BluetoothSerial: NSObject, CBCentralManagerDelegate, CBPeripheralDel
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
         delegate.serialDidReadRSSI(RSSI)
     }
+    
 }

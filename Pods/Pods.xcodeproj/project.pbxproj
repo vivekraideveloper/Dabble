@@ -7,87 +7,99 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03DCD393DF69EE6DE4AD424B1192DD02 /* UIViewController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 154B751FCFA2B6FE86A09B959924B7BD /* UIViewController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03DCD393DF69EE6DE4AD424B1192DD02 /* UIViewController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = B663A13EEE1B0837647445ED216AA7F0 /* UIViewController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0407C4559E291D3C120CDCB5B717C7EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
 		08E88902EDB5EF7D424C72B48FAA27A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		0968524ED4DE8DF7834055C5B6089D72 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B274B02FF85E0D5C264D6B2F38B61A82 /* MBProgressHUD-dummy.m */; };
-		0D7F425CFB628271BFB6FCFF8201BF4F /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = D51E299E261AA713D3986337723188D4 /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		128E2D9001ABF2FE244EDBBE7F33E1DB /* NavigationDrawer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C35DD5F0F83715F7F6414FA3CFE07D73 /* NavigationDrawer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		139A9CEDE5163F58CBB1A3A135DAD6A3 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD980FB5B570E54A40FF4F7326E7BC4A /* UIImage+ChameleonPrivate.m */; };
-		1A4D6AACC765ECBE5C97A209E65C1399 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA149B53C056B03BDC1FE136DB5869A0 /* SCLExtensions.swift */; };
-		1B704F3C816C4532F9B7FDFE0625732E /* ChameleonFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6193848360E017780E8049A93B750EFF /* ChameleonFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26B8AEDBFA375C3E6908C38F4D6760AF /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E4A75DCEC0D21FBDC5F36A9A949F1 /* SCLAlertView-dummy.m */; };
-		28A794912ED1E06B05D96DF5ED0AED19 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB3E2D029EF0A09EA22E25B25BB036D3 /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2924FD58A020B2A3E4B0CC40AA27CE9F /* DismissMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D226B8FD98EBF055B4BEE2D3B68DA /* DismissMenuAnimator.swift */; };
-		29F74E8A334254C68C6720E3B247CE32 /* NSArray+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 093FC294B4E3E716767C35AD8787E3AB /* NSArray+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DDDE2C06FB4DCC639CFD100F224D6FD /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B9D06AECF10426B6EC6C361C8835F0 /* UIColor+Chameleon.m */; };
-		2E35EF0E49E4B8D1B5896CB75E3B3106 /* NavigationDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DF0C63749538A17F918F0FFEE8481B /* NavigationDrawer-dummy.m */; };
-		3D08C4F4E2E65D192D317AED0A8237B3 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C6315F149A435F0AC8612A6F8A4D16 /* UIColor+ChameleonPrivate.m */; };
+		0968524ED4DE8DF7834055C5B6089D72 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 936F37FD2F083BE9C4393DAB92B01AAC /* MBProgressHUD-dummy.m */; };
+		0D7F425CFB628271BFB6FCFF8201BF4F /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 31153F48D5C343551358FEFAD6772294 /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		128E2D9001ABF2FE244EDBBE7F33E1DB /* NavigationDrawer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28A40BF78F6F76032422474D95D49203 /* NavigationDrawer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		139A9CEDE5163F58CBB1A3A135DAD6A3 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCE8708D78080EE32B68FAB0D1EBA41 /* UIImage+ChameleonPrivate.m */; };
+		1B704F3C816C4532F9B7FDFE0625732E /* ChameleonFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A93260C2A95B2A8213D1E54C821BB4D0 /* ChameleonFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28A794912ED1E06B05D96DF5ED0AED19 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C40CEB2D325DA82A8AC3B997432B74F0 /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2924FD58A020B2A3E4B0CC40AA27CE9F /* DismissMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F0B4B50C7358B9779EF719D399A897 /* DismissMenuAnimator.swift */; };
+		29F74E8A334254C68C6720E3B247CE32 /* NSArray+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = E15C76568BEC92A358DD95AA1898A476 /* NSArray+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DDDE2C06FB4DCC639CFD100F224D6FD /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF9AD3489F89829EFF29D7E7C8A39CA /* UIColor+Chameleon.m */; };
+		2E35EF0E49E4B8D1B5896CB75E3B3106 /* NavigationDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E4D1320F773AE101F6728C3DC79E15 /* NavigationDrawer-dummy.m */; };
+		30F1E76C8641B82312BA5FCAE69CD440 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDD2DA4E1E6D9C9831B3D479D93313 /* SCLAlertView.swift */; };
+		36D85ED24D9638950538A8A4303BE905 /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F47220453A53913BF0AC6A07C6FDCFCA /* SCLAlertView-dummy.m */; };
+		3D08C4F4E2E65D192D317AED0A8237B3 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F6B5B5D515DF9A2DDAB214C6469553 /* UIColor+ChameleonPrivate.m */; };
 		3EE679252C26FE5A3816BDBE854387F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */; };
-		44117424757A5E62D87B8BF4B41A4207 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BF354EDBE66A947BFA3BAF5588DF8A0C /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		459048ECD9FAA42B77566EC56ECAD793 /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = CC25F851F3F0A262767ECD12A79A0526 /* UINavigationController+Chameleon.m */; };
-		59EE8EBCBDB54A53A3514E70CAB05191 /* Pods-Dabble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B07EF78C65B0E1EE229CC65A4633C1 /* Pods-Dabble-dummy.m */; };
-		5EA9F0ED011B06DEFA8542EEE72508C3 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = AC458777E5AE630045608FB1045C6472 /* UIViewController+Chameleon.m */; };
-		604286A8F8A2ACB063BDF97B09D4987C /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6885436ABB0F1A18EA1B41ABC0125298 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		659078922AD2E568B8640D6CD207BD1F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E90BDA97ED3BF58CA67B3F87575F17 /* Interactor.swift */; };
-		6712100A2CCB9B987281A02F6778473C /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E8B8D4651CB828644D9B257CBBCB7F /* NSArray+Chameleon.m */; };
+		44117424757A5E62D87B8BF4B41A4207 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 30781E10720C4BEE924057F8A4932966 /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		459048ECD9FAA42B77566EC56ECAD793 /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB2F24FA1C513AEB9942EF78E53D160 /* UINavigationController+Chameleon.m */; };
+		4A72A3A4462C25B1116F40837E86E3BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
+		4C020F0092BFA721C7FD253AA17C01BC /* RNPulseButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA299552BF933D49954574D135736819 /* RNPulseButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A79E4D57D4B6A166891AD214659B605 /* Pods-Dabble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA22A5B810A8F55BB3A529119420520 /* Pods-Dabble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B676A9B24D3D3ABC82F7002FDDBE881 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
+		5EA9F0ED011B06DEFA8542EEE72508C3 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 983663FCBDC23C1D73DA92A73EEBFA4C /* UIViewController+Chameleon.m */; };
+		604286A8F8A2ACB063BDF97B09D4987C /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = FA4CE722A771BD7217B1A0F8DC7F0DF6 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		659078922AD2E568B8640D6CD207BD1F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03841809CBB41488A32AB45E484A23D1 /* Interactor.swift */; };
+		6712100A2CCB9B987281A02F6778473C /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FD1CBF18432DBA1A455B7AB65F9A04 /* NSArray+Chameleon.m */; };
 		673D37B7393421A843ECBC8A42CC56CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89163E94743FDDD60913C47150E225B /* UIKit.framework */; };
-		6851FD38BE6B6CDFFF2081FDDA7DA666 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEC39A5E443838AB2446C3778F416F /* PresentMenuAnimator.swift */; };
-		749A5E6316C8D43997B8DE3E498218A3 /* Pods-Dabble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA22A5B810A8F55BB3A529119420520 /* Pods-Dabble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78281D8673FC507089FCFDC439DEDC16 /* Chameleon_.h in Headers */ = {isa = PBXBuildFile; fileRef = 02235999E3F2082EEE2E1DB626FBCBCB /* Chameleon_.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		833F15A28A0D562548517BCA8EAF23B6 /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EAEEA91D77E312CFA0EF3F131658C7 /* ChameleonShorthand.swift */; };
-		83CFC8F573AD5B75191E162E64C7D039 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ACA69A1CFDCBA352E732EE55492AA9 /* UIButton+Chameleon.m */; };
-		86F7D970F220974A0E26C3B632C5C74F /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A31C1CB2C7CFD686DC7A2061E74835 /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		897C38C8E3C31950E2E93A4D6937CCC4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 962DCF923D90D9C0942B0E3C118FC79F /* MBProgressHUD.m */; };
-		8ECF929AC5E737EBEB542283886D5E07 /* UIView+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B01C45B430553080B86289BBE4B644A5 /* UIView+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95E542740750F827BE2EBE3DE6F62D0E /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC70F4D21BE1848FBC53EDCE55D3C6C /* ChameleonFramework-dummy.m */; };
+		6851FD38BE6B6CDFFF2081FDDA7DA666 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF3656FEB6F3AFB85E70F4305E50957 /* PresentMenuAnimator.swift */; };
+		78281D8673FC507089FCFDC439DEDC16 /* Chameleon_.h in Headers */ = {isa = PBXBuildFile; fileRef = 92DB3A2B8582171B8701E8E103FDE7EB /* Chameleon_.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B539F61164D2140222C34431B733F6A /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 382E674480BBBCCFB0E27625294A522A /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C0305B9C51E882718F8F18EB5142155 /* RNPulseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0E854ABC54325D667907293FC6DF /* RNPulseButton.swift */; };
+		833F15A28A0D562548517BCA8EAF23B6 /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B2A682A3315C5ECBA17956DBEE7C2 /* ChameleonShorthand.swift */; };
+		83CFC8F573AD5B75191E162E64C7D039 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 428CBAAC51942F9FFE6810998CBCDEAC /* UIButton+Chameleon.m */; };
+		86F7D970F220974A0E26C3B632C5C74F /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C86C63DCCD8F32A3A5A6C6CF822882 /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		897C38C8E3C31950E2E93A4D6937CCC4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B2668E3C31E6FFFBD35CBC77F01D45 /* MBProgressHUD.m */; };
+		8ECF929AC5E737EBEB542283886D5E07 /* UIView+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A257B966853D54902FD6E862B7B6 /* UIView+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93AE7B31B59499547A7DCC08A1EE63FA /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4003888F216B8260170FB594C1B2F /* SCLExtensions.swift */; };
+		95E542740750F827BE2EBE3DE6F62D0E /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE444235500B253E697CE45BCC9D28C4 /* ChameleonFramework-dummy.m */; };
 		97E9904F140EF13E0605FEF48FCE9604 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */; };
-		9A3EAF15D3C58FD56A552FD703A9154C /* ChameleonConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 885671F4EE6A831A2660D193EB143C6E /* ChameleonConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B6AD39C81FAF37861FC0FEC41022146 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 30AF4D43A6A92DBE6BC5F8D26E4AB85A /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A3EAF15D3C58FD56A552FD703A9154C /* ChameleonConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E2F74F01275B72F5FC368BDD0445C33 /* ChameleonConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B6AD39C81FAF37861FC0FEC41022146 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 201B36CA8FA4FBC6D51DEBD5D30A1AD1 /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DD693AA2ADE8FEB96FB893D6F2EA633 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		A5BF8DBDD8660DBCFE712657F3D82BDA /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6862C95FE7CB8672C7AF62F916FE02 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A664D0A12D5F3DBD08A7E8DFE3AE83E2 /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 882132D194814462A4B4F651CDBC375D /* UIView+ChameleonPrivate.m */; };
-		B26038F91C7C4CC322D7F25C5D16FE9E /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A9801E211A69F157969AC1FA42345F37 /* ChameleonConstants.m */; };
-		B4EA53699AA19822E674188743266B2B /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 880528866E4BEDB420DD7E928DDD60C7 /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B6053BD7B4C7B5159049412C89FB859E /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDF18E25BB733BFFD38E3E0CD41E993 /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7810D96E8749D6F53B4E7A563D57387 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
+		A5BF8DBDD8660DBCFE712657F3D82BDA /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C21FE7ED82E3DA590E37F6714FAA503 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A664D0A12D5F3DBD08A7E8DFE3AE83E2 /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4C7D968AE4A853FF7ED6C992511B48 /* UIView+ChameleonPrivate.m */; };
+		B26038F91C7C4CC322D7F25C5D16FE9E /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F63AF82E0438AD0F9800EACE6ABB8EC3 /* ChameleonConstants.m */; };
+		B4EA53699AA19822E674188743266B2B /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C8CC7BCBF2C310138D4FB7DEA53510B /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB0FDDCC82B2A765E40D762291143991 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */; };
-		BFA97401155C4E14893D9AA1E0D1EC80 /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE17C03716BA453C4129C94A87EFFA4 /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C2074324D6AFE2584107D018D19E425F /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E68CDE73D730F2B7AF3D5C0DEC16 /* SCLAlertView.swift */; };
-		C3C8BB46937DD0BBC7FBE25E298052F8 /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45910CCC2670960897BD7236B70A26 /* UIAppearance+Swift.m */; };
+		BFA97401155C4E14893D9AA1E0D1EC80 /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9CCB19F8A9CB20AE1CDA9DEDB51449 /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1B45A8BBDF5453A8A902B854424F7F2 /* RNPulseButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5AE0A6BD13BDD2AB519C8F17671C23 /* RNPulseButton-dummy.m */; };
+		C3C8BB46937DD0BBC7FBE25E298052F8 /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = B1633CA1301DCEEAF5890E7A30175D78 /* UIAppearance+Swift.m */; };
 		D7A85ED8F049F25DF76FDFA39955361D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		DB5FB611FB6EBF2F2BA7B78FE0CED535 /* UIColor+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 35A63A5A3362926B1FFD37002F50AA76 /* UIColor+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7FA38FEAF957D69E92153FBAFB3DB40 /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D29327D30E7AE874765CC97F1F3DD /* Chameleon_.m */; };
-		EC786817C5CEBCD51A4C9EC9B883ED6F /* ChameleonEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F0B91750310E6B9671DF76288B69D14 /* ChameleonEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED4DBD1E13182AA813DC1237FA6E3A42 /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 8366151AEE67D6DD377DB2326E62DE0A /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D939CAE2BF6C634A99DF1F7126E669A3 /* Pods-Dabble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B07EF78C65B0E1EE229CC65A4633C1 /* Pods-Dabble-dummy.m */; };
+		DB5FB611FB6EBF2F2BA7B78FE0CED535 /* UIColor+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = E43A7E895F56B408B8703434BEEB5548 /* UIColor+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E07CBFF720DAA010AF3D44A97AA7BA6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89163E94743FDDD60913C47150E225B /* UIKit.framework */; };
+		E7FA38FEAF957D69E92153FBAFB3DB40 /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = C78F4C08CBC8E3FC22CC01D1A4561FCB /* Chameleon_.m */; };
+		EC786817C5CEBCD51A4C9EC9B883ED6F /* ChameleonEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C21EB5E4A20A7EAD9241CF7DF54DCC /* ChameleonEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED4DBD1E13182AA813DC1237FA6E3A42 /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 37AFD7A0365964FD8AB83BF1873A2C80 /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFF00C12F5CBB6C4123B2AE334CB569A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */; };
-		F19506BF0FA485A3B8E5007107325680 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AC57BBB31F071C216045ACD23E122F /* MenuHelper.swift */; };
-		FB82C1293D7DDE0D3E2E6D68CDD5852C /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = C63C95A05E5D4B0B168055D45F8F24C7 /* UILabel+Chameleon.m */; };
-		FCDC0A1ED7312A2EF2220F48B8C209C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
+		F19506BF0FA485A3B8E5007107325680 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AB8B8F1DAD4AB4ABB067C1C5B04973 /* MenuHelper.swift */; };
+		FB82C1293D7DDE0D3E2E6D68CDD5852C /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = B63F42A22430A090281DE9AF0B126311 /* UILabel+Chameleon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		329043170C417A150DC423EF387440E5 /* PBXContainerItemProxy */ = {
+		20D3CE9687334FB6C47E09A8C0E34FEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9EDDE6AFB6C3C88CE28462FDD8E29396;
-			remoteInfo = NavigationDrawer;
+			remoteGlobalIDString = 0571230DF62A12DFB54ABA2BD434AE96;
+			remoteInfo = RNPulseButton;
 		};
-		605F204493E1CEAB5923495295AD6280 /* PBXContainerItemProxy */ = {
+		374780D54EEF319B824DF432484B5B0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CCA40FDFBE3A35394355054211E9B15;
+			remoteInfo = SCLAlertView;
+		};
+		C9743689F305D6B8AA78B128CF807AC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 76BD4592010354D6C23D6ECCA20D83A8;
 			remoteInfo = ChameleonFramework;
 		};
-		C7E779F34CB5A1AEFEDF1119131408ED /* PBXContainerItemProxy */ = {
+		CB8A8976F35455D5C188A149762342C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1B63AA72B73837E76E67DEC8C58899C2;
-			remoteInfo = SCLAlertView;
+			remoteGlobalIDString = 9EDDE6AFB6C3C88CE28462FDD8E29396;
+			remoteInfo = NavigationDrawer;
 		};
-		FC7BD9CC172C05A52CE70B8C8401EC57 /* PBXContainerItemProxy */ = {
+		EC9CEEBBDBCBAC6051B071404E5AB561 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -97,86 +109,94 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00590F1533EF6272A386204A74781918 /* NavigationDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NavigationDrawer-prefix.pch"; sourceTree = "<group>"; };
 		006047AAA2A6CFFD375F0AA35A29165E /* Pods-Dabble-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dabble-frameworks.sh"; sourceTree = "<group>"; };
-		02235999E3F2082EEE2E1DB626FBCBCB /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
-		093FC294B4E3E716767C35AD8787E3AB /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
-		0C2480CE8E422C90E6C404CF8BF0CE46 /* ChameleonFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-prefix.pch"; sourceTree = "<group>"; };
-		10B90D7AADD26F69B36012C9528B5BE5 /* Pods_Dabble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dabble.framework; path = "Pods-Dabble.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		134B7160B35C5BC52D0427D6533FE47A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		154B751FCFA2B6FE86A09B959924B7BD /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
-		1B656648DFC85294CBF4170B3385AE29 /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
+		02E4003888F216B8260170FB594C1B2F /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
+		03841809CBB41488A32AB45E484A23D1 /* Interactor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = NavigationDrawer/Sources/Interactor.swift; sourceTree = "<group>"; };
+		0421A257B966853D54902FD6E862B7B6 /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		095B79A00A27CA8F0EF421C481B9DB21 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105E63D6C6A464A07C2B4CA570DA6D96 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChameleonFramework.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F43DDFB74CFAEF231E712C9D03A3AD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12517CE326ECE1D62F200F6112378643 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E2F74F01275B72F5FC368BDD0445C33 /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
+		201B36CA8FA4FBC6D51DEBD5D30A1AD1 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
+		28A40BF78F6F76032422474D95D49203 /* NavigationDrawer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NavigationDrawer-umbrella.h"; sourceTree = "<group>"; };
 		2E126296219185132A353BE29B32659D /* Pods-Dabble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dabble.release.xcconfig"; sourceTree = "<group>"; };
-		30AF4D43A6A92DBE6BC5F8D26E4AB85A /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
-		33C6315F149A435F0AC8612A6F8A4D16 /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
-		35A63A5A3362926B1FFD37002F50AA76 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
+		30781E10720C4BEE924057F8A4932966 /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		31153F48D5C343551358FEFAD6772294 /* UIButton+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Chameleon.h"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		37AFD7A0365964FD8AB83BF1873A2C80 /* Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = "Pod/Classes/Objective-C/Chameleon.h"; sourceTree = "<group>"; };
 		37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		47A31C1CB2C7CFD686DC7A2061E74835 /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
-		47EAEEA91D77E312CFA0EF3F131658C7 /* ChameleonShorthand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChameleonShorthand.swift; path = Pod/Classes/Swift/ChameleonShorthand.swift; sourceTree = "<group>"; };
-		4FCB7DD4A239DAF15407E1DC0CE1450D /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
-		50162645C16C334D10AEB1D4629DF0A8 /* NavigationDrawer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NavigationDrawer.xcconfig; sourceTree = "<group>"; };
+		382E674480BBBCCFB0E27625294A522A /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
+		3C8CC7BCBF2C310138D4FB7DEA53510B /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
+		3D01C72CD31A11A2E5900170708E8212 /* NavigationDrawer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NavigationDrawer.modulemap; sourceTree = "<group>"; };
+		428CBAAC51942F9FFE6810998CBCDEAC /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
+		4584761EC2B575B60F3B2267188AD900 /* ChameleonFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.xcconfig; sourceTree = "<group>"; };
+		471EE7698F85E18083025B15D535F27E /* RNPulseButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNPulseButton-prefix.pch"; sourceTree = "<group>"; };
+		476E24D8D749071D010B68E3BACF5295 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
+		49ADEA49759049B910A943CAE23CCFEB /* RNPulseButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RNPulseButton.framework; path = RNPulseButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AC668A9232F3E8CCABA5A4FC1FA007A /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FCE8708D78080EE32B68FAB0D1EBA41 /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		550B565964914876C4AA8C5D848D2F7F /* RNPulseButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNPulseButton.xcconfig; sourceTree = "<group>"; };
+		558BAABCE1FD731A119D98A9A5CA744B /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
+		5783D4DB78D62E8290C213D0A80C5982 /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
+		57AB8B8F1DAD4AB4ABB067C1C5B04973 /* MenuHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuHelper.swift; path = NavigationDrawer/Sources/MenuHelper.swift; sourceTree = "<group>"; };
 		58D77FEE62499DC4E9D357B380F1AD9F /* Pods-Dabble-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Dabble-resources.sh"; sourceTree = "<group>"; };
-		5AA7A4B480EF9BD42847FEC4ADC52085 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		5C6E4A75DCEC0D21FBDC5F36A9A949F1 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
-		5F9D226B8FD98EBF055B4BEE2D3B68DA /* DismissMenuAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DismissMenuAnimator.swift; path = NavigationDrawer/Sources/DismissMenuAnimator.swift; sourceTree = "<group>"; };
-		5FDF18E25BB733BFFD38E3E0CD41E993 /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
-		6115FA502648AB812C205EA83BF8827C /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
-		6193848360E017780E8049A93B750EFF /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
-		6531261610385F004819D7719E4AF849 /* ChameleonFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.xcconfig; sourceTree = "<group>"; };
 		65B07EF78C65B0E1EE229CC65A4633C1 /* Pods-Dabble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Dabble-dummy.m"; sourceTree = "<group>"; };
-		6885436ABB0F1A18EA1B41ABC0125298 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
+		6BACCB237D42F6FF7379F2818B7BDD95 /* NavigationDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NavigationDrawer.framework; path = NavigationDrawer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		712CB7E61BBF551B6093BC4AC71D8D03 /* Pods-Dabble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Dabble.modulemap"; sourceTree = "<group>"; };
-		71D94A8386FF585A5C31A69E3B1BAC47 /* NavigationDrawer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NavigationDrawer.modulemap; sourceTree = "<group>"; };
-		7DE17C03716BA453C4129C94A87EFFA4 /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
-		800112B42C8F2EBD341A6D92FEE83FCA /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChameleonFramework.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8366151AEE67D6DD377DB2326E62DE0A /* Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = "Pod/Classes/Objective-C/Chameleon.h"; sourceTree = "<group>"; };
-		880528866E4BEDB420DD7E928DDD60C7 /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
-		882132D194814462A4B4F651CDBC375D /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
-		885671F4EE6A831A2660D193EB143C6E /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
-		887A33E750DBFD8F0EB672BCD957F9D6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BC8282A7196D49A4AEDC232D9D15371 /* ChameleonFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChameleonFramework.modulemap; sourceTree = "<group>"; };
-		8C45910CCC2670960897BD7236B70A26 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
-		8F0B91750310E6B9671DF76288B69D14 /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
+		74502F4856E80CCA29806468EFD68EE6 /* NavigationDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NavigationDrawer-prefix.pch"; sourceTree = "<group>"; };
+		77FD1CBF18432DBA1A455B7AB65F9A04 /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		7C5AE0A6BD13BDD2AB519C8F17671C23 /* RNPulseButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNPulseButton-dummy.m"; sourceTree = "<group>"; };
+		8752AA24DC9A43781EB7F3550BE6E7E2 /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SCLAlertView.framework; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DB3A2B8582171B8701E8E103FDE7EB /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
+		936F37FD2F083BE9C4393DAB92B01AAC /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95AEC39A5E443838AB2446C3778F416F /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentMenuAnimator.swift; path = NavigationDrawer/Sources/PresentMenuAnimator.swift; sourceTree = "<group>"; };
-		962DCF923D90D9C0942B0E3C118FC79F /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		9BEC2E293511F7860A8FEE36B6617E51 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
-		9F9D29327D30E7AE874765CC97F1F3DD /* Chameleon_.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Chameleon_.m; path = "Pod/Classes/Objective-C/Chameleon_.m"; sourceTree = "<group>"; };
-		A027E471369883C26967B8E70FD6EC28 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9801E211A69F157969AC1FA42345F37 /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
-		AC458777E5AE630045608FB1045C6472 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
-		B01C45B430553080B86289BBE4B644A5 /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		980C0E854ABC54325D667907293FC6DF /* RNPulseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RNPulseButton.swift; path = Sources/RNPulseButton.swift; sourceTree = "<group>"; };
+		983663FCBDC23C1D73DA92A73EEBFA4C /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		9C21FE7ED82E3DA590E37F6714FAA503 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A5D99E9AD38B93953C718736BE81D750 /* NavigationDrawer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NavigationDrawer.xcconfig; sourceTree = "<group>"; };
+		A893C5476C9359A335B7A998595C1729 /* RNPulseButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RNPulseButton.modulemap; sourceTree = "<group>"; };
+		A93260C2A95B2A8213D1E54C821BB4D0 /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
+		A9B2668E3C31E6FFFBD35CBC77F01D45 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B08B2A682A3315C5ECBA17956DBEE7C2 /* ChameleonShorthand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChameleonShorthand.swift; path = Pod/Classes/Swift/ChameleonShorthand.swift; sourceTree = "<group>"; };
+		B1633CA1301DCEEAF5890E7A30175D78 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
 		B1CC392383BAD890D98C64F2C9011BF7 /* Pods-Dabble-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Dabble-acknowledgements.plist"; sourceTree = "<group>"; };
-		B1E6C54F2E498B51E9FACACCA6C0CD50 /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SCLAlertView.framework; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B274B02FF85E0D5C264D6B2F38B61A82 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		B5E3C790753359192482B123CF93186E /* ChameleonFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChameleonFramework.modulemap; sourceTree = "<group>"; };
+		B63F42A22430A090281DE9AF0B126311 /* UILabel+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Chameleon.m"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.m"; sourceTree = "<group>"; };
 		B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		B69F1C8154376148E20CB082F71BD563 /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		B7E8B8D4651CB828644D9B257CBBCB7F /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
-		B8ACA69A1CFDCBA352E732EE55492AA9 /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
-		BF354EDBE66A947BFA3BAF5588DF8A0C /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
-		C0AC57BBB31F071C216045ACD23E122F /* MenuHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuHelper.swift; path = NavigationDrawer/Sources/MenuHelper.swift; sourceTree = "<group>"; };
-		C35DD5F0F83715F7F6414FA3CFE07D73 /* NavigationDrawer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NavigationDrawer-umbrella.h"; sourceTree = "<group>"; };
-		C5B9D06AECF10426B6EC6C361C8835F0 /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
-		C63C95A05E5D4B0B168055D45F8F24C7 /* UILabel+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Chameleon.m"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.m"; sourceTree = "<group>"; };
-		C718293943A9C337EE258BFAFE402607 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC25F851F3F0A262767ECD12A79A0526 /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
-		D05D7A087A237975748C458F083B900F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D51E299E261AA713D3986337723188D4 /* UIButton+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Chameleon.h"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		B663A13EEE1B0837647445ED216AA7F0 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		BC7C430CF4FBD4B62E3184D39B8B8D07 /* ChameleonFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-prefix.pch"; sourceTree = "<group>"; };
+		BD4C7D968AE4A853FF7ED6C992511B48 /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		BEF3656FEB6F3AFB85E70F4305E50957 /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresentMenuAnimator.swift; path = NavigationDrawer/Sources/PresentMenuAnimator.swift; sourceTree = "<group>"; };
+		C40CEB2D325DA82A8AC3B997432B74F0 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		C4C21EB5E4A20A7EAD9241CF7DF54DCC /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
+		C78F4C08CBC8E3FC22CC01D1A4561FCB /* Chameleon_.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Chameleon_.m; path = "Pod/Classes/Objective-C/Chameleon_.m"; sourceTree = "<group>"; };
+		CAF9AD3489F89829EFF29D7E7C8A39CA /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		D28E3F033B9AD0005E8DD33D0E9AF92E /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
+		D4F6B5B5D515DF9A2DDAB214C6469553 /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
 		D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DD980FB5B570E54A40FF4F7326E7BC4A /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		D6280B43FAE30110DE1D86D6FE2F8DA2 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		D6C86C63DCCD8F32A3A5A6C6CF822882 /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		D8DDD2DA4E1E6D9C9831B3D479D93313 /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
+		DCB2F24FA1C513AEB9942EF78E53D160 /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
+		DCF140A407AB2EB86805027FC0F7CD1B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE251EED39C4EA5236DED6AFE7E4DA8F /* Pods-Dabble-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Dabble-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DEA22A5B810A8F55BB3A529119420520 /* Pods-Dabble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Dabble-umbrella.h"; sourceTree = "<group>"; };
 		DF14935838D7463118346E72E70D2677 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFEF59D14B9288A90114015FBD8CAA6A /* Pods_Dabble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Dabble.framework; path = "Pods-Dabble.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15C76568BEC92A358DD95AA1898A476 /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		E3147134E0BA121C6D3FBE880F6AA5CA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E43A7E895F56B408B8703434BEEB5548 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
 		E540E744B0D65E2086C69E69F8684795 /* Pods-Dabble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Dabble.debug.xcconfig"; sourceTree = "<group>"; };
-		E554E68CDE73D730F2B7AF3D5C0DEC16 /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
+		E5E4D1320F773AE101F6728C3DC79E15 /* NavigationDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NavigationDrawer-dummy.m"; sourceTree = "<group>"; };
 		E89163E94743FDDD60913C47150E225B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		EA149B53C056B03BDC1FE136DB5869A0 /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
-		EB3E2D029EF0A09EA22E25B25BB036D3 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
-		ECC70F4D21BE1848FBC53EDCE55D3C6C /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
-		EE6862C95FE7CB8672C7AF62F916FE02 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		F4E90BDA97ED3BF58CA67B3F87575F17 /* Interactor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interactor.swift; path = NavigationDrawer/Sources/Interactor.swift; sourceTree = "<group>"; };
-		F8133DB566EABB95BFEFD4D14CFEC2D5 /* NavigationDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NavigationDrawer.framework; path = NavigationDrawer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8DF0C63749538A17F918F0FFEE8481B /* NavigationDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NavigationDrawer-dummy.m"; sourceTree = "<group>"; };
+		EE444235500B253E697CE45BCC9D28C4 /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
+		F1F0B4B50C7358B9779EF719D399A897 /* DismissMenuAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DismissMenuAnimator.swift; path = NavigationDrawer/Sources/DismissMenuAnimator.swift; sourceTree = "<group>"; };
+		F3103C3B661D3F9CAF6B7D5CCD0AD401 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		F47220453A53913BF0AC6A07C6FDCFCA /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
+		F63AF82E0438AD0F9800EACE6ABB8EC3 /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
+		FA299552BF933D49954574D135736819 /* RNPulseButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNPulseButton-umbrella.h"; sourceTree = "<group>"; };
+		FA4CE722A771BD7217B1A0F8DC7F0DF6 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
+		FD9CCB19F8A9CB20AE1CDA9DEDB51449 /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,19 +208,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		261139865D1F87745BCC8D6A564DE8A3 /* Frameworks */ = {
+		36D141EF57386A8A4C962BB039EBE504 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7810D96E8749D6F53B4E7A563D57387 /* Foundation.framework in Frameworks */,
+				5B676A9B24D3D3ABC82F7002FDDBE881 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		32DB7A8C3EE2088CCC623538CB4858D7 /* Frameworks */ = {
+		72C1D832D47908732FAB21FD14237750 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCDC0A1ED7312A2EF2220F48B8C209C0 /* Foundation.framework in Frameworks */,
+				0407C4559E291D3C120CDCB5B717C7EA /* Foundation.framework in Frameworks */,
+				E07CBFF720DAA010AF3D44A97AA7BA6D /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC07770C9B376D0191C82F9CBEFCA8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A72A3A4462C25B1116F40837E86E3BA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,29 +257,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04954C22440700D3EFA0F54C5992E072 /* MBProgressHUD */ = {
+		0DE3090753E8E8802EDA8524B97FA5F7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EE6862C95FE7CB8672C7AF62F916FE02 /* MBProgressHUD.h */,
-				962DCF923D90D9C0942B0E3C118FC79F /* MBProgressHUD.m */,
-				6AF93F5BEE303D2F1D003DD932A4F9AE /* Support Files */,
-			);
-			name = MBProgressHUD;
-			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		04CE31D5217465C1F06F16C5A77DA2AD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A027E471369883C26967B8E70FD6EC28 /* Info.plist */,
-				6115FA502648AB812C205EA83BF8827C /* SCLAlertView.modulemap */,
-				1B656648DFC85294CBF4170B3385AE29 /* SCLAlertView.xcconfig */,
-				5C6E4A75DCEC0D21FBDC5F36A9A949F1 /* SCLAlertView-dummy.m */,
-				9BEC2E293511F7860A8FEE36B6617E51 /* SCLAlertView-prefix.pch */,
-				5FDF18E25BB733BFFD38E3E0CD41E993 /* SCLAlertView-umbrella.h */,
+				12517CE326ECE1D62F200F6112378643 /* Info.plist */,
+				3D01C72CD31A11A2E5900170708E8212 /* NavigationDrawer.modulemap */,
+				A5D99E9AD38B93953C718736BE81D750 /* NavigationDrawer.xcconfig */,
+				E5E4D1320F773AE101F6728C3DC79E15 /* NavigationDrawer-dummy.m */,
+				74502F4856E80CCA29806468EFD68EE6 /* NavigationDrawer-prefix.pch */,
+				28A40BF78F6F76032422474D95D49203 /* NavigationDrawer-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SCLAlertView";
+			path = "../Target Support Files/NavigationDrawer";
 			sourceTree = "<group>";
 		};
 		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
@@ -259,6 +277,64 @@
 				53C8B4AB97860F06FE722851EA867B18 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1628CAAE11991309DAC5E04664D13A77 /* RNPulseButton */ = {
+			isa = PBXGroup;
+			children = (
+				980C0E854ABC54325D667907293FC6DF /* RNPulseButton.swift */,
+				3E223EADD800D323B02D3DC756EF84F6 /* Support Files */,
+			);
+			name = RNPulseButton;
+			path = RNPulseButton;
+			sourceTree = "<group>";
+		};
+		16F6952E514613DC4A266FC0823EBF83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D1D13F261D30349F4995CB67A5E92F1 /* ChameleonFramework */,
+				97E9191138069CF13495E1FAE6310174 /* MBProgressHUD */,
+				E0CC60ED8E3C34198464B3B3B2EFC189 /* NavigationDrawer */,
+				1628CAAE11991309DAC5E04664D13A77 /* RNPulseButton */,
+				9A4A474F2DBF9F71D9103F648534B9A2 /* SCLAlertView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		16FB62F7B633AD6DD6B7C3E3EF1B7E0E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5E3C790753359192482B123CF93186E /* ChameleonFramework.modulemap */,
+				4584761EC2B575B60F3B2267188AD900 /* ChameleonFramework.xcconfig */,
+				EE444235500B253E697CE45BCC9D28C4 /* ChameleonFramework-dummy.m */,
+				BC7C430CF4FBD4B62E3184D39B8B8D07 /* ChameleonFramework-prefix.pch */,
+				A93260C2A95B2A8213D1E54C821BB4D0 /* ChameleonFramework-umbrella.h */,
+				11F43DDFB74CFAEF231E712C9D03A3AD /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ChameleonFramework";
+			sourceTree = "<group>";
+		};
+		1E1B082ED6F3E48328D499D2D008E31A /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				B08B2A682A3315C5ECBA17956DBEE7C2 /* ChameleonShorthand.swift */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
+		3E223EADD800D323B02D3DC756EF84F6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				095B79A00A27CA8F0EF421C481B9DB21 /* Info.plist */,
+				A893C5476C9359A335B7A998595C1729 /* RNPulseButton.modulemap */,
+				550B565964914876C4AA8C5D848D2F7F /* RNPulseButton.xcconfig */,
+				7C5AE0A6BD13BDD2AB519C8F17671C23 /* RNPulseButton-dummy.m */,
+				471EE7698F85E18083025B15D535F27E /* RNPulseButton-prefix.pch */,
+				FA299552BF933D49954574D135736819 /* RNPulseButton-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RNPulseButton";
 			sourceTree = "<group>";
 		};
 		437E993BA4575F6620C80FF29DA8A3C1 /* Targets Support Files */ = {
@@ -280,15 +356,39 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6AF93F5BEE303D2F1D003DD932A4F9AE /* Support Files */ = {
+		579C40D1FA4CE581FDDE225D363441A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D05D7A087A237975748C458F083B900F /* Info.plist */,
-				4FCB7DD4A239DAF15407E1DC0CE1450D /* MBProgressHUD.modulemap */,
-				B69F1C8154376148E20CB082F71BD563 /* MBProgressHUD.xcconfig */,
-				B274B02FF85E0D5C264D6B2F38B61A82 /* MBProgressHUD-dummy.m */,
-				5AA7A4B480EF9BD42847FEC4ADC52085 /* MBProgressHUD-prefix.pch */,
-				EB3E2D029EF0A09EA22E25B25BB036D3 /* MBProgressHUD-umbrella.h */,
+				105E63D6C6A464A07C2B4CA570DA6D96 /* ChameleonFramework.framework */,
+				4AC668A9232F3E8CCABA5A4FC1FA007A /* MBProgressHUD.framework */,
+				6BACCB237D42F6FF7379F2818B7BDD95 /* NavigationDrawer.framework */,
+				DFEF59D14B9288A90114015FBD8CAA6A /* Pods_Dabble.framework */,
+				49ADEA49759049B910A943CAE23CCFEB /* RNPulseButton.framework */,
+				8752AA24DC9A43781EB7F3550BE6E7E2 /* SCLAlertView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D1D13F261D30349F4995CB67A5E92F1 /* ChameleonFramework */ = {
+			isa = PBXGroup;
+			children = (
+				B3CC79EFEADCA477B78C73529BF868BF /* Default */,
+				16FB62F7B633AD6DD6B7C3E3EF1B7E0E /* Support Files */,
+				1E1B082ED6F3E48328D499D2D008E31A /* Swift */,
+			);
+			name = ChameleonFramework;
+			path = ChameleonFramework;
+			sourceTree = "<group>";
+		};
+		6A071BBD1AD8BCFA086B7A9ED4BB5462 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3147134E0BA121C6D3FBE880F6AA5CA /* Info.plist */,
+				D6280B43FAE30110DE1D86D6FE2F8DA2 /* MBProgressHUD.modulemap */,
+				D28E3F033B9AD0005E8DD33D0E9AF92E /* MBProgressHUD.xcconfig */,
+				936F37FD2F083BE9C4393DAB92B01AAC /* MBProgressHUD-dummy.m */,
+				F3103C3B661D3F9CAF6B7D5CCD0AD401 /* MBProgressHUD-prefix.pch */,
+				C40CEB2D325DA82A8AC3B997432B74F0 /* MBProgressHUD-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MBProgressHUD";
@@ -299,74 +399,66 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				B5584C10224B71DFDF6FE558E7C4AE64 /* Pods */,
-				93A42E63AED82B54E98ED2E606A593DE /* Products */,
+				16F6952E514613DC4A266FC0823EBF83 /* Pods */,
+				579C40D1FA4CE581FDDE225D363441A5 /* Products */,
 				437E993BA4575F6620C80FF29DA8A3C1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		93A42E63AED82B54E98ED2E606A593DE /* Products */ = {
+		97E9191138069CF13495E1FAE6310174 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				800112B42C8F2EBD341A6D92FEE83FCA /* ChameleonFramework.framework */,
-				C718293943A9C337EE258BFAFE402607 /* MBProgressHUD.framework */,
-				F8133DB566EABB95BFEFD4D14CFEC2D5 /* NavigationDrawer.framework */,
-				10B90D7AADD26F69B36012C9528B5BE5 /* Pods_Dabble.framework */,
-				B1E6C54F2E498B51E9FACACCA6C0CD50 /* SCLAlertView.framework */,
+				9C21FE7ED82E3DA590E37F6714FAA503 /* MBProgressHUD.h */,
+				A9B2668E3C31E6FFFBD35CBC77F01D45 /* MBProgressHUD.m */,
+				6A071BBD1AD8BCFA086B7A9ED4BB5462 /* Support Files */,
 			);
-			name = Products;
+			name = MBProgressHUD;
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		97A7D514B70D9D962128784557C01E3D /* Support Files */ = {
+		9A4A474F2DBF9F71D9103F648534B9A2 /* SCLAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				8BC8282A7196D49A4AEDC232D9D15371 /* ChameleonFramework.modulemap */,
-				6531261610385F004819D7719E4AF849 /* ChameleonFramework.xcconfig */,
-				ECC70F4D21BE1848FBC53EDCE55D3C6C /* ChameleonFramework-dummy.m */,
-				0C2480CE8E422C90E6C404CF8BF0CE46 /* ChameleonFramework-prefix.pch */,
-				6193848360E017780E8049A93B750EFF /* ChameleonFramework-umbrella.h */,
-				887A33E750DBFD8F0EB672BCD957F9D6 /* Info.plist */,
+				D8DDD2DA4E1E6D9C9831B3D479D93313 /* SCLAlertView.swift */,
+				02E4003888F216B8260170FB594C1B2F /* SCLExtensions.swift */,
+				FFCEF8F3766E6BAF69D455CC3551DA00 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ChameleonFramework";
+			name = SCLAlertView;
+			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
-		A13ECC6F362BE8F2CEDB9C5699BDF773 /* Support Files */ = {
+		B3CC79EFEADCA477B78C73529BF868BF /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				134B7160B35C5BC52D0427D6533FE47A /* Info.plist */,
-				71D94A8386FF585A5C31A69E3B1BAC47 /* NavigationDrawer.modulemap */,
-				50162645C16C334D10AEB1D4629DF0A8 /* NavigationDrawer.xcconfig */,
-				F8DF0C63749538A17F918F0FFEE8481B /* NavigationDrawer-dummy.m */,
-				00590F1533EF6272A386204A74781918 /* NavigationDrawer-prefix.pch */,
-				C35DD5F0F83715F7F6414FA3CFE07D73 /* NavigationDrawer-umbrella.h */,
+				37AFD7A0365964FD8AB83BF1873A2C80 /* Chameleon.h */,
+				92DB3A2B8582171B8701E8E103FDE7EB /* Chameleon_.h */,
+				C78F4C08CBC8E3FC22CC01D1A4561FCB /* Chameleon_.m */,
+				1E2F74F01275B72F5FC368BDD0445C33 /* ChameleonConstants.h */,
+				F63AF82E0438AD0F9800EACE6ABB8EC3 /* ChameleonConstants.m */,
+				C4C21EB5E4A20A7EAD9241CF7DF54DCC /* ChameleonEnums.h */,
+				3C8CC7BCBF2C310138D4FB7DEA53510B /* ChameleonMacros.h */,
+				E15C76568BEC92A358DD95AA1898A476 /* NSArray+Chameleon.h */,
+				77FD1CBF18432DBA1A455B7AB65F9A04 /* NSArray+Chameleon.m */,
+				201B36CA8FA4FBC6D51DEBD5D30A1AD1 /* UIAppearance+Swift.h */,
+				B1633CA1301DCEEAF5890E7A30175D78 /* UIAppearance+Swift.m */,
+				31153F48D5C343551358FEFAD6772294 /* UIButton+Chameleon.h */,
+				428CBAAC51942F9FFE6810998CBCDEAC /* UIButton+Chameleon.m */,
+				E43A7E895F56B408B8703434BEEB5548 /* UIColor+Chameleon.h */,
+				CAF9AD3489F89829EFF29D7E7C8A39CA /* UIColor+Chameleon.m */,
+				30781E10720C4BEE924057F8A4932966 /* UIColor+ChameleonPrivate.h */,
+				D4F6B5B5D515DF9A2DDAB214C6469553 /* UIColor+ChameleonPrivate.m */,
+				D6C86C63DCCD8F32A3A5A6C6CF822882 /* UIImage+ChameleonPrivate.h */,
+				4FCE8708D78080EE32B68FAB0D1EBA41 /* UIImage+ChameleonPrivate.m */,
+				FA4CE722A771BD7217B1A0F8DC7F0DF6 /* UILabel+Chameleon.h */,
+				B63F42A22430A090281DE9AF0B126311 /* UILabel+Chameleon.m */,
+				FD9CCB19F8A9CB20AE1CDA9DEDB51449 /* UINavigationController+Chameleon.h */,
+				DCB2F24FA1C513AEB9942EF78E53D160 /* UINavigationController+Chameleon.m */,
+				0421A257B966853D54902FD6E862B7B6 /* UIView+ChameleonPrivate.h */,
+				BD4C7D968AE4A853FF7ED6C992511B48 /* UIView+ChameleonPrivate.m */,
+				B663A13EEE1B0837647445ED216AA7F0 /* UIViewController+Chameleon.h */,
+				983663FCBDC23C1D73DA92A73EEBFA4C /* UIViewController+Chameleon.m */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/NavigationDrawer";
-			sourceTree = "<group>";
-		};
-		B5584C10224B71DFDF6FE558E7C4AE64 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DF790B8DCFE880E14C8E48EB94818184 /* ChameleonFramework */,
-				04954C22440700D3EFA0F54C5992E072 /* MBProgressHUD */,
-				BDB4962E5D08ED55F5D06313D95F1550 /* NavigationDrawer */,
-				D57BCF6C8A32E20705E7E74DC875096E /* SCLAlertView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BDB4962E5D08ED55F5D06313D95F1550 /* NavigationDrawer */ = {
-			isa = PBXGroup;
-			children = (
-				5F9D226B8FD98EBF055B4BEE2D3B68DA /* DismissMenuAnimator.swift */,
-				F4E90BDA97ED3BF58CA67B3F87575F17 /* Interactor.swift */,
-				C0AC57BBB31F071C216045ACD23E122F /* MenuHelper.swift */,
-				95AEC39A5E443838AB2446C3778F416F /* PresentMenuAnimator.swift */,
-				A13ECC6F362BE8F2CEDB9C5699BDF773 /* Support Files */,
-			);
-			name = NavigationDrawer;
-			path = NavigationDrawer;
+			name = Default;
 			sourceTree = "<group>";
 		};
 		CA9514413244E70F11AAABD92D94539D /* Pods-Dabble */ = {
@@ -387,73 +479,44 @@
 			path = "Target Support Files/Pods-Dabble";
 			sourceTree = "<group>";
 		};
-		D57BCF6C8A32E20705E7E74DC875096E /* SCLAlertView */ = {
+		E0CC60ED8E3C34198464B3B3B2EFC189 /* NavigationDrawer */ = {
 			isa = PBXGroup;
 			children = (
-				E554E68CDE73D730F2B7AF3D5C0DEC16 /* SCLAlertView.swift */,
-				EA149B53C056B03BDC1FE136DB5869A0 /* SCLExtensions.swift */,
-				04CE31D5217465C1F06F16C5A77DA2AD /* Support Files */,
+				F1F0B4B50C7358B9779EF719D399A897 /* DismissMenuAnimator.swift */,
+				03841809CBB41488A32AB45E484A23D1 /* Interactor.swift */,
+				57AB8B8F1DAD4AB4ABB067C1C5B04973 /* MenuHelper.swift */,
+				BEF3656FEB6F3AFB85E70F4305E50957 /* PresentMenuAnimator.swift */,
+				0DE3090753E8E8802EDA8524B97FA5F7 /* Support Files */,
 			);
-			name = SCLAlertView;
-			path = SCLAlertView;
+			name = NavigationDrawer;
+			path = NavigationDrawer;
 			sourceTree = "<group>";
 		};
-		D67882D3BA7690F8FDC49FB8336439A9 /* Default */ = {
+		FFCEF8F3766E6BAF69D455CC3551DA00 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8366151AEE67D6DD377DB2326E62DE0A /* Chameleon.h */,
-				02235999E3F2082EEE2E1DB626FBCBCB /* Chameleon_.h */,
-				9F9D29327D30E7AE874765CC97F1F3DD /* Chameleon_.m */,
-				885671F4EE6A831A2660D193EB143C6E /* ChameleonConstants.h */,
-				A9801E211A69F157969AC1FA42345F37 /* ChameleonConstants.m */,
-				8F0B91750310E6B9671DF76288B69D14 /* ChameleonEnums.h */,
-				880528866E4BEDB420DD7E928DDD60C7 /* ChameleonMacros.h */,
-				093FC294B4E3E716767C35AD8787E3AB /* NSArray+Chameleon.h */,
-				B7E8B8D4651CB828644D9B257CBBCB7F /* NSArray+Chameleon.m */,
-				30AF4D43A6A92DBE6BC5F8D26E4AB85A /* UIAppearance+Swift.h */,
-				8C45910CCC2670960897BD7236B70A26 /* UIAppearance+Swift.m */,
-				D51E299E261AA713D3986337723188D4 /* UIButton+Chameleon.h */,
-				B8ACA69A1CFDCBA352E732EE55492AA9 /* UIButton+Chameleon.m */,
-				35A63A5A3362926B1FFD37002F50AA76 /* UIColor+Chameleon.h */,
-				C5B9D06AECF10426B6EC6C361C8835F0 /* UIColor+Chameleon.m */,
-				BF354EDBE66A947BFA3BAF5588DF8A0C /* UIColor+ChameleonPrivate.h */,
-				33C6315F149A435F0AC8612A6F8A4D16 /* UIColor+ChameleonPrivate.m */,
-				47A31C1CB2C7CFD686DC7A2061E74835 /* UIImage+ChameleonPrivate.h */,
-				DD980FB5B570E54A40FF4F7326E7BC4A /* UIImage+ChameleonPrivate.m */,
-				6885436ABB0F1A18EA1B41ABC0125298 /* UILabel+Chameleon.h */,
-				C63C95A05E5D4B0B168055D45F8F24C7 /* UILabel+Chameleon.m */,
-				7DE17C03716BA453C4129C94A87EFFA4 /* UINavigationController+Chameleon.h */,
-				CC25F851F3F0A262767ECD12A79A0526 /* UINavigationController+Chameleon.m */,
-				B01C45B430553080B86289BBE4B644A5 /* UIView+ChameleonPrivate.h */,
-				882132D194814462A4B4F651CDBC375D /* UIView+ChameleonPrivate.m */,
-				154B751FCFA2B6FE86A09B959924B7BD /* UIViewController+Chameleon.h */,
-				AC458777E5AE630045608FB1045C6472 /* UIViewController+Chameleon.m */,
+				DCF140A407AB2EB86805027FC0F7CD1B /* Info.plist */,
+				558BAABCE1FD731A119D98A9A5CA744B /* SCLAlertView.modulemap */,
+				5783D4DB78D62E8290C213D0A80C5982 /* SCLAlertView.xcconfig */,
+				F47220453A53913BF0AC6A07C6FDCFCA /* SCLAlertView-dummy.m */,
+				476E24D8D749071D010B68E3BACF5295 /* SCLAlertView-prefix.pch */,
+				382E674480BBBCCFB0E27625294A522A /* SCLAlertView-umbrella.h */,
 			);
-			name = Default;
-			sourceTree = "<group>";
-		};
-		DF790B8DCFE880E14C8E48EB94818184 /* ChameleonFramework */ = {
-			isa = PBXGroup;
-			children = (
-				D67882D3BA7690F8FDC49FB8336439A9 /* Default */,
-				97A7D514B70D9D962128784557C01E3D /* Support Files */,
-				F1BDA152DB59115F22DF81474973F072 /* Swift */,
-			);
-			name = ChameleonFramework;
-			path = ChameleonFramework;
-			sourceTree = "<group>";
-		};
-		F1BDA152DB59115F22DF81474973F072 /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				47EAEEA91D77E312CFA0EF3F131658C7 /* ChameleonShorthand.swift */,
-			);
-			name = Swift;
+			name = "Support Files";
+			path = "../Target Support Files/SCLAlertView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		08CFD53563B8DBB064144335293E674E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B539F61164D2140222C34431B733F6A /* SCLAlertView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		197B7877D5D346F405BDD059EF96DBDC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,11 +526,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52DD338F36F4A095E98620A85BCAAA28 /* Headers */ = {
+		1A8DADDD0EFD8FE573719232DE30BA71 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				749A5E6316C8D43997B8DE3E498218A3 /* Pods-Dabble-umbrella.h in Headers */,
+				5A79E4D57D4B6A166891AD214659B605 /* Pods-Dabble-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,14 +557,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		922562244B133FE1DAB266F15CCCEB77 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B6053BD7B4C7B5159049412C89FB859E /* SCLAlertView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		94D5E6D22CCBCA22F7B15B132190CDFA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,45 +565,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEE801353486834DAA935B8F07ED3A26 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C020F0092BFA721C7FD253AA17C01BC /* RNPulseButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0ECB701FCA801564D492D281ABF7DF96 /* Pods-Dabble */ = {
+		03FEEDEDD6BD8A705549792638159C25 /* Pods-Dabble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 44FAAF55626B4A06A9E07E76B7C727E4 /* Build configuration list for PBXNativeTarget "Pods-Dabble" */;
+			buildConfigurationList = 6FFDACD9E8D4624A6F4B8238048C56FE /* Build configuration list for PBXNativeTarget "Pods-Dabble" */;
 			buildPhases = (
-				39B0DDF515530BFF0BB246A1FDE65D0A /* Sources */,
-				261139865D1F87745BCC8D6A564DE8A3 /* Frameworks */,
-				52DD338F36F4A095E98620A85BCAAA28 /* Headers */,
+				D1AEAE3D11820E45D6874F13A2D483E4 /* Sources */,
+				9CC07770C9B376D0191C82F9CBEFCA8E /* Frameworks */,
+				1A8DADDD0EFD8FE573719232DE30BA71 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0053E9F6ECF07EF3CDF541CAC7A698D1 /* PBXTargetDependency */,
-				2C3B07F846ACD1BCB5237C04DAB675AE /* PBXTargetDependency */,
-				EDC572FD29C96EB93FF78D7AE22FFA31 /* PBXTargetDependency */,
-				1D8507FAB69EF6FB0C75EEF23C1C81F3 /* PBXTargetDependency */,
+				8107C8BCFAB087A64B5AD17B0D93901A /* PBXTargetDependency */,
+				C864B5AE74B1106CC33F2D9FDB33FEA5 /* PBXTargetDependency */,
+				0A4646A67A22BFD5731EB3976144F279 /* PBXTargetDependency */,
+				325F46268EBF95C756A3DA0EC9B9F0C4 /* PBXTargetDependency */,
+				89876E30A90103A928BED1B944822A46 /* PBXTargetDependency */,
 			);
 			name = "Pods-Dabble";
 			productName = "Pods-Dabble";
-			productReference = 10B90D7AADD26F69B36012C9528B5BE5 /* Pods_Dabble.framework */;
+			productReference = DFEF59D14B9288A90114015FBD8CAA6A /* Pods_Dabble.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		1B63AA72B73837E76E67DEC8C58899C2 /* SCLAlertView */ = {
+		0571230DF62A12DFB54ABA2BD434AE96 /* RNPulseButton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E65BC479E048B5F2ADB5D20526FFB65 /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
+			buildConfigurationList = 82702E67388D9DF8676CDE257F67C73B /* Build configuration list for PBXNativeTarget "RNPulseButton" */;
 			buildPhases = (
-				6385E341E2248D5842999BA411561C5F /* Sources */,
-				32DB7A8C3EE2088CCC623538CB4858D7 /* Frameworks */,
-				922562244B133FE1DAB266F15CCCEB77 /* Headers */,
+				A8C5D608D5EE2B5B8898AD07956C06B8 /* Sources */,
+				72C1D832D47908732FAB21FD14237750 /* Frameworks */,
+				AEE801353486834DAA935B8F07ED3A26 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SCLAlertView;
-			productName = SCLAlertView;
-			productReference = B1E6C54F2E498B51E9FACACCA6C0CD50 /* SCLAlertView.framework */;
+			name = RNPulseButton;
+			productName = RNPulseButton;
+			productReference = 49ADEA49759049B910A943CAE23CCFEB /* RNPulseButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */ = {
@@ -565,7 +629,24 @@
 			);
 			name = MBProgressHUD;
 			productName = MBProgressHUD;
-			productReference = C718293943A9C337EE258BFAFE402607 /* MBProgressHUD.framework */;
+			productReference = 4AC668A9232F3E8CCABA5A4FC1FA007A /* MBProgressHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4CCA40FDFBE3A35394355054211E9B15 /* SCLAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C62E323A8D63369A6213AD446827C72A /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
+			buildPhases = (
+				2CE52ACBCC6D3F56E371A10B6BE5BB56 /* Sources */,
+				36D141EF57386A8A4C962BB039EBE504 /* Frameworks */,
+				08CFD53563B8DBB064144335293E674E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCLAlertView;
+			productName = SCLAlertView;
+			productReference = 8752AA24DC9A43781EB7F3550BE6E7E2 /* SCLAlertView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		76BD4592010354D6C23D6ECCA20D83A8 /* ChameleonFramework */ = {
@@ -582,7 +663,7 @@
 			);
 			name = ChameleonFramework;
 			productName = ChameleonFramework;
-			productReference = 800112B42C8F2EBD341A6D92FEE83FCA /* ChameleonFramework.framework */;
+			productReference = 105E63D6C6A464A07C2B4CA570DA6D96 /* ChameleonFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9EDDE6AFB6C3C88CE28462FDD8E29396 /* NavigationDrawer */ = {
@@ -599,7 +680,7 @@
 			);
 			name = NavigationDrawer;
 			productName = NavigationDrawer;
-			productReference = F8133DB566EABB95BFEFD4D14CFEC2D5 /* NavigationDrawer.framework */;
+			productReference = 6BACCB237D42F6FF7379F2818B7BDD95 /* NavigationDrawer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -619,35 +700,37 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 93A42E63AED82B54E98ED2E606A593DE /* Products */;
+			productRefGroup = 579C40D1FA4CE581FDDE225D363441A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				76BD4592010354D6C23D6ECCA20D83A8 /* ChameleonFramework */,
 				41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */,
 				9EDDE6AFB6C3C88CE28462FDD8E29396 /* NavigationDrawer */,
-				0ECB701FCA801564D492D281ABF7DF96 /* Pods-Dabble */,
-				1B63AA72B73837E76E67DEC8C58899C2 /* SCLAlertView */,
+				03FEEDEDD6BD8A705549792638159C25 /* Pods-Dabble */,
+				0571230DF62A12DFB54ABA2BD434AE96 /* RNPulseButton */,
+				4CCA40FDFBE3A35394355054211E9B15 /* SCLAlertView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		39B0DDF515530BFF0BB246A1FDE65D0A /* Sources */ = {
+		2CE52ACBCC6D3F56E371A10B6BE5BB56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59EE8EBCBDB54A53A3514E70CAB05191 /* Pods-Dabble-dummy.m in Sources */,
+				36D85ED24D9638950538A8A4303BE905 /* SCLAlertView-dummy.m in Sources */,
+				30F1E76C8641B82312BA5FCAE69CD440 /* SCLAlertView.swift in Sources */,
+				93AE7B31B59499547A7DCC08A1EE63FA /* SCLExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6385E341E2248D5842999BA411561C5F /* Sources */ = {
+		A8C5D608D5EE2B5B8898AD07956C06B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26B8AEDBFA375C3E6908C38F4D6760AF /* SCLAlertView-dummy.m in Sources */,
-				C2074324D6AFE2584107D018D19E425F /* SCLAlertView.swift in Sources */,
-				1A4D6AACC765ECBE5C97A209E65C1399 /* SCLExtensions.swift in Sources */,
+				C1B45A8BBDF5453A8A902B854424F7F2 /* RNPulseButton-dummy.m in Sources */,
+				7C0305B9C51E882718F8F18EB5142155 /* RNPulseButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +743,14 @@
 				F19506BF0FA485A3B8E5007107325680 /* MenuHelper.swift in Sources */,
 				2E35EF0E49E4B8D1B5896CB75E3B3106 /* NavigationDrawer-dummy.m in Sources */,
 				6851FD38BE6B6CDFFF2081FDDA7DA666 /* PresentMenuAnimator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1AEAE3D11820E45D6874F13A2D483E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D939CAE2BF6C634A99DF1F7126E669A3 /* Pods-Dabble-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,76 +787,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0053E9F6ECF07EF3CDF541CAC7A698D1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ChameleonFramework;
-			target = 76BD4592010354D6C23D6ECCA20D83A8 /* ChameleonFramework */;
-			targetProxy = 605F204493E1CEAB5923495295AD6280 /* PBXContainerItemProxy */;
-		};
-		1D8507FAB69EF6FB0C75EEF23C1C81F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SCLAlertView;
-			target = 1B63AA72B73837E76E67DEC8C58899C2 /* SCLAlertView */;
-			targetProxy = C7E779F34CB5A1AEFEDF1119131408ED /* PBXContainerItemProxy */;
-		};
-		2C3B07F846ACD1BCB5237C04DAB675AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			target = 41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */;
-			targetProxy = FC7BD9CC172C05A52CE70B8C8401EC57 /* PBXContainerItemProxy */;
-		};
-		EDC572FD29C96EB93FF78D7AE22FFA31 /* PBXTargetDependency */ = {
+		0A4646A67A22BFD5731EB3976144F279 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NavigationDrawer;
 			target = 9EDDE6AFB6C3C88CE28462FDD8E29396 /* NavigationDrawer */;
-			targetProxy = 329043170C417A150DC423EF387440E5 /* PBXContainerItemProxy */;
+			targetProxy = CB8A8976F35455D5C188A149762342C7 /* PBXContainerItemProxy */;
+		};
+		325F46268EBF95C756A3DA0EC9B9F0C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RNPulseButton;
+			target = 0571230DF62A12DFB54ABA2BD434AE96 /* RNPulseButton */;
+			targetProxy = 20D3CE9687334FB6C47E09A8C0E34FEF /* PBXContainerItemProxy */;
+		};
+		8107C8BCFAB087A64B5AD17B0D93901A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ChameleonFramework;
+			target = 76BD4592010354D6C23D6ECCA20D83A8 /* ChameleonFramework */;
+			targetProxy = C9743689F305D6B8AA78B128CF807AC7 /* PBXContainerItemProxy */;
+		};
+		89876E30A90103A928BED1B944822A46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCLAlertView;
+			target = 4CCA40FDFBE3A35394355054211E9B15 /* SCLAlertView */;
+			targetProxy = 374780D54EEF319B824DF432484B5B0C /* PBXContainerItemProxy */;
+		};
+		C864B5AE74B1106CC33F2D9FDB33FEA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBProgressHUD;
+			target = 41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */;
+			targetProxy = EC9CEEBBDBCBAC6051B071404E5AB561 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		05024067CBCB6D1A56587E6A9C87EF42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E126296219185132A353BE29B32659D /* Pods-Dabble.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Dabble/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Dabble/Pods-Dabble.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		086F41E0EAB5E99F6E8BDFBE7DA75B89 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B69F1C8154376148E20CB082F71BD563 /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = D28E3F033B9AD0005E8DD33D0E9AF92E /* MBProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -799,226 +856,7 @@
 			};
 			name = Release;
 		};
-		0E47837C3B263A3BC718E8CAD02FF256 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6531261610385F004819D7719E4AF849 /* ChameleonFramework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
-				PRODUCT_MODULE_NAME = ChameleonFramework;
-				PRODUCT_NAME = ChameleonFramework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		30ACF6AF5073081115596A57C6790CC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50162645C16C334D10AEB1D4629DF0A8 /* NavigationDrawer.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/NavigationDrawer/NavigationDrawer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/NavigationDrawer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/NavigationDrawer/NavigationDrawer.modulemap";
-				PRODUCT_MODULE_NAME = NavigationDrawer;
-				PRODUCT_NAME = NavigationDrawer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		65ACBB19D717DD9C811C7724665E75CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50162645C16C334D10AEB1D4629DF0A8 /* NavigationDrawer.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/NavigationDrawer/NavigationDrawer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/NavigationDrawer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/NavigationDrawer/NavigationDrawer.modulemap";
-				PRODUCT_MODULE_NAME = NavigationDrawer;
-				PRODUCT_NAME = NavigationDrawer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		69203DCC4E095008361E3994BA772E25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B656648DFC85294CBF4170B3385AE29 /* SCLAlertView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
-				PRODUCT_MODULE_NAME = SCLAlertView;
-				PRODUCT_NAME = SCLAlertView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		70741DE854B83AF224A01325E679C628 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6531261610385F004819D7719E4AF849 /* ChameleonFramework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
-				PRODUCT_MODULE_NAME = ChameleonFramework;
-				PRODUCT_NAME = ChameleonFramework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		903A01CEFBF66EED73D48ACF023F1E22 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B69F1C8154376148E20CB082F71BD563 /* MBProgressHUD.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
-				PRODUCT_MODULE_NAME = MBProgressHUD;
-				PRODUCT_NAME = MBProgressHUD;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CB363F06B7DA16B052BE31C757920A1B /* Debug */ = {
+		08D2FB5AF1F2FE723E94735BF2F9AD68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E540E744B0D65E2086C69E69F8684795 /* Pods-Dabble.debug.xcconfig */;
 			buildSettings = {
@@ -1058,9 +896,270 @@
 			};
 			name = Debug;
 		};
-		EAF2005664743A3C6214AF9951CE4054 /* Release */ = {
+		0E47837C3B263A3BC718E8CAD02FF256 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B656648DFC85294CBF4170B3385AE29 /* SCLAlertView.xcconfig */;
+			baseConfigurationReference = 4584761EC2B575B60F3B2267188AD900 /* ChameleonFramework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
+				PRODUCT_MODULE_NAME = ChameleonFramework;
+				PRODUCT_NAME = ChameleonFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1C59F00640A99F6A36ADF519754C364D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 550B565964914876C4AA8C5D848D2F7F /* RNPulseButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNPulseButton/RNPulseButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNPulseButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RNPulseButton/RNPulseButton.modulemap";
+				PRODUCT_MODULE_NAME = RNPulseButton;
+				PRODUCT_NAME = RNPulseButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		30ACF6AF5073081115596A57C6790CC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D99E9AD38B93953C718736BE81D750 /* NavigationDrawer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NavigationDrawer/NavigationDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NavigationDrawer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NavigationDrawer/NavigationDrawer.modulemap";
+				PRODUCT_MODULE_NAME = NavigationDrawer;
+				PRODUCT_NAME = NavigationDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3DED9EE9AEEE226A4C9BE236587ACC8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E126296219185132A353BE29B32659D /* Pods-Dabble.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Dabble/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Dabble/Pods-Dabble.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5497D4F707EA2CAB8B97D090F357227F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 550B565964914876C4AA8C5D848D2F7F /* RNPulseButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RNPulseButton/RNPulseButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RNPulseButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/RNPulseButton/RNPulseButton.modulemap";
+				PRODUCT_MODULE_NAME = RNPulseButton;
+				PRODUCT_NAME = RNPulseButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65ACBB19D717DD9C811C7724665E75CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D99E9AD38B93953C718736BE81D750 /* NavigationDrawer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NavigationDrawer/NavigationDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NavigationDrawer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NavigationDrawer/NavigationDrawer.modulemap";
+				PRODUCT_MODULE_NAME = NavigationDrawer;
+				PRODUCT_NAME = NavigationDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		70741DE854B83AF224A01325E679C628 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4584761EC2B575B60F3B2267188AD900 /* ChameleonFramework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
+				PRODUCT_MODULE_NAME = ChameleonFramework;
+				PRODUCT_NAME = ChameleonFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		712D9E0C8CB3A2FA71A46A3604BA9A91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5783D4DB78D62E8290C213D0A80C5982 /* SCLAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1094,6 +1193,77 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		903A01CEFBF66EED73D48ACF023F1E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D28E3F033B9AD0005E8DD33D0E9AF92E /* MBProgressHUD.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = MBProgressHUD;
+				PRODUCT_NAME = MBProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B17B44D0012BDECE6A11AF0D1EF16763 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5783D4DB78D62E8290C213D0A80C5982 /* SCLAlertView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
+				PRODUCT_MODULE_NAME = SCLAlertView;
+				PRODUCT_NAME = SCLAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		FA39F93BCC98288C75B07575327D1A76 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1237,20 +1407,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		44FAAF55626B4A06A9E07E76B7C727E4 /* Build configuration list for PBXNativeTarget "Pods-Dabble" */ = {
+		6FFDACD9E8D4624A6F4B8238048C56FE /* Build configuration list for PBXNativeTarget "Pods-Dabble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CB363F06B7DA16B052BE31C757920A1B /* Debug */,
-				05024067CBCB6D1A56587E6A9C87EF42 /* Release */,
+				08D2FB5AF1F2FE723E94735BF2F9AD68 /* Debug */,
+				3DED9EE9AEEE226A4C9BE236587ACC8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E65BC479E048B5F2ADB5D20526FFB65 /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
+		82702E67388D9DF8676CDE257F67C73B /* Build configuration list for PBXNativeTarget "RNPulseButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				69203DCC4E095008361E3994BA772E25 /* Debug */,
-				EAF2005664743A3C6214AF9951CE4054 /* Release */,
+				1C59F00640A99F6A36ADF519754C364D /* Debug */,
+				5497D4F707EA2CAB8B97D090F357227F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1260,6 +1430,15 @@
 			buildConfigurations = (
 				30ACF6AF5073081115596A57C6790CC9 /* Debug */,
 				65ACBB19D717DD9C811C7724665E75CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C62E323A8D63369A6213AD446827C72A /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17B44D0012BDECE6A11AF0D1EF16763 /* Debug */,
+				712D9E0C8CB3A2FA71A46A3604BA9A91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

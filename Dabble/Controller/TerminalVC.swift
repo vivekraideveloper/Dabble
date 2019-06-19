@@ -11,6 +11,7 @@ import CoreBluetooth
 import MBProgressHUD
 import Intents
 import Speech
+import RNPulseButton
 
 class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, BluetoothSerialDelegate, SFSpeechRecognizerDelegate  {
    
@@ -28,6 +29,15 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    let pulseView = RNPulseButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100),
+                                  pulseRadius: 100,
+                                  pulseCount: 4,
+                                  pulseDuration: 3,
+                                  intervalTime: 0.4,
+                                  scaleFactor: 3,
+                                  repeatCount: 100,
+                                  pulseColor: UIColor(red: 11/255.0, green: 44/255.0, blue: 96/255.0, alpha: 1.0),
+                                  normalImage: nil, selectedImage: nil)
     
     //    MARK: IBOutlets here
     @IBOutlet weak var bottomView: UIView!
@@ -43,6 +53,11 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let screenSize: CGRect = UIScreen.main.bounds
+        
+        pulseView.center = view.convert(view.center, from: view.superview)
+        self.view.addSubview(pulseView)
+        pulseView.isHidden = true
         
         // textView
         textView.delegate = self
@@ -627,13 +642,18 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     }
     @IBAction func assistantButtonPressed(_ sender: Any) {
         if audioEngine.isRunning {
+            textView.text = ""
+            pulseView.isHidden = true
+            pulseView.stop()
             audioEngine.stop()
             recognitionRequest?.endAudio()
             assistantButton.isEnabled = false
             assistantButton.setTitle("", for: .normal)
         } else {
+            pulseView.isHidden = false
+            pulseView.start()
             startRecording()
-            assistantButton.setTitle("Stop ", for: .normal)
+            assistantButton.setTitle("Stop", for: .normal)
         }
     }
 }

@@ -121,8 +121,10 @@ class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewData
         serial.stopScan()
         selectedPeripheral = peripherals[(indexPath as NSIndexPath).row].peripheral
         serial.connectToPeripheral(selectedPeripheral!)
+        
         progressHUD = MBProgressHUD.showAdded(to: view, animated: true)
         progressHUD!.label.text = "Connecting"
+        
         
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(BluetoothScannerVC.connectTimeOut), userInfo: nil, repeats: false)
     }
@@ -169,6 +171,9 @@ class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func serialDidReceiveBytes(_ bytes: [UInt8]) {
+        print(bytes)
+    }
     func serialIsReady(_ peripheral: CBPeripheral) {
         if let hud = progressHUD {
             hud.hide(animated: false)
@@ -189,6 +194,27 @@ class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewData
             dismiss(animated: true, completion: nil)
         }
     }
+    
+    // string to byte Array conversion
+    func toByteArray( _ hex:String ) -> [UInt8] {
+        
+        // remove "-" from Hexadecimal
+        let hexString = hex.removeWord( "-" )
+        
+        let size = hexString.count / 2
+        var result:[UInt8] = [UInt8]( repeating: 0, count: size ) // array with length = size
+        
+        // for ( int i = 0; i < hexString.length; i += 2 )
+        for i in stride( from: 0, to: hexString.count, by: 2 ) {
+            
+            let subHexStr = hexString.subString( i, length: 2 )
+            
+            result[ i / 2 ] = UInt8( subHexStr, radix: 16 )! // ! - because could be null
+        }
+        
+        return result
+    }
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         serial.stopScan()
         dismiss(animated: true, completion: nil)

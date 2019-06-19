@@ -27,7 +27,8 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     let margin: CGFloat = 0.0
     let cellsPerRow = 2
-    
+    var message = ""
+    var checkFramesIncomingBool: Bool = false
     //    MARK: Method calls
     
     override func viewDidLoad() {
@@ -57,9 +58,16 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
 //       navigationSliderFromLeft
         
+        
 
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if serial.isPoweredOn{
+            serial.sendBytesToDevice(toByteArray("FF0003000000"))
+            print(toByteArray("FF0003000000"))
+        }
+    }
 //    deinit {
 //        NotificationCenter.default.removeObserver(self)
 //    }
@@ -101,7 +109,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     //MARK: BluetoothSerialDelegate
     
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
-        print("Heheheheheheheeh")
+        
         reloadView()
         //        dismissKeyboard()
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
@@ -121,6 +129,12 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+    func serialDidReceiveBytes(_ bytes: [UInt8]) {
+        print(bytes)
+        print(DataService.instance.getBoardData(bytes))
+        print(DataService.instance.getVersionData(bytes))
+        
+    }
     
     
     func collectionViewSetUp(){
@@ -186,6 +200,25 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     }
     
+    // string to byte Array conversion
+    func toByteArray( _ hex:String ) -> [UInt8] {
+        
+        // remove "-" from Hexadecimal
+        let hexString = hex.removeWord( "-" )
+        
+        let size = hexString.count / 2
+        var result:[UInt8] = [UInt8]( repeating: 0, count: size ) // array with length = size
+        
+        // for ( int i = 0; i < hexString.length; i += 2 )
+        for i in stride( from: 0, to: hexString.count, by: 2 ) {
+            
+            let subHexStr = hexString.subString( i, length: 2 )
+            
+            result[ i / 2 ] = UInt8( subHexStr, radix: 16 )! // ! - because could be null
+        }
+        
+        return result
+    }
    
     
     @IBAction func settingsButtonPressed(_ sender: Any) {

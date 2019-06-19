@@ -213,7 +213,7 @@ open class VivekCircularRingSlider: UIView {
         innerRingShape.strokeColor = self.innerCircleColor
         innerRingShape.lineWidth = innerRingWidth
         innerRingShape.strokeEnd = 1
-        innerRingShape.lineCap = CAShapeLayerLineCap.butt
+        innerRingShape.lineCap = CAShapeLayerLineCap.round
         self.layer.addSublayer(innerRingShape)
     }
     
@@ -234,7 +234,7 @@ open class VivekCircularRingSlider: UIView {
         outerRingShape.fillColor = UIColor.clear.cgColor
         outerRingShape.strokeColor = UIColor.red.cgColor
         outerRingShape.lineWidth = outerRingWidth
-        
+        outerRingShape.lineCap = .round
         self.layer.addSublayer(outerRingShape)
     }
     
