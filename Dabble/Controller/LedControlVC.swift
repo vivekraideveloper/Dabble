@@ -58,6 +58,13 @@ class LedControlVC: UIViewController, BluetoothSerialDelegate {
         pinButton.setTitle(UserDefaults.standard.string(forKey: "pinValue") ?? "Pin : 555", for: .normal)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if serial.isPoweredOn{
+            serial.sendBytesToDevice(toByteArray("FF0003000000"))
+            print(toByteArray("FF0003000000"))
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor(red: 11/255.0, green: 44/255.0, blue: 96/255.0, alpha: 1.0)
     }

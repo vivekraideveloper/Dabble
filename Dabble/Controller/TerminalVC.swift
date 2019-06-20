@@ -33,6 +33,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         view.addSubview(button)
         button.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: 0, height: 0)
+        button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
         return view
     }()
     let chooseOptions: UILabel = {
@@ -88,9 +89,10 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
         button.contentHorizontalAlignment = .left
         let image = UIImageView()
-        image.image = UIImage(named: "untick")
+        image.image = UIImage(named: "radioOn")
         button.addSubview(image)
         image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(asciiButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -100,9 +102,10 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
         button.contentHorizontalAlignment = .left
         let image = UIImageView()
-        image.image = UIImage(named: "tick")
+        image.image = UIImage(named: "radioOff")
         button.addSubview(image)
         image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(binaryButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -112,9 +115,10 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
         button.contentHorizontalAlignment = .left
         let image = UIImageView()
-        image.image = UIImage(named: "untick")
+        image.image = UIImage(named: "radioOff")
         button.addSubview(image)
         image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(decimalButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -124,9 +128,10 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
         button.contentHorizontalAlignment = .left
         let image = UIImageView()
-        image.image = UIImage(named: "untick")
+        image.image = UIImage(named: "radioOff")
         button.addSubview(image)
         image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(hexadecimalButtonPressed), for: .touchUpInside)
         return button
     }()
    
@@ -139,6 +144,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         image.image = UIImage(named: "tick")
         button.addSubview(image)
         image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(autoSendButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -147,6 +153,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         button.setTitle("Help", for: .normal)
         button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
         button.contentHorizontalAlignment = .center
+        button.addTarget(self, action: #selector(helpButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -155,7 +162,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     var chatArray: [Terminal] = []
     var stringArray: [String] = []
     var dataType = "ASCII"
-    var autoSendText = false
+    var autoSendText = true
     var eviveToPhoneMessage = ""
     var removeUnnecessaryCharcters: Bool = true
     var checkFramesIncomingBool: Bool = false
@@ -188,66 +195,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(blurEffectView)
-        
-        view.addSubview(containerView)
-        view.addSubview(cancelView)
-        containerView.anchor(top: nil, left: view.leftAnchor, bottom: cancelView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 5, paddingRight: 10, width: 0, height: 410)
-        cancelView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 20, paddingRight: 10, width: 0, height: 50)
-        
-        containerView.addSubview(chooseOptions)
-        chooseOptions.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 8, paddingRight: 0, width: 0, height: 20)
-        
-        containerView.addSubview(separator)
-        separator.anchor(top: chooseOptions.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
-        
-        containerView.addSubview(ascii)
-        ascii.anchor(top: separator.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
-        
-        containerView.addSubview(separator2)
-        separator2.anchor(top: ascii.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
-        
-        containerView.addSubview(binary)
-        binary.anchor(top: separator2.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
-        
-        containerView.addSubview(separator3)
-        separator3.anchor(top: binary.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
-        
-        containerView.addSubview(decimal)
-        decimal.anchor(top: separator3.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
-        
-        containerView.addSubview(separator4)
-        separator4.anchor(top: decimal.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
-        
-        containerView.addSubview(hexaDecimal)
-        hexaDecimal.anchor(top: separator4.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
-        
-        containerView.addSubview(separator5)
-        separator5.anchor(top: hexaDecimal.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
-        
-        containerView.addSubview(autoSend)
-        autoSend.anchor(top: separator5.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
-        
-        containerView.addSubview(separator6)
-        separator6.anchor(top: autoSend.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
-        
-        containerView.addSubview(help)
-        help.anchor(top: separator6.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 0, width: 0, height: 40)
-
-        
-        
-       
-        
-        
-        
-        
-        
-        
+    
         
         
         pulseView.center = view.convert(view.center, from: view.superview)
@@ -310,6 +258,60 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
                 self.assistantButton.isEnabled = isButtonEnabled
             }
         }
+        
+        createAlertView()
+    }
+    
+    func createAlertView(){
+        
+        view.addSubview(containerView)
+        view.addSubview(cancelView)
+        containerView.anchor(top: nil, left: view.leftAnchor, bottom: cancelView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 5, paddingRight: 10, width: 0, height: 410)
+        cancelView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 20, paddingRight: 10, width: 0, height: 50)
+        
+        containerView.addSubview(chooseOptions)
+        chooseOptions.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 8, paddingRight: 0, width: 0, height: 20)
+        
+        containerView.addSubview(separator)
+        separator.anchor(top: chooseOptions.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
+        
+        containerView.addSubview(ascii)
+        ascii.anchor(top: separator.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator2)
+        separator2.anchor(top: ascii.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
+        
+        containerView.addSubview(binary)
+        binary.anchor(top: separator2.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator3)
+        separator3.anchor(top: binary.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
+        
+        containerView.addSubview(decimal)
+        decimal.anchor(top: separator3.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator4)
+        separator4.anchor(top: decimal.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
+        
+        containerView.addSubview(hexaDecimal)
+        hexaDecimal.anchor(top: separator4.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator5)
+        separator5.anchor(top: hexaDecimal.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
+        
+        containerView.addSubview(autoSend)
+        autoSend.anchor(top: separator5.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator6)
+        separator6.anchor(top: autoSend.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
+        
+        containerView.addSubview(help)
+        help.anchor(top: separator6.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 0, width: 0, height: 40)
+        
+        
+        containerView.isHidden = true
+        cancelView.isHidden = true
+        
     }
     
     @objc func back(sender: UIBarButtonItem) {
@@ -717,6 +719,154 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         return
     }
     
+    @objc func asciiButtonPressed(){
+        let asciiImage = ascii.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let binaryImage = binary.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let decimalImage = decimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let hexadecimalImage = hexaDecimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        asciiImage?.image = UIImage(named: "radioOn")
+        binaryImage?.image = UIImage(named: "radioOff")
+        decimalImage?.image = UIImage(named: "radioOff")
+        hexadecimalImage?.image = UIImage(named: "radioOff")
+        self.dataType = "ASCII"
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "ASCII"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        chatTableView.backgroundColor = UIColor.white
+
+        print("ASCii")
+    }
+    @objc func binaryButtonPressed(){
+        let asciiImage = ascii.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let binaryImage = binary.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let decimalImage = decimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let hexadecimalImage = hexaDecimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        asciiImage?.image = UIImage(named: "radioOff")
+        binaryImage?.image = UIImage(named: "radioOn")
+        decimalImage?.image = UIImage(named: "radioOff")
+        hexadecimalImage?.image = UIImage(named: "radioOff")
+        self.dataType = "Binary"
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Binary"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        chatTableView.backgroundColor = UIColor.white
+
+        print("Binary")
+    }
+    @objc func decimalButtonPressed(){
+        let asciiImage = ascii.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let binaryImage = binary.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let decimalImage = decimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let hexadecimalImage = hexaDecimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        asciiImage?.image = UIImage(named: "radioOff")
+        binaryImage?.image = UIImage(named: "radioOff")
+        decimalImage?.image = UIImage(named: "radioOn")
+        hexadecimalImage?.image = UIImage(named: "radioOff")
+        self.dataType = "Decimal"
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Decimal"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        chatTableView.backgroundColor = UIColor.white
+
+        print("Decimal")
+    }
+    @objc func hexadecimalButtonPressed(){
+        let asciiImage = ascii.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let binaryImage = binary.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let decimalImage = decimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let hexadecimalImage = hexaDecimal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        asciiImage?.image = UIImage(named: "radioOff")
+        binaryImage?.image = UIImage(named: "radioOff")
+        decimalImage?.image = UIImage(named: "radioOff")
+        hexadecimalImage?.image = UIImage(named: "radioOn")
+        self.dataType = "Hexadecimal"
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Hexadecimal"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        chatTableView.backgroundColor = UIColor.white
+
+        print("Hexadecimal")
+    }
+    @objc func autoSendButtonPressed(){
+        if !self.autoSendText{
+            let autoSendImage = autoSend.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+            autoSendImage?.image = UIImage(named: "tick")
+            self.autoSendText = true
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.label.text = "AutoSend Turned On"
+            hud.hide(animated: true, afterDelay: 2.0)
+        }else{
+            let autoSendImage = autoSend.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+            autoSendImage?.image = UIImage(named: "untick")
+            self.autoSendText = false
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.label.text = "AutoSend Turned Off"
+            hud.hide(animated: true, afterDelay: 2.0)
+        }
+
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        chatTableView.backgroundColor = UIColor.white
+
+        print("Auto Send")
+    }
+    @objc func helpButtonPressed(){
+        let myAlert = UIAlertController(title: "Terminal", message: nil, preferredStyle: .alert)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        let messageText = NSMutableAttributedString(
+            string: "\nThis module allows you to both send and receive data from a device with this module.\n\nYou can send both textual and voice commands to the device eg. turning it ON or OFF. The messages are displayed with a timestamp.\n\nYou can publish data sent by the device on the app.\n\nThe data can be displayed in 4 formats: ASCII, Binary, Decimal and Hexadecimal.",
+            attributes: [
+                NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body),
+                NSAttributedString.Key.foregroundColor : UIColor.black
+            ]
+        )
+        
+        myAlert.setValue(messageText, forKey: "attributedMessage")
+        let knowMore = UIAlertAction(title: "More Info", style: .default) { action in
+            UIApplication.shared.open(URL(string: "https://thestempedia.com/docs/dabble/terminal-module/")!, options: [:], completionHandler: nil)
+        }
+        let close = UIAlertAction(title: "Close", style: .default) { action in
+        }
+        myAlert.addAction(knowMore)
+        myAlert.addAction(close)
+        self.present(myAlert, animated: true, completion: nil)
+
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        chatTableView.backgroundColor = UIColor.white
+        
+        print("Help")
+    }
+    @objc func cancelButtonPressed(){
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        chatTableView.backgroundColor = UIColor.white
+        print("Cancel")
+    }
+    
     @IBAction func sendButtonPressed(_ sender: Any) {
        sendMessagePhoneToEvive()
     }
@@ -748,76 +898,84 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     }
     
     @IBAction func menuButtonPressed(_ sender: Any) {
-        let menuPopUp = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .actionSheet)
+        view.backgroundColor = UIColor.gray
+        chatTableView.backgroundColor = UIColor.gray
+        containerView.animShow()
+        cancelView.animShow()
         
-        let ascii = UIAlertAction(title: "ASCII", style: .destructive) { (buttonTapped) in
-            self.dataType = "ASCII"
-            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-            hud.mode = MBProgressHUDMode.text
-            hud.label.text = "ASCII"
-            hud.hide(animated: true, afterDelay: 1.0)
-        }
-        let binary = UIAlertAction(title: "Binary", style: .destructive) { (buttonTapped) in
-            self.dataType = "Binary"
-            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-            hud.mode = MBProgressHUDMode.text
-            hud.label.text = "Binary"
-            hud.hide(animated: true, afterDelay: 1.0)
-        }
-        let decimal = UIAlertAction(title: "Decimal", style: .destructive) { (buttonTapped) in
-            self.dataType = "Decimal"
-            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-            hud.mode = MBProgressHUDMode.text
-            hud.label.text = "Decimal"
-            hud.hide(animated: true, afterDelay: 1.0)
-        }
-        let hex = UIAlertAction(title: "Hexadecimal", style: .destructive) { (buttonTapped) in
-            self.dataType = "Hexadecimal"
-            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-            hud.mode = MBProgressHUDMode.text
-            hud.label.text = "Hexadecimal"
-            hud.hide(animated: true, afterDelay: 1.0)
-            
-        }
-        let autoSend = UIAlertAction(title: "Auto Send (2 sec)", style: .destructive) { (buttonTapped) in
-            if !self.autoSendText{
-                self.autoSendText = true
-                let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-                hud.mode = MBProgressHUDMode.text
-                hud.label.text = "AutoSend Turned On"
-                hud.hide(animated: true, afterDelay: 2.0)
-            }else{
-                self.autoSendText = false
-                let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-                hud.mode = MBProgressHUDMode.text
-                hud.label.text = "AutoSend Turned Off"
-                hud.hide(animated: true, afterDelay: 2.0)
-            }
-            
-        }
-        let help = UIAlertAction(title: "Help", style: .destructive) { (buttonTapped) in
-            let alertVC = UIAlertController(title: "Terminal", message: "This module allows you to both send and receive data from a device with this module.\n\nYou can send both textual and voice commands to the device eg. turning it ON or OFF. The messages are displayed with a timestamp.\n\nYou can publish data sent by the device on the app.\n\nThe data can be displayed in 4 formats: ASCII, Binary, Decimal and Hexadecimal.", preferredStyle: .alert)
-            let knowMore = UIAlertAction(title: "More Info", style: .default) { action in
-                UIApplication.shared.open(URL(string: "https://thestempedia.com/docs/dabble/terminal-module/")!, options: [:], completionHandler: nil)
-            }
-            let close = UIAlertAction(title: "Close", style: .default) { action in
-            }
-            alertVC.addAction(knowMore)
-            alertVC.addAction(close)
-            self.present(alertVC, animated: true, completion: nil)
-            
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-        }
         
-        menuPopUp.addAction(ascii)
-        menuPopUp.addAction(binary)
-        menuPopUp.addAction(decimal)
-        menuPopUp.addAction(hex)
-        menuPopUp.addAction(autoSend)
-        menuPopUp.addAction(help)
-        menuPopUp.addAction(cancelAction)
-        present(menuPopUp, animated: true, completion: nil)
+//        let menuPopUp = UIAlertController(title: "Choose Options", message: nil, preferredStyle: .actionSheet)
+//
+//
+//
+//        let ascii = UIAlertAction(title: "ASCII", style: .destructive) { (buttonTapped) in
+//            self.dataType = "ASCII"
+//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            hud.mode = MBProgressHUDMode.text
+//            hud.label.text = "ASCII"
+//            hud.hide(animated: true, afterDelay: 1.0)
+//        }
+//        let binary = UIAlertAction(title: "Binary", style: .destructive) { (buttonTapped) in
+//            self.dataType = "Binary"
+//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            hud.mode = MBProgressHUDMode.text
+//            hud.label.text = "Binary"
+//            hud.hide(animated: true, afterDelay: 1.0)
+//        }
+//        let decimal = UIAlertAction(title: "Decimal", style: .destructive) { (buttonTapped) in
+//            self.dataType = "Decimal"
+//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            hud.mode = MBProgressHUDMode.text
+//            hud.label.text = "Decimal"
+//            hud.hide(animated: true, afterDelay: 1.0)
+//        }
+//        let hex = UIAlertAction(title: "Hexadecimal", style: .destructive) { (buttonTapped) in
+//            self.dataType = "Hexadecimal"
+//            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//            hud.mode = MBProgressHUDMode.text
+//            hud.label.text = "Hexadecimal"
+//            hud.hide(animated: true, afterDelay: 1.0)
+//
+//        }
+//        let autoSend = UIAlertAction(title: "Auto Send (2 sec)", style: .destructive) { (buttonTapped) in
+//            if !self.autoSendText{
+//                self.autoSendText = true
+//                let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//                hud.mode = MBProgressHUDMode.text
+//                hud.label.text = "AutoSend Turned On"
+//                hud.hide(animated: true, afterDelay: 2.0)
+//            }else{
+//                self.autoSendText = false
+//                let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//                hud.mode = MBProgressHUDMode.text
+//                hud.label.text = "AutoSend Turned Off"
+//                hud.hide(animated: true, afterDelay: 2.0)
+//            }
+//
+//        }
+//        let help = UIAlertAction(title: "Help", style: .destructive) { (buttonTapped) in
+//            let alertVC = UIAlertController(title: "Terminal", message: "This module allows you to both send and receive data from a device with this module.\n\nYou can send both textual and voice commands to the device eg. turning it ON or OFF. The messages are displayed with a timestamp.\n\nYou can publish data sent by the device on the app.\n\nThe data can be displayed in 4 formats: ASCII, Binary, Decimal and Hexadecimal.", preferredStyle: .alert)
+//            let knowMore = UIAlertAction(title: "More Info", style: .default) { action in
+//                UIApplication.shared.open(URL(string: "https://thestempedia.com/docs/dabble/terminal-module/")!, options: [:], completionHandler: nil)
+//            }
+//            let close = UIAlertAction(title: "Close", style: .default) { action in
+//            }
+//            alertVC.addAction(knowMore)
+//            alertVC.addAction(close)
+//            self.present(alertVC, animated: true, completion: nil)
+//
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+//        }
+//
+//        menuPopUp.addAction(ascii)
+//        menuPopUp.addAction(binary)
+//        menuPopUp.addAction(decimal)
+//        menuPopUp.addAction(hex)
+//        menuPopUp.addAction(autoSend)
+//        menuPopUp.addAction(help)
+//        menuPopUp.addAction(cancelAction)
+//        present(menuPopUp, animated: true, completion: nil)
     }
     
     @IBAction func scrollButtonPressed(_ sender: Any) {

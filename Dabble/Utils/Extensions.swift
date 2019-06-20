@@ -131,6 +131,21 @@ extension UIView {
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
+    
+    func animShow(){
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn], animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
+        self.isHidden = false
+        
+    }
+    func animHide(){
+        
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut], animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
+        self.isHidden = true
+    }
 }
 
 

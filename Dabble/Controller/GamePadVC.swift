@@ -17,6 +17,84 @@ import AVFoundation
 
 class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate {
     
+    let containerView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        return view
+    }()
+    
+    let cancelView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        let button = UIButton()
+        button.setTitle("Cancel", for: .normal)
+        button.setTitleColor(UIColor(red: 32, green: 104, blue: 253) , for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        view.addSubview(button)
+        button.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: 0, height: 0)
+        button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
+        return view
+    }()
+    
+    let switchMode: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textAlignment = NSTextAlignment.left
+        label.textColor = UIColor(red: 179, green: 179, blue: 179)
+        label.text = "Switch Mode"
+        return label
+    }()
+    
+    let separator: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    
+    let digital: UIButton = {
+        let button = UIButton()
+        button.setTitle("Digital Mode", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "radioOn")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(digitalButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    let joystick: UIButton = {
+        let button = UIButton()
+        button.setTitle("Joystick Mode", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "radioOff")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(joystickButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    let accelerometerButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Accelerometer Mode", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "radioOff")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(accelerometerButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     @IBOutlet weak var joystickView: KZJoystickView!
     @IBOutlet weak var triangleButton: UIButton!
     @IBOutlet weak var squareButton: UIButton!
@@ -32,6 +110,7 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
     @IBOutlet weak var modeButton: UIButton!
     @IBOutlet weak var accelOuter: UIImageView!
     @IBOutlet weak var accelInner: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     
     
     
@@ -67,8 +146,29 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         // Handling Core Motion
         motionManager = CMMotionManager()
         self.motionManager.stopAccelerometerUpdates()
+        
+        createAlertView()
     }
     
+    
+    func createAlertView(){
+        view.addSubview(containerView)
+        view.addSubview(cancelView)
+        containerView.anchor(top: nil, left: view.leftAnchor, bottom: cancelView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 200, paddingBottom: 5, paddingRight: 200, width: 400, height: 230)
+        cancelView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 200, paddingBottom: 20, paddingRight: 200, width: 400, height: 50)
+        containerView.addSubview(switchMode)
+        switchMode.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 8, paddingRight: 20, width: 0, height: 20)
+        containerView.addSubview(separator)
+        separator.anchor(top: switchMode.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 3)
+        containerView.addSubview(digital)
+        digital.anchor(top: separator.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
+        containerView.addSubview(joystick)
+        joystick.anchor(top: digital.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
+        containerView.addSubview(accelerometerButton)
+        accelerometerButton.anchor(top: joystick.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
+        containerView.isHidden = true
+        cancelView.isHidden = true
+    }
    
     
     func gamePadButtonsPressed(){
@@ -419,6 +519,102 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         
     }
     
+    @objc func digitalButtonPressed(){
+        let digitalMode = digital.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let joystickMode = joystick.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let accelMode = accelerometerButton.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        digitalMode?.image = UIImage(named: "radioOn")
+        joystickMode?.image = UIImage(named: "radioOff")
+        accelMode?.image = UIImage(named: "radioOff")
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Digital Mode"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        backButton.backgroundColor = UIColor.white
+        
+        self.upButton.isHidden = false
+        self.downButton.isHidden = false
+        self.leftButton.isHidden = false
+        self.rightButton.isHidden = false
+        self.joystickView.isHidden = true
+        self.accelInner.isHidden = true
+        self.accelOuter.isHidden = true
+        self.motionManager.stopAccelerometerUpdates()
+
+        print("Digital")
+    }
+    
+    @objc func joystickButtonPressed(){
+        let digitalMode = digital.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let joystickMode = joystick.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let accelMode = accelerometerButton.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        digitalMode?.image = UIImage(named: "radioOff")
+        joystickMode?.image = UIImage(named: "radioOn")
+        accelMode?.image = UIImage(named: "radioOff")
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Joystick Mode"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        backButton.backgroundColor = UIColor.white
+       
+        self.upButton.isHidden = true
+        self.downButton.isHidden = true
+        self.leftButton.isHidden = true
+        self.rightButton.isHidden = true
+        self.joystickView.isHidden = false
+        self.accelInner.isHidden = true
+        self.accelOuter.isHidden = true
+        self.joystickView.backgroundView.isHidden = false
+        self.joystickView.thumbView.isHidden = false
+        self.motionManager.stopAccelerometerUpdates()
+
+        print("Joystick")
+    }
+    
+    @objc func accelerometerButtonPressed(){
+        let digitalMode = digital.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let joystickMode = joystick.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let accelMode = accelerometerButton.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        digitalMode?.image = UIImage(named: "radioOff")
+        joystickMode?.image = UIImage(named: "radioOff")
+        accelMode?.image = UIImage(named: "radioOn")
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Accelerometer Mode"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        backButton.backgroundColor = UIColor.white
+        
+        self.upButton.isHidden = true
+        self.downButton.isHidden = true
+        self.leftButton.isHidden = true
+        self.rightButton.isHidden = true
+        self.joystickView.isHidden = false
+        self.joystickView.backgroundView.isHidden = true
+        self.joystickView.thumbView.isHidden = true
+        self.accelInner.isHidden = false
+        self.accelOuter.isHidden = false
+        self.motionManager.startAccelerometerUpdates(to: .main, withHandler: self.updateLabels)
+        
+        print("Accelerometer")
+    }
+    
+    @objc func cancelButtonPressed(){
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        backButton.backgroundColor = UIColor.white
+        print("Cancel")
+    }
+    
     //    MARK: Back button pressed
     @IBAction func buttonPressed(_ sender: Any) {
         UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
@@ -439,52 +635,56 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         }
     }
     @IBAction func modeButtonPressed(_ sender: Any) {
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: false, showCircularIcon: true
-        )
-        let alertView = SCLAlertView(appearance: appearance)
-       
-        alertView.addButton("Digital Mode"){
-            self.upButton.isHidden = false
-            self.downButton.isHidden = false
-            self.leftButton.isHidden = false
-            self.rightButton.isHidden = false
-            self.joystickView.isHidden = true
-            self.accelInner.isHidden = true
-            self.accelOuter.isHidden = true
-            self.motionManager.stopAccelerometerUpdates()
-
-        }
-        alertView.addButton("Joystick Mode") {
-            print("Joystick button tapped")
-            self.upButton.isHidden = true
-            self.downButton.isHidden = true
-            self.leftButton.isHidden = true
-            self.rightButton.isHidden = true
-            self.joystickView.isHidden = false
-            self.accelInner.isHidden = true
-            self.accelOuter.isHidden = true
-            self.joystickView.backgroundView.isHidden = false
-            self.joystickView.thumbView.isHidden = false
-            self.motionManager.stopAccelerometerUpdates()
-
-        }
-        alertView.addButton("Accelerometer Mode") {
-            print("Accelerometer button tapped")
-            self.upButton.isHidden = true
-            self.downButton.isHidden = true
-            self.leftButton.isHidden = true
-            self.rightButton.isHidden = true
-            self.joystickView.isHidden = false
-            self.joystickView.backgroundView.isHidden = true
-            self.joystickView.thumbView.isHidden = true
-            self.accelInner.isHidden = false
-            self.accelOuter.isHidden = false
-            self.motionManager.startAccelerometerUpdates(to: .main, withHandler: self.updateLabels)
-            
-
-        }
-         alertView.showTitle("Switch Mode", subTitle: "", style: .info)
+        view.backgroundColor = UIColor.gray
+        backButton.backgroundColor = UIColor.gray
+        containerView.animShow()
+        cancelView.animShow()
+//        let appearance = SCLAlertView.SCLAppearance(
+//            showCloseButton: false, showCircularIcon: true
+//        )
+//        let alertView = SCLAlertView(appearance: appearance)
+//
+//        alertView.addButton("Digital Mode"){
+//            self.upButton.isHidden = false
+//            self.downButton.isHidden = false
+//            self.leftButton.isHidden = false
+//            self.rightButton.isHidden = false
+//            self.joystickView.isHidden = true
+//            self.accelInner.isHidden = true
+//            self.accelOuter.isHidden = true
+//            self.motionManager.stopAccelerometerUpdates()
+//
+//        }
+//        alertView.addButton("Joystick Mode") {
+//            print("Joystick button tapped")
+//            self.upButton.isHidden = true
+//            self.downButton.isHidden = true
+//            self.leftButton.isHidden = true
+//            self.rightButton.isHidden = true
+//            self.joystickView.isHidden = false
+//            self.accelInner.isHidden = true
+//            self.accelOuter.isHidden = true
+//            self.joystickView.backgroundView.isHidden = false
+//            self.joystickView.thumbView.isHidden = false
+//            self.motionManager.stopAccelerometerUpdates()
+//
+//        }
+//        alertView.addButton("Accelerometer Mode") {
+//            print("Accelerometer button tapped")
+//            self.upButton.isHidden = true
+//            self.downButton.isHidden = true
+//            self.leftButton.isHidden = true
+//            self.rightButton.isHidden = true
+//            self.joystickView.isHidden = false
+//            self.joystickView.backgroundView.isHidden = true
+//            self.joystickView.thumbView.isHidden = true
+//            self.accelInner.isHidden = false
+//            self.accelOuter.isHidden = false
+//            self.motionManager.startAccelerometerUpdates(to: .main, withHandler: self.updateLabels)
+//
+//
+//        }
+//         alertView.showTitle("Switch Mode", subTitle: "", style: .info)
         
         
     }
