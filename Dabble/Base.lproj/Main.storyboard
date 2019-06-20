@@ -1621,7 +1621,7 @@
         <image name="assistant" width="24" height="24"/>
         <image name="back" width="36" height="36"/>
         <image name="barometer" width="148" height="148"/>
-        <image name="brightnessOff" width="96" height="96"/>
+        <image name="brightnessOff" width="120" height="120"/>
         <image name="circle_g" width="53" height="53"/>
         <image name="connect" width="29" height="29"/>
         <image name="cross_g" width="53" height="53"/>

@@ -41,20 +41,21 @@ class LedControlVC: UIViewController, BluetoothSerialDelegate {
         circularSliderView.delegate = self
         circularSliderView.setCircluarRingShadow(shadowColor: UIColor.clear, radius: 5)
         circularSliderView.setArrayValues(labelValues: arrValues, currentIndex: 0)
-        circularSliderView.setKnobOfSlider(knobSize: 45, knonbImage: UIImage(named: "knob")!)
-        circularSliderView.setCircularRingWidth(innerRingWidth: 16, outerRingWidth: 24)
+        circularSliderView.setKnobOfSlider(knobSize: 40, knonbImage: UIImage(named: "knob")!)
+        circularSliderView.setCircularRingWidth(innerRingWidth: 18, outerRingWidth: 18)
+        circularSliderView.setCircluarRingColor(innerCirlce: UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1.0), outerCircle: UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1.0))
         circularSliderView.setValueTextFieldDelegate(viewController: self)
         circularSliderView.setBackgroundColorOfAllButtons(startPointColor: UIColor.clear, endPointColor: UIColor.clear, knobColor: UIColor.flatGreen())
         circularSliderView.setProgressLayerColor(colors: [UIColor(red: 6/255.0, green: 201/255.0, blue: 6/255.0, alpha: 1.0).cgColor, UIColor(red: 3/255.0, green: 229/255.0, blue: 3/255.0, alpha: 1.0).cgColor])
         circularSliderView.setTextLabel(labelFont: UIFont.boldSystemFont(ofSize: 50), textColor: UIColor.green)
-        
-//        circularSliderView.setEndPointsImage(startPointImage: UIImage(named: "location")!, endPointImage: UIImage(named: "location")!)
         
 //        Power
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         powerImage.isUserInteractionEnabled = true
         powerImage.addGestureRecognizer(tapGestureRecognizer)
         
+        
+        pinButton.setTitle(UserDefaults.standard.string(forKey: "pinValue") ?? "Pin : 555", for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -223,6 +224,7 @@ class LedControlVC: UIViewController, BluetoothSerialDelegate {
                     hud.label.text = "No Value Entered"
                     hud.hide(animated: true, afterDelay: 1.0)
                 }else{
+                    UserDefaults.standard.set("Pin : \(pinValue)", forKey: "pinValue")
                     if DataService.instance.pinArray.contains(Int(pinValue)!){
                         self.pinButton.setTitle("Pin : \(pinValue)", for:  .normal)
                         let pinString = "FF0A010101"

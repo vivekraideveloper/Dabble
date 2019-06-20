@@ -14,7 +14,142 @@ import Speech
 import RNPulseButton
 
 class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UITableViewDataSource, BluetoothSerialDelegate, SFSpeechRecognizerDelegate  {
+    
+    let containerView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        return view
+    }()
+    
+    let cancelView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        let button = UIButton()
+        button.setTitle("Cancel", for: .normal)
+        button.setTitleColor(UIColor(red: 32, green: 104, blue: 253) , for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        view.addSubview(button)
+        button.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: 0, height: 0)
+        return view
+    }()
+    let chooseOptions: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = label.font.withSize(14)
+        label.textColor = UIColor(red: 179, green: 179, blue: 179)
+        label.text = "Choose Options"
+        return label
+    }()
+    
+    let separator: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    
+    let separator2: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    let separator3: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    let separator4: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    let separator5: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    let separator6: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    
+    let ascii: UIButton = {
+        let button = UIButton()
+        button.setTitle("ASCII", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "untick")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        return button
+    }()
+    
+    let binary: UIButton = {
+        let button = UIButton()
+        button.setTitle("Binary", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "tick")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        return button
+    }()
+    
+    let decimal: UIButton = {
+        let button = UIButton()
+        button.setTitle("Decimal", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "untick")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        return button
+    }()
+    
+    let hexaDecimal: UIButton = {
+        let button = UIButton()
+        button.setTitle("Hexadecimal", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "untick")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        return button
+    }()
    
+    let autoSend: UIButton = {
+        let button = UIButton()
+        button.setTitle("Autosend (2 sec)", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "tick")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        return button
+    }()
+    
+    let help: UIButton = {
+        let button = UIButton()
+        button.setTitle("Help", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .center
+        return button
+    }()
+    
     //    MARK: Variables here
     var scrollOff: Bool = false
     var chatArray: [Terminal] = []
@@ -53,7 +188,67 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let screenSize: CGRect = UIScreen.main.bounds
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+        
+        view.addSubview(containerView)
+        view.addSubview(cancelView)
+        containerView.anchor(top: nil, left: view.leftAnchor, bottom: cancelView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 5, paddingRight: 10, width: 0, height: 410)
+        cancelView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 20, paddingRight: 10, width: 0, height: 50)
+        
+        containerView.addSubview(chooseOptions)
+        chooseOptions.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 8, paddingRight: 0, width: 0, height: 20)
+        
+        containerView.addSubview(separator)
+        separator.anchor(top: chooseOptions.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
+        
+        containerView.addSubview(ascii)
+        ascii.anchor(top: separator.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator2)
+        separator2.anchor(top: ascii.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
+        
+        containerView.addSubview(binary)
+        binary.anchor(top: separator2.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator3)
+        separator3.anchor(top: binary.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
+        
+        containerView.addSubview(decimal)
+        decimal.anchor(top: separator3.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator4)
+        separator4.anchor(top: decimal.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 2)
+        
+        containerView.addSubview(hexaDecimal)
+        hexaDecimal.anchor(top: separator4.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator5)
+        separator5.anchor(top: hexaDecimal.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
+        
+        containerView.addSubview(autoSend)
+        autoSend.anchor(top: separator5.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 40)
+        
+        containerView.addSubview(separator6)
+        separator6.anchor(top: autoSend.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
+        
+        containerView.addSubview(help)
+        help.anchor(top: separator6.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 0, width: 0, height: 40)
+
+        
+        
+       
+        
+        
+        
+        
+        
+        
+        
         
         pulseView.center = view.convert(view.center, from: view.superview)
         self.view.addSubview(pulseView)
@@ -117,7 +312,6 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         }
     }
     
-    
     @objc func back(sender: UIBarButtonItem) {
         // Perform your custom actions
         serial.stopScan()
@@ -164,6 +358,10 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         }else{
             view.frame.origin.y = 0
         }
+        
+    }
+    
+    func alertView(){
         
     }
     
@@ -330,10 +528,6 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
 //        }
         
         print(eviveToPhoneMessage)
-        
-        
-        
-        
         
         if checkFramesIncomingBool{
             eviveToPhoneMessage.removeFirst()
