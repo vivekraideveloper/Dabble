@@ -95,7 +95,7 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
         let separator = UIView()
         separator.backgroundColor = UIColor.gray
         view.addSubview(separator)
-        separator.anchor(top: versionLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: view.bounds.width, height: 1)
+        separator.anchor(top: versionLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: view.bounds.width, height: 1)
         return view
     }()
     
@@ -107,7 +107,7 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
         button.contentHorizontalAlignment = .left
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         view.addSubview(button)
-        button.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 25, paddingLeft: 20, paddingBottom: 20, paddingRight: 0, width: 0, height: 50)
+        button.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 15, paddingLeft: 20, paddingBottom: 15, paddingRight: 0, width: 0, height: 50)
         button.addTarget(self, action: #selector(notificationSettings), for: .touchUpInside)
         let separator = UIView()
         separator.backgroundColor = UIColor.gray
@@ -185,6 +185,7 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
             
         }else{
             serial.disconnect()
+            toggle?.isOn = false
             for i in autoConnectedView.subviews{
                 if i.tag == 1{
                     (i as? UILabel)?.text = "No Device Connected"

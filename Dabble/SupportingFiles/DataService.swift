@@ -17,20 +17,18 @@ class DataService {
     var pinArray: [Int] = []
     
     private let components = [
-        Components(title: "LED Controller", imageName: "ledController", color1: 0x35ad4a, color2: 0x0e7a3d),
+        Components(title: "LED Brightness Control", imageName: "ledController", color1: 0x35ad4a, color2: 0x0e7a3d),
         Components(title: "Terminal", imageName: "terminal", color1: 0x3f4a9e, color2: 0x201d58),
         Components(title: "Gamepad",imageName: "gamepad", color1: 0xf37a20, color2: 0xd83a27),
-        Components(title: "Pin Monitor", imageName: "ledController",color1: 0xec1c25, color2: 0x951b1e),
-        Components(title: "Motor Controller", imageName: "ledController",color1: 0xf9cb0d, color2: 0xe59524),
-        Components(title: "Inputs", imageName: "ledController",color1: 0x00b794, color2: 0x00604e),
-        Components(title: "Camera Module", imageName: "ledController",color1: 0x96002b, color2: 0xd11141),
-        Components(title: "Phone Sensor", imageName: "phoneSensor",color1: 0x1c397c, color2: 0x071b47),
-        Components(title: "Camera and Video", imageName: "ledController",color1: 0xf37735, color2: 0xe25314),
-        Components(title: "Color Detector", imageName: "ledController",color1: 0xffc425, color2: 0xe2a334),
-        Components(title: "Oscilloscope", imageName: "ledController",color1: 0x540d6e, color2: 0x38004f),
-        Components(title: "IOT", imageName: "ledController",color1: 0x03b159, color2: 0x098443),
-        Components(title: "Touch Tune", imageName: "ledController",color1: 0x1c77c3, color2: 0x09588e),
-        Components(title: "Projects", imageName: "ledController",color1: 0xffc425, color2: 0xcc8e11),
+        Components(title: "Pin State Monitor", imageName: "pinMonitor",color1: 0xec1c25, color2: 0x951b1e),
+        Components(title: "Motor Control", imageName: "motorControl",color1: 0xf9cb0d, color2: 0xe59524),
+        Components(title: "Inputs", imageName: "inputs",color1: 0x00b794, color2: 0x00604e),
+        Components(title: "Camera", imageName: "camera",color1: 0xd11141, color2: 0x96002b),
+        Components(title: "Phone Sensors", imageName: "phoneSensor",color1: 0x1c397c, color2: 0x071b47),
+        Components(title: "Oscilloscope", imageName: "oscilloscope",color1: 0x540d6e, color2: 0x38004f),
+        Components(title: "IoT", imageName: "iot",color1: 0x03b159, color2: 0x098443),
+        Components(title: "Music", imageName: "music",color1: 0x1c77c3, color2: 0x09588e),
+        Components(title: "Projects", imageName: "projects",color1: 0xffc425, color2: 0xcc8e11),
     ]
     
     func getComponents() -> [Components] {

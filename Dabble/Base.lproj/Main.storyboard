@@ -58,19 +58,19 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="156" height="179"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NnU-Y3-Kcy">
-                                                            <rect key="frame" x="12" y="42.999999999999993" width="132.33333333333334" height="93.333333333333314"/>
+                                                            <rect key="frame" x="23.666666666666671" y="44.666666666666657" width="109.00000000000001" height="90"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-0m-aPx">
-                                                                    <rect key="frame" x="36.666666666666657" y="0.0" width="59" height="59"/>
+                                                                    <rect key="frame" x="25" y="0.0" width="59" height="59"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="59" id="6C9-bC-ofu"/>
                                                                         <constraint firstAttribute="width" constant="59" id="Cjz-Py-ZT4"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Goes Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M53-gI-lL2">
-                                                                    <rect key="frame" x="0.0" y="75" width="132.33333333333334" height="18.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="75" width="109" height="15"/>
                                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
