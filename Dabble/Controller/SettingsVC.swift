@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreBluetooth
+import MBProgressHUD
 
-class SettingsVC: UIViewController {
+class SettingsVC: UIViewController, BluetoothSerialDelegate {
     
     let autoConnectedView: UIView = {
         let view = UIView()
@@ -25,6 +27,7 @@ class SettingsVC: UIViewController {
         }else{
             deviceLabel.text = "No Device Connected"
         }
+        deviceLabel.tag = 1
         deviceLabel.textColor = UIColor(red: 77, green: 77, blue: 77)
         deviceLabel.font = UIFont.systemFont(ofSize: 12)
         view.addSubview(deviceLabel)
@@ -35,6 +38,7 @@ class SettingsVC: UIViewController {
         toggle.onTintColor = UIColor(red: 11, green: 44, blue: 96)
         view.addSubview(toggle)
         toggle.anchor(top: view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 20, paddingLeft: 0, paddingBottom: 5, paddingRight: 25, width: 50, height: 12)
+        toggle.addTarget(self, action: #selector(connectToLastDevice), for: .valueChanged)
         let separator = UIView()
         separator.backgroundColor = UIColor.gray
         view.addSubview(separator)
@@ -111,6 +115,16 @@ class SettingsVC: UIViewController {
         separator.anchor(top: button.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: view.bounds.width, height: 1)
         return view
     }()
+    
+    /// The peripherals that have been discovered (no duplicates and sorted by asc RSSI)
+    var peripherals: [(peripheral: CBPeripheral, RSSI: Float)] = []
+    
+    /// The peripheral the user has selected
+    var selectedPeripheral: CBPeripheral?
+    
+    /// Progress hud shown
+    var progressHUD: MBProgressHUD?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let stackView = UIStackView(arrangedSubviews: [autoConnectedView ,connectedView, libraryView, notification])
@@ -120,12 +134,182 @@ class SettingsVC: UIViewController {
          view.addSubview(stackView)
         stackView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 90, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.bounds.width, height: 250)
 
-
+//        Blutooth Scanning
+        serial.delegate = self
+        if serial.centralManager.state != .poweredOn {
+            let alert = UIAlertController(title: "Settings", message: "Turn on your Bluetooth", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Close", style: .cancel) { (action) in
+                
+            }
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         
+        reloadView()
+        // start scanning and schedule the time out
+        serial.startScan()
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(SettingsVC.scanTimeOut), userInfo: nil, repeats: false)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadView()
+    }
+    
+    @objc func connectToLastDevice(){
+
+        let toggle = autoConnectedView.subviews.first(where: { $0 is UISwitch }) as? UISwitch
+        if toggle!.isOn{
+            for i in peripherals{
+                if i.peripheral.identifier.uuidString == UserDefaults.standard.string(forKey: "lastDevice")!{
+                    serial.connectToPeripheral(i.peripheral)
+                    for j in autoConnectedView.subviews{
+                        if j.tag == 1{
+                            (j as? UILabel)?.text = i.peripheral.name!
+                        }
+                    }
+                    let hud = MBProgressHUD.showAdded(to: view, animated: true)
+                    hud.mode = MBProgressHUDMode.text
+                    hud.label.text = "Connected"
+                    hud.hide(animated: true, afterDelay: 1.5)
+                }else{
+                    let hud = MBProgressHUD.showAdded(to: view, animated: true)
+                    hud.mode = MBProgressHUDMode.text
+                    hud.label.text = "No Device was Connected Earlier"
+                    hud.hide(animated: true, afterDelay: 1.5)
+                    toggle?.isOn = false
+                    return
+                }
+            }
+            
+        }else{
+            serial.disconnect()
+            for i in autoConnectedView.subviews{
+                if i.tag == 1{
+                    (i as? UILabel)?.text = "No Device Connected"
+                }
+            }
+        }
     }
     
     @objc func notificationSettings(){
         performSegue(withIdentifier: "notificationSettings", sender: self)
+    }
+    
+    @objc func scanTimeOut() {
+        // timeout has occurred, stop scanning and give the user the option to try again
+        serial.stopScan()
+    }
+    
+    @objc func connectTimeOut() {
+        
+        // don't if we've already connected
+        if let _ = serial.connectedPeripheral {
+            return
+        }
+        
+        if let hud = progressHUD {
+            hud.hide(animated: false)
+        }
+        
+        if let _ = selectedPeripheral {
+            serial.disconnect()
+            selectedPeripheral = nil
+        }
+        
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Failed to connect"
+        hud.hide(animated: true, afterDelay: 2)
+    }
+    
+    //    MARK: BluetoothSerial Delegate Methods here
+    
+    func serialDidDiscoverPeripheral(_ peripheral: CBPeripheral, RSSI: NSNumber?) {
+        // check whether it is a duplicate
+        for exisiting in peripherals {
+            if exisiting.peripheral.identifier == peripheral.identifier { return }
+        }
+        
+        // add to the array, next sort & reload
+        let theRSSI = RSSI?.floatValue ?? 0.0
+        peripherals.append((peripheral: peripheral, RSSI: theRSSI))
+        peripherals.sort { $0.RSSI < $1.RSSI }
+    }
+    
+    func serialDidFailToConnect(_ peripheral: CBPeripheral, error: NSError?) {
+        if let hud = progressHUD {
+            hud.hide(animated: false)
+        }
+        
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Failed to connect"
+        hud.hide(animated: true, afterDelay: 1.0)
+    }
+    
+    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
+        if let hud = progressHUD {
+            hud.hide(animated: false)
+        }
+        
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Failed to connect"
+        hud.hide(animated: true, afterDelay: 1.0)
+        
+    }
+    
+    func serialDidReceiveBytes(_ bytes: [UInt8]) {
+        print(bytes)
+    }
+    func serialIsReady(_ peripheral: CBPeripheral) {
+        if let hud = progressHUD {
+            hud.hide(animated: false)
+        }
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
+//        navigationController?.popViewController(animated: true)
+//        dismiss(animated: true, completion: nil)
+    }
+    func serialDidChangeState() {
+        if let hud = progressHUD {
+            hud.hide(animated: false)
+        }
+        
+        if serial.centralManager.state != .poweredOn {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "reloadStartViewController"), object: self)
+//            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @objc func reloadView() {
+        // in case we're the visible view again
+        serial.delegate = self
+        let toggle = autoConnectedView.subviews.first(where: { $0 is UISwitch }) as? UISwitch
+        if serial.isReady {
+            toggle?.isOn = true
+            for i in autoConnectedView.subviews{
+                if i.tag == 1{
+                    (i as? UILabel)?.text = serial.connectedPeripheral?.name!
+                }
+            }
+        } else if serial.centralManager.state == .poweredOn {
+            toggle?.isOn = false
+            for i in autoConnectedView.subviews{
+                if i.tag == 1{
+                    (i as? UILabel)?.text = "No Device Connected"
+                }
+            }
+        } else {
+          toggle?.isOn = false
+            for i in autoConnectedView.subviews{
+                if i.tag == 1{
+                    (i as? UILabel)?.text = "No Device Connected"
+                }
+            }
+        }
     }
 
 }

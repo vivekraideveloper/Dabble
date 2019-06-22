@@ -34,6 +34,7 @@
 		80F5304622AB82F90048324E /* PhoneSensorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5304522AB82F90048324E /* PhoneSensorCell.swift */; };
 		80F5304822AB8CDC0048324E /* SensorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5304722AB8CDC0048324E /* SensorComponents.swift */; };
 		80F7DECB22BE1A81004246D1 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7DECA22BE1A81004246D1 /* NotificationsVC.swift */; };
+		80F7DECD22BE3BD4004246D1 /* LastBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7DECC22BE3BD4004246D1 /* LastBluetooth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +83,7 @@
 		80F5304522AB82F90048324E /* PhoneSensorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorCell.swift; sourceTree = "<group>"; };
 		80F5304722AB8CDC0048324E /* SensorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorComponents.swift; sourceTree = "<group>"; };
 		80F7DECA22BE1A81004246D1 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		80F7DECC22BE3BD4004246D1 /* LastBluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastBluetooth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				80C1EFF82297B67600320E15 /* Components.swift */,
 				808A543C229D35D00029CA3A /* Terminal.swift */,
 				80F5304722AB8CDC0048324E /* SensorComponents.swift */,
+				80F7DECC22BE3BD4004246D1 /* LastBluetooth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -311,9 +314,9 @@
 				"${PODS_ROOT}/Instabug/Instabug.framework",
 				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/NavigationDrawer/NavigationDrawer.framework",
 				"${BUILT_PRODUCTS_DIR}/RNPulseButton/RNPulseButton.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -321,9 +324,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NavigationDrawer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNPulseButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -345,6 +348,7 @@
 				80F5304822AB8CDC0048324E /* SensorComponents.swift in Sources */,
 				80C1EFF92297B67600320E15 /* Components.swift in Sources */,
 				80C1EFFD2297C2F700320E15 /* GradientView.swift in Sources */,
+				80F7DECD22BE3BD4004246D1 /* LastBluetooth.swift in Sources */,
 				80029940229BE18500C8F947 /* Extensions.swift in Sources */,
 				8091FFF322B4FECB007B345B /* VivekCircularRingSlider.swift in Sources */,
 				80D7FB3D22A0F1EF00B9988C /* GamePadVC.swift in Sources */,

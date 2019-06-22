@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreBluetooth
 
 class DataService {
     
@@ -75,6 +76,8 @@ class DataService {
         }
         return boardName
     }
+    
+    
 }
 
 

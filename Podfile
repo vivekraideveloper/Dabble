@@ -8,8 +8,7 @@ target 'Dabble' do
   # Pods for Dabble
 pod 'ChameleonFramework/Swift'
 pod 'MBProgressHUD'
-pod 'SCLAlertView'
-pod 'NavigationDrawer'
+pod 'RealmSwift'
 pod 'RNPulseButton'
 pod 'Instabug'
 end

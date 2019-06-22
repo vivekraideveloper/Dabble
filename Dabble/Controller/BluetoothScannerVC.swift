@@ -10,6 +10,7 @@ import UIKit
 import CoreBluetooth
 import MBProgressHUD
 import QuartzCore
+import RealmSwift
 
 class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, BluetoothSerialDelegate {
     
@@ -120,6 +121,7 @@ class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewData
         // the user has selected a peripheral, so stop scanning and proceed to the next view
         serial.stopScan()
         selectedPeripheral = peripherals[(indexPath as NSIndexPath).row].peripheral
+        UserDefaults.standard.set((selectedPeripheral!.identifier).uuidString, forKey: "lastDevice")
         serial.connectToPeripheral(selectedPeripheral!)
         
         progressHUD = MBProgressHUD.showAdded(to: view, animated: true)

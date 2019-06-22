@@ -10,7 +10,6 @@ import UIKit
 import CoreBluetooth
 import MBProgressHUD
 import QuartzCore
-import SCLAlertView
 import CoreMotion
 import CoreLocation
 import AVFoundation
@@ -509,25 +508,25 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
         }
     }
     @IBAction func menuButtonPressed(_ sender: Any) {
-        let appearance = SCLAlertView.SCLAppearance(
-            showCloseButton: false, showCircularIcon: false
-        )
-        let alertView = SCLAlertView(appearance: appearance)
-        
-        alertView.addButton("Help"){
-            
-        }
-        alertView.addButton("Refresh Rate - Slow") {
-            
-        
-        }
-        alertView.addButton("Refresh Rate - Normal") {
-            
-        }
-        alertView.addButton("Refresh Rate - Fast") {
-            
-        }
-        alertView.showTitle("Dabble", subTitle: "Select options", style: .info)
+//        let appearance = SCLAlertView.SCLAppearance(
+//            showCloseButton: false, showCircularIcon: false
+//        )
+//        let alertView = SCLAlertView(appearance: appearance)
+//
+//        alertView.addButton("Help"){
+//
+//        }
+//        alertView.addButton("Refresh Rate - Slow") {
+//
+//
+//        }
+//        alertView.addButton("Refresh Rate - Normal") {
+//
+//        }
+//        alertView.addButton("Refresh Rate - Fast") {
+//
+//        }
+//        alertView.showTitle("Dabble", subTitle: "Select options", style: .info)
     }
     
 }

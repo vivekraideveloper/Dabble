@@ -11,7 +11,6 @@ import AudioToolbox
 import CoreBluetooth
 import QuartzCore
 import MBProgressHUD
-import SCLAlertView
 import CoreMotion
 import AVFoundation
 

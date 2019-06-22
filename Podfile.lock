@@ -4,35 +4,37 @@ PODS:
     - ChameleonFramework/Default
   - Instabug (8.4.1)
   - MBProgressHUD (1.1.0)
-  - NavigationDrawer (1.0.0)
+  - Realm (3.16.2):
+    - Realm/Headers (= 3.16.2)
+  - Realm/Headers (3.16.2)
+  - RealmSwift (3.16.2):
+    - Realm (= 3.16.2)
   - RNPulseButton (0.5.0)
-  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
   - Instabug
   - MBProgressHUD
-  - NavigationDrawer
+  - RealmSwift
   - RNPulseButton
-  - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ChameleonFramework
     - Instabug
     - MBProgressHUD
-    - NavigationDrawer
+    - Realm
+    - RealmSwift
     - RNPulseButton
-    - SCLAlertView
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Instabug: 2a0f15350b24bde315ae5edc456c7e0e5a6c5d04
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  NavigationDrawer: bc637c0a1700b04f8cd9a5e88b709f6793ca6ac6
+  Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
+  RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
   RNPulseButton: a722cfe692b83796906fbc51c0eba7e87c0fec2a
-  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 1735653c060c247640deb17bfccbe85deccafadf
+PODFILE CHECKSUM: fa8186f2ebc28e29d1a51807099cae1c765a9f7c
 
 COCOAPODS: 1.5.3

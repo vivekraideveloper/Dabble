@@ -61,7 +61,6 @@ class NotificationsVC: UIViewController {
         stackView.spacing = 10
         view.addSubview(stackView)
         stackView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 90, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.bounds.width, height: 130)
-
     }
 
 }
