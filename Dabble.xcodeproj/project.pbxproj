@@ -33,6 +33,7 @@
 		80D7FB3D22A0F1EF00B9988C /* GamePadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */; };
 		80F5304622AB82F90048324E /* PhoneSensorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5304522AB82F90048324E /* PhoneSensorCell.swift */; };
 		80F5304822AB8CDC0048324E /* SensorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5304722AB8CDC0048324E /* SensorComponents.swift */; };
+		80F7DECB22BE1A81004246D1 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7DECA22BE1A81004246D1 /* NotificationsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +81,7 @@
 		80D7FB3C22A0F1EF00B9988C /* GamePadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePadVC.swift; sourceTree = "<group>"; };
 		80F5304522AB82F90048324E /* PhoneSensorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSensorCell.swift; sourceTree = "<group>"; };
 		80F5304722AB8CDC0048324E /* SensorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorComponents.swift; sourceTree = "<group>"; };
+		80F7DECA22BE1A81004246D1 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				80C0E0B422A287C20018B043 /* SettingsVC.swift */,
 				801F0D0C22B37D610005FDA9 /* LedControlVC.swift */,
 				801F0D1222B3FA0E0005FDA9 /* NavDrawerVC.swift */,
+				80F7DECA22BE1A81004246D1 /* NotificationsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dabble/Pods-Dabble-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework",
+				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/NavigationDrawer/NavigationDrawer.framework",
 				"${BUILT_PRODUCTS_DIR}/RNPulseButton/RNPulseButton.framework",
@@ -313,6 +318,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NavigationDrawer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNPulseButton.framework",
@@ -352,6 +359,7 @@
 				805C5FBC22A63B2B0091AF25 /* KZJoystickView.swift in Sources */,
 				801F0D0D22B37D620005FDA9 /* LedControlVC.swift in Sources */,
 				801F0D0B22B22D1C0005FDA9 /* PhoneSensorsVC.swift in Sources */,
+				80F7DECB22BE1A81004246D1 /* NotificationsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import UIKit
 import CoreBluetooth
 import MBProgressHUD
 import Intents
+import Instabug
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
+        // Instabug
+        Instabug.start(withToken: "76b226e305dd9846a8f0de2fec737054", invocationEvents: [.shake, .screenshot])
         return true
     }
 

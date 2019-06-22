@@ -150,6 +150,11 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
         createAlertView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reloadView()
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeVC.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
+        
+    }
     
     func createAlertView(){
         view.addSubview(containerView)
@@ -377,11 +382,7 @@ class GamePadVC: UIViewController, BluetoothSerialDelegate, JoystickViewDelegate
     }
     
     //MARK: Rotate device
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-        
-    }
+
     override var shouldAutorotate: Bool{
         return false
     }

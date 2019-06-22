@@ -141,7 +141,7 @@ extension UIView {
     }
     func animHide(){
         
-        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 2, delay: 2, options: [.curveEaseOut], animations: {
             self.layoutIfNeeded()
         }, completion: nil)
         self.isHidden = true
@@ -233,6 +233,7 @@ extension UIView {
     }
     
 }
+
 
 extension Int {
     

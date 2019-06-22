@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ChameleonFramework" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/NavigationDrawer" "${PODS_CONFIGURATION_BUILD_DIR}/RNPulseButton" "${PODS_CONFIGURATION_BUILD_DIR}/SCLAlertView"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PODS_ROOT)/Instabug/" "${PODS_CONFIGURATION_BUILD_DIR}/ChameleonFramework" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/NavigationDrawer" "${PODS_CONFIGURATION_BUILD_DIR}/RNPulseButton" "${PODS_CONFIGURATION_BUILD_DIR}/SCLAlertView" "${PODS_ROOT}/Instabug"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
 OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/ChameleonFramework/ChameleonFramework.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/NavigationDrawer/NavigationDrawer.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/RNPulseButton/RNPulseButton.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SCLAlertView/SCLAlertView.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "ChameleonFramework" -framework "MBProgressHUD" -framework "NavigationDrawer" -framework "RNPulseButton" -framework "SCLAlertView"
+OTHER_LDFLAGS = $(inherited) -l"z" -framework "AVFoundation" -framework "ChameleonFramework" -framework "CoreData" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreMotion" -framework "CoreTelephony" -framework "CoreVideo" -framework "Instabug" -framework "MBProgressHUD" -framework "NavigationDrawer" -framework "RNPulseButton" -framework "SCLAlertView" -framework "SystemConfiguration" -framework "UIKit"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

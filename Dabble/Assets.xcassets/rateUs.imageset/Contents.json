@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Back_Button_1x-2.png",
+      "filename" : "Rate_Us_1x-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Back_Button_2x-2.png",
+      "filename" : "Rate_Us_2x-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Back_Button_3x-2.png",
+      "filename" : "Rate_Us_3x-2.png",
       "scale" : "3x"
     }
   ],

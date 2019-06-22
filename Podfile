@@ -11,4 +11,5 @@ pod 'MBProgressHUD'
 pod 'SCLAlertView'
 pod 'NavigationDrawer'
 pod 'RNPulseButton'
+pod 'Instabug'
 end
