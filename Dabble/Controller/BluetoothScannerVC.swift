@@ -20,7 +20,7 @@ class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tryAgainButton: UIBarButtonItem!
     
     //    MARK: Variables here
-    
+    var appDelegate = UIApplication.shared.delegate as? AppDelegate
     /// The peripherals that have been discovered (no duplicates and sorted by asc RSSI)
     var peripherals: [(peripheral: CBPeripheral, RSSI: Float)] = []
     
@@ -57,6 +57,12 @@ class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewData
         serial.startScan()
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(BluetoothScannerVC.scanTimeOut), userInfo: nil, repeats: false)
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if serial.connectedPeripheral != nil{
+            self.appDelegate?.scheduleNotification(notificationType: "Connected")
+        }
     }
     
     override func didReceiveMemoryWarning() {

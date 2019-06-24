@@ -116,6 +116,8 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
         return view
     }()
     
+    var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     /// The peripherals that have been discovered (no duplicates and sorted by asc RSSI)
     var peripherals: [(peripheral: CBPeripheral, RSSI: Float)] = []
     
@@ -173,6 +175,7 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
                     hud.mode = MBProgressHUDMode.text
                     hud.label.text = "Connected"
                     hud.hide(animated: true, afterDelay: 1.5)
+                    self.appDelegate?.scheduleNotification(notificationType: "Connected")
                 }else{
                     let hud = MBProgressHUD.showAdded(to: view, animated: true)
                     hud.mode = MBProgressHUDMode.text

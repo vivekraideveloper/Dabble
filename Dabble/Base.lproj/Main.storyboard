@@ -1052,7 +1052,7 @@
             </objects>
             <point key="canvasLocation" x="3418" y="-119"/>
         </scene>
-        <!--LED Brightness Controller-->
+        <!--LED Brightness Control-->
         <scene sceneID="ZKu-Wb-7Et">
             <objects>
                 <viewController id="WCI-Z9-qCe" customClass="LedControlVC" customModule="Dabble" customModuleProvider="target" sceneMemberID="viewController">
@@ -1128,7 +1128,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E1p-tX-dc7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="LED Brightness Controller" id="6jw-Q4-FXH">
+                    <navigationItem key="navigationItem" title="LED Brightness Control" id="6jw-Q4-FXH">
                         <rightBarButtonItems>
                             <barButtonItem image="menu_icon" id="i6B-6Q-6FD">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1677,7 +1677,7 @@
         <image name="up_g" width="43.666667938232422" height="66.333335876464844"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ORv-1B-5yd"/>
+        <segue reference="mBp-SE-ZDB"/>
         <segue reference="JH0-SP-USS"/>
     </inferredMetricsTieBreakers>
 </document>

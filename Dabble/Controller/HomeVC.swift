@@ -11,8 +11,9 @@ import  CoreBluetooth
 import MBProgressHUD
 import QuartzCore
 import Instabug
+import MessageUI
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BluetoothSerialDelegate{
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BluetoothSerialDelegate, MFMailComposeViewControllerDelegate{
     
     let navDrawer: UIView = {
         let view = UIView()
@@ -438,7 +439,14 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
     }
     @objc func feedbackButtonPressed(){
-        Instabug.show()
+        let mailVC = MFMailComposeViewController()
+        mailVC.mailComposeDelegate = self
+        mailVC.setToRecipients(["contact@thestempedia.com"])
+        mailVC.setSubject("Dabble Feedback")
+        mailVC.setMessageBody("Email message string", isHTML: false)
+        navDrawer.animHide()
+        navCoverView.animHide()
+        present(mailVC, animated: true, completion: nil)
         print("Feedback")
     }
     @objc func shareButtonPressed(){
@@ -449,6 +457,10 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func settingsButtonPressed(_ sender: Any) {
