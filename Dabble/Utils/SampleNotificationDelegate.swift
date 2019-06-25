@@ -10,15 +10,19 @@
 import Foundation
 import UserNotifications
 import UserNotificationsUI
+import SafariServices
 
-class SampleNotificationDelegate: NSObject , UNUserNotificationCenterDelegate {
+class SampleNotificationDelegate: UIViewController, UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert,.sound])
+        completionHandler([.alert,.sound, .badge])
     }
+    
+    
+    
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -28,7 +32,13 @@ class SampleNotificationDelegate: NSObject , UNUserNotificationCenterDelegate {
         case UNNotificationDismissActionIdentifier:
             print("Dismiss Action")
         case UNNotificationDefaultActionIdentifier:
-            print("Open Action")
+            print("Open Action******************************")
+            
+            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            if let url = URL(string: (response.notification.request.content.userInfo["url"] as? String)!) {
+                let safari = SFSafariViewController(url: url)
+                appDelegate?.window?.rootViewController?.present(safari, animated: true, completion: nil)
+            }
         case "Snooze":
             print("Snooze")
         case "Delete":

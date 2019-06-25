@@ -1177,7 +1177,7 @@
         <!--Terminal-->
         <scene sceneID="5Lu-Ee-1Vy">
             <objects>
-                <viewController id="RkD-Dn-Z5M" customClass="TerminalVC" customModule="Dabble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TerminalVC" id="RkD-Dn-Z5M" customClass="TerminalVC" customModule="Dabble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kUl-2V-aE7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1606,7 +1606,7 @@
         <!--Navigation Controller-->
         <scene sceneID="anG-IG-OzY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SNw-ol-004" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootViewController" automaticallyAdjustsScrollViewInsets="NO" id="SNw-ol-004" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ACn-OG-xgk">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1677,7 +1677,7 @@
         <image name="up_g" width="43.666667938232422" height="66.333335876464844"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mBp-SE-ZDB"/>
+        <segue reference="Tab-xk-Akt"/>
         <segue reference="JH0-SP-USS"/>
     </inferredMetricsTieBreakers>
 </document>

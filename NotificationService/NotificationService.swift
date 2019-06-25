@@ -20,7 +20,7 @@ class NotificationService: UNNotificationServiceExtension {
         
         if let bestAttemptContent = bestAttemptContent {
             // Modify the notification content here...
-            bestAttemptContent.title = "\(bestAttemptContent.title)"
+            bestAttemptContent.title = (request.content.userInfo["title"] as? String)!
             
             var urlString:String? = nil
             if let urlImageString = request.content.userInfo["urlImageString"] as? String {
@@ -45,6 +45,7 @@ class NotificationService: UNNotificationServiceExtension {
             
             contentHandler(bestAttemptContent)
         }
+        
     }
     
     override func serviceExtensionTimeWillExpire() {

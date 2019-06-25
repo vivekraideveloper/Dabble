@@ -12,6 +12,8 @@ import MBProgressHUD
 import Intents
 import Instabug
 import UserNotifications
+import SafariServices
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -90,6 +92,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         UIApplication.shared.registerForRemoteNotifications()
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+    }
+    
 }
 
 
@@ -102,6 +109,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler([.alert, .sound])
     }
     
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -109,6 +117,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         if response.notification.request.identifier == "Local Notification" {
             print("Handling notifications with the Local Notification Identifier")
         }
+        
+        
         
         completionHandler()
     }

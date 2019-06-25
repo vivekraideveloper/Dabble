@@ -34,7 +34,7 @@ class NotificationsVC: UIViewController {
     let projectsView: UIView = {
         let view = UIView()
         let label = UILabel()
-        label.text = "Projects"
+        label.text = "Project Modules"
         label.textAlignment = NSTextAlignment.left
         label.font = UIFont.systemFont(ofSize: 18)
         view.addSubview(label)

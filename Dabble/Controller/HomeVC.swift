@@ -12,6 +12,7 @@ import MBProgressHUD
 import QuartzCore
 import Instabug
 import MessageUI
+import SafariServices
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BluetoothSerialDelegate, MFMailComposeViewControllerDelegate{
     
