@@ -443,7 +443,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         mailVC.mailComposeDelegate = self
         mailVC.setToRecipients(["contact@thestempedia.com"])
         mailVC.setSubject("Dabble Feedback")
-        mailVC.setMessageBody("Email message string", isHTML: false)
+        mailVC.setMessageBody("Type your message here ...", isHTML: false)
         navDrawer.animHide()
         navCoverView.animHide()
         present(mailVC, animated: true, completion: nil)

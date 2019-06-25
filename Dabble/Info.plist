@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Dabble wants to recognize your speech</string>
 	<key>CFBundleDisplayName</key>
 	<string>Dabble</string>
 	<key>CFBundleExecutable</key>
@@ -34,6 +32,12 @@
 	<string>Dabble wants to use your Microphone</string>
 	<key>NSSiriUsageDescription</key>
 	<string>Allow access to Siri</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Dabble wants to recognize your speech</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
