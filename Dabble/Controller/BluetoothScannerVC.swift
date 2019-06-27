@@ -10,7 +10,6 @@ import UIKit
 import CoreBluetooth
 import MBProgressHUD
 import QuartzCore
-import RealmSwift
 
 class BluetoothScannerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, BluetoothSerialDelegate {
     

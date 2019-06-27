@@ -166,6 +166,7 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     var eviveToPhoneMessage = ""
     var removeUnnecessaryCharcters: Bool = true
     var checkFramesIncomingBool: Bool = false
+    var searchTimer: Timer?
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -204,9 +205,12 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
         
         // textView
         textView.delegate = self
-        textView.layer.cornerRadius = 8
+        textView.layer.cornerRadius = 18
         textView.text = ""
-        
+        textView.isScrollEnabled = false
+        textView.translatesAutoresizingMaskIntoConstraints = false
+
+
         // tableView
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -628,10 +632,22 @@ class TerminalVC: UIViewController, UITextViewDelegate, UITableViewDelegate, UIT
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(TerminalVC.sendMessage), userInfo: nil, repeats: false)
+        let size = CGSize(width: textView.bounds.width, height: .infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+        textView.constraints.forEach { (constraint) in
+            if constraint.firstAttribute == .height{
+                constraint.constant = estimatedSize.height
+                
+            }
+        }
+        
+        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(TerminalVC.sendMessage), userInfo: nil, repeats: false)
+
        
     }
+    
    
+
     func sendMessagePhoneToEvive(){
         if !serial.isReady {
             let alert = UIAlertController(title: "Not connected", message: "Where I am supposed to send this ?", preferredStyle: .alert)

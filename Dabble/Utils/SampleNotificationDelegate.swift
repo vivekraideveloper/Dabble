@@ -32,7 +32,7 @@ class SampleNotificationDelegate: UIViewController, UNUserNotificationCenterDele
         case UNNotificationDismissActionIdentifier:
             print("Dismiss Action")
         case UNNotificationDefaultActionIdentifier:
-            print("Open Action******************************")
+            print("Open Action  ******************************")
             
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             if let url = URL(string: (response.notification.request.content.userInfo["url"] as? String)!) {

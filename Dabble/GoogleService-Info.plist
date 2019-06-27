@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>153344296756-n1v2fms03uaofmnelfn3v4mtt5vqdj82.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.153344296756-n1v2fms03uaofmnelfn3v4mtt5vqdj82</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>153344296756-2p84119t1n25u0ht60callkc3fdqnq12.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCHsvycZikaRP44cODaHrPiDjdSuO-HH_c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>153344296756</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.dabbleapp</string>
+	<key>PROJECT_ID</key>
+	<string>dabblepushtest01</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dabblepushtest01.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:153344296756:ios:46740e9811e40590</string>
+	<key>DATABASE_URL</key>
+	<string>https://dabblepushtest01.firebaseio.com</string>
+</dict>
+</plist>

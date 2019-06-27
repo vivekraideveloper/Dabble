@@ -34,6 +34,116 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
     @IBOutlet weak var locationLatitude: UITextField!
     @IBOutlet weak var pressure: UITextField!
     @IBOutlet weak var accelView: UIView!
+    @IBOutlet weak var gyroView: UIView!
+    @IBOutlet weak var magnetoView: UIView!
+    @IBOutlet weak var soundView: UIView!
+    @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var pressureView: UIView!
+    @IBOutlet weak var accelLabel: UILabel!
+    @IBOutlet weak var gyroLabel: UILabel!
+    @IBOutlet weak var magnetoLabel: UILabel!
+    @IBOutlet weak var soundLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    
+    
+    // AlertViews
+    
+    
+    let containerView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        return view
+    }()
+    
+    let cancelView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        let button = UIButton()
+        button.setTitle("Cancel", for: .normal)
+        button.setTitleColor(UIColor(red: 32, green: 104, blue: 253) , for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        view.addSubview(button)
+        button.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: 0, height: 0)
+        button.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
+        return view
+    }()
+    
+    let refreshMode: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textAlignment = NSTextAlignment.left
+        label.textColor = UIColor(red: 179, green: 179, blue: 179)
+        label.text = "Refresh Rate"
+        return label
+    }()
+    
+    let separator: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    
+    let separator2: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230, green: 230, blue: 230)
+        return view
+        
+    }()
+    
+    let slow: UIButton = {
+        let button = UIButton()
+        button.setTitle("Refresh Rate - Slow", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "radioOff")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(slowButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    let normal: UIButton = {
+        let button = UIButton()
+        button.setTitle("Refresh Rate - Normal", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "radioOn")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(normalButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    let fast: UIButton = {
+        let button = UIButton()
+        button.setTitle("Refresh Rate - Fast", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .left
+        let image = UIImageView()
+        image.image = UIImage(named: "radioOff")
+        button.addSubview(image)
+        image.anchor(top: button.topAnchor, left: nil, bottom: button.bottomAnchor, right: button.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 20, height: 20)
+        button.addTarget(self, action: #selector(fastButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    let help: UIButton = {
+        let button = UIButton()
+        button.setTitle("Help", for: .normal)
+        button.setTitleColor(UIColor(red: 77, green: 77, blue: 77), for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.addTarget(self, action: #selector(helpButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     
     //    MARK: Variables here
      var motionManager: CMMotionManager!
@@ -42,6 +152,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
     var recorder: AVAudioRecorder!
     var levelTimer = Timer()
     
+    var refreshRate: Double = 0.1
     var accelX: Double = 0
     var accelY: Double = 0
     var accelZ: Double = 0
@@ -70,7 +181,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
     var sensorCount: Int = 0{
         didSet{
             if self.sensorCount == 1{
-                timer1 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
+                timer1 = Timer.scheduledTimer(timeInterval: refreshRate, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
                 print(1)
                 timer2?.invalidate()
                 timer3?.invalidate()
@@ -79,7 +190,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 timer6?.invalidate()
             }
             if self.sensorCount == 2{
-                timer2 = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
+                timer2 = Timer.scheduledTimer(timeInterval: refreshRate*2, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
                 print(2)
                 timer1?.invalidate()
                 timer3?.invalidate()
@@ -88,7 +199,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 timer6?.invalidate()
             }
             if self.sensorCount == 3{
-                timer3 = Timer.scheduledTimer(timeInterval: 12, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
+                timer3 = Timer.scheduledTimer(timeInterval: refreshRate*3, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
                 print(3)
                 timer2?.invalidate()
                 timer1?.invalidate()
@@ -97,7 +208,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 timer6?.invalidate()
             }
             if self.sensorCount == 4{
-                timer4 = Timer.scheduledTimer(timeInterval: 16, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
+                timer4 = Timer.scheduledTimer(timeInterval: refreshRate*4, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
                 print(4)
                 timer2?.invalidate()
                 timer3?.invalidate()
@@ -106,7 +217,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 timer6?.invalidate()
             }
             if self.sensorCount == 5{
-                timer5 = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
+                timer5 = Timer.scheduledTimer(timeInterval: refreshRate*5, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
                 print(5)
                 timer2?.invalidate()
                 timer3?.invalidate()
@@ -115,7 +226,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 timer6?.invalidate()
             }
             if self.sensorCount == 6{
-                timer6 = Timer.scheduledTimer(timeInterval: 24, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
+                timer6 = Timer.scheduledTimer(timeInterval: refreshRate*6, target: self, selector: #selector(self.sensorTimer), userInfo: nil, repeats: true)
                 print(6)
                 timer2?.invalidate()
                 timer3?.invalidate()
@@ -134,19 +245,35 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
         reloadView()
         NotificationCenter.default.addObserver(self, selector: #selector(PhoneSensorsVC.reloadView), name: NSNotification.Name(rawValue: "reloadStartViewController"), object: nil)
         
+//        Add shadow and corner radius to Views
+
+        let viewsToRound = [accelLabel, gyroLabel, magnetoLabel, soundLabel, locationLabel, pressureLabel]
+        for i in viewsToRound{
+            let path = UIBezierPath(roundedRect:i!.bounds, byRoundingCorners:[.topRight, .topLeft], cornerRadii: CGSize(width: 10, height: 10))
+            let maskLayer = CAShapeLayer()
+            maskLayer.path = path.cgPath
+            i!.layer.mask = maskLayer
+//            i!.setShadow(color: UIColor.red, opacity: 1, offset: 3, radius: 4)
+        }
+
+        let viewToShadow = [accelView, gyroView, magnetoView, soundView, locationView, pressureView]
+        for i in viewToShadow{
+            i!.dropShadow(color: .gray, opacity: 1, offSet: CGSize(width: -1, height: 1), radius: 10, scale: true)
+        }
+
         
         
         motionManager = CMMotionManager()
 //        Accelerometer
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(refreshRate)), execute: {
             self.motionManager.startAccelerometerUpdates(to: .main, withHandler: self.updateAccelerometer)
         })
 //        Gyroscope
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(refreshRate)), execute: {
             self.motionManager.startGyroUpdates(to: .main, withHandler: self.updateGyroscope)
         })
 //        Magnetometer
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(refreshRate)), execute: {
             self.motionManager.startMagnetometerUpdates(to: .main, withHandler: self.updateMagnetometer)
         })
         
@@ -154,9 +281,10 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
         locationUpdate()
         
 //        Audio Update
@@ -173,6 +301,31 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 self.pressureValue = Float(data!.pressure)
             }
         }
+        
+        createAlertView()
+    }
+    
+    func createAlertView(){
+        view.addSubview(containerView)
+        view.addSubview(cancelView)
+        containerView.anchor(top: nil, left: view.leftAnchor, bottom: cancelView.topAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 5, paddingRight: 10, width: 0, height: 280)
+        cancelView.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 20, paddingRight: 10, width: 0, height: 50)
+        containerView.addSubview(refreshMode)
+        refreshMode.anchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 8, paddingRight: 20, width: 0, height: 20)
+        containerView.addSubview(separator)
+        separator.anchor(top: refreshMode.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 3)
+        containerView.addSubview(slow)
+        slow.anchor(top: separator.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
+        containerView.addSubview(normal)
+        normal.anchor(top: slow.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
+        containerView.addSubview(fast)
+        fast.anchor(top: normal.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 0, height: 40)
+        containerView.addSubview(separator2)
+        separator2.anchor(top: fast.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 10, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 5)
+        containerView.addSubview(help)
+        help.anchor(top: separator2.bottomAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 5, paddingLeft: 20, paddingBottom: 8, paddingRight: 20, width: 0, height: 40)
+        containerView.isHidden = true
+        cancelView.isHidden = true
     }
     
     func updateAccelerometer(data: CMAccelerometerData?, error: Error?){
@@ -266,8 +419,11 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
             currentLocation = locationManager.location
             
         }
-        locationLongitude.text = formatter.string(for: currentLocation!.coordinate.longitude)
-        locationLatitude.text = formatter.string(for: currentLocation!.coordinate.latitude)
+        guard let long = currentLocation?.coordinate.longitude else {return}
+        guard let lat = currentLocation?.coordinate.latitude else {return}
+
+        locationLongitude.text = formatter.string(for: long)
+        locationLatitude.text = formatter.string(for: lat)
     }
     
    
@@ -389,7 +545,7 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
     }
     func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
         reloadView()
-        //        dismissKeyboard()
+        
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = MBProgressHUDMode.text
         hud.label.text = "Disconnected"
@@ -434,6 +590,95 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
                 Array(UnsafeBufferPointer(start: $0, count: MemoryLayout<T>.size))
             }
         }
+    }
+    
+    @objc func cancelButtonPressed(){
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+//        backButton.backgroundColor = UIColor.white
+        print("Cancel")
+    }
+    @objc func slowButtonPressed(){
+        refreshRate = 0.5
+        let slowRate = slow.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let normalRate = normal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let fastRate = fast.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        slowRate?.image = UIImage(named: "radioOn")
+        normalRate?.image = UIImage(named: "radioOff")
+        fastRate?.image = UIImage(named: "radioOff")
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Slow Refresh Rate"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        print("Slow")
+    }
+    @objc func normalButtonPressed(){
+        refreshRate = 0.1
+        let slowRate = slow.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let normalRate = normal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let fastRate = fast.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        slowRate?.image = UIImage(named: "radioOff")
+        normalRate?.image = UIImage(named: "radioOn")
+        fastRate?.image = UIImage(named: "radioOff")
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Normal Refresh Rate"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        print("Normal")
+        
+    }
+    @objc func fastButtonPressed(){
+        refreshRate = 0.025
+        let slowRate = slow.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let normalRate = normal.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        let fastRate = fast.subviews.first(where: { $0 is UIImageView }) as? UIImageView
+        slowRate?.image = UIImage(named: "radioOff")
+        normalRate?.image = UIImage(named: "radioOff")
+        fastRate?.image = UIImage(named: "radioOn")
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = "Fast Refresh Rate"
+        hud.hide(animated: true, afterDelay: 1.0)
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        print("Fast")
+    }
+    @objc func helpButtonPressed(){
+        let myAlert = UIAlertController(title: "Phone Sensors", message: nil, preferredStyle: .alert)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.left
+        let messageText = NSMutableAttributedString(
+            string: "\nThis module allows you to access the following inbuilt sensors of your Smartphone:\n\nAccelerometer: Senses the acceleration acting on your Smartphone in all three directions in m/s.\n\nGyroscope: Senses the angular velocity in all three directions in rad/s.\n\nMagnetometer: Senses the magnetic field acting in all three directions in µT. It can be used to move robots in a specific direction.\n\nSound meter: Senses the intensity of nearby sound in dB.\n\nGPS: Shows the Longitude and Latitude of your current location.\n\nBarometer: Senses the pressure in KPa.",
+            attributes: [
+                NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body),
+                NSAttributedString.Key.foregroundColor : UIColor.black
+            ]
+        )
+        
+        myAlert.setValue(messageText, forKey: "attributedMessage")
+        let knowMore = UIAlertAction(title: "More Info", style: .default) { action in
+            UIApplication.shared.open(URL(string: "https://thestempedia.com/docs/dabble/phone-sensors-module/")!, options: [:], completionHandler: nil)
+        }
+        let close = UIAlertAction(title: "Close", style: .default) { action in
+        }
+        myAlert.addAction(knowMore)
+        myAlert.addAction(close)
+        self.present(myAlert, animated: true, completion: nil)
+        
+        containerView.animHide()
+        cancelView.animHide()
+        view.backgroundColor = UIColor.white
+        
+        print("Help")
     }
     
     @IBAction func accelerometerSwitch(_ sender: UISwitch) {
@@ -508,25 +753,10 @@ class PhoneSensorsVC: UIViewController, BluetoothSerialDelegate, CLLocationManag
         }
     }
     @IBAction func menuButtonPressed(_ sender: Any) {
-//        let appearance = SCLAlertView.SCLAppearance(
-//            showCloseButton: false, showCircularIcon: false
-//        )
-//        let alertView = SCLAlertView(appearance: appearance)
-//
-//        alertView.addButton("Help"){
-//
-//        }
-//        alertView.addButton("Refresh Rate - Slow") {
-//
-//
-//        }
-//        alertView.addButton("Refresh Rate - Normal") {
-//
-//        }
-//        alertView.addButton("Refresh Rate - Fast") {
-//
-//        }
-//        alertView.showTitle("Dabble", subTitle: "Select options", style: .info)
+        view.backgroundColor = UIColor.gray
+//        backButton.backgroundColor = UIColor.gray
+        containerView.animShow()
+        cancelView.animShow()
     }
     
 }

@@ -10,9 +10,10 @@ import UIKit
 import  CoreBluetooth
 import MBProgressHUD
 import QuartzCore
-import Instabug
 import MessageUI
 import SafariServices
+import Toast_Swift
+import Crashlytics
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BluetoothSerialDelegate, MFMailComposeViewControllerDelegate{
     
@@ -132,7 +133,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }()
     
     //    MARK: Variables here
-    
     private(set) public var components = [Components]()
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -319,6 +319,30 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? HomeCell{
             let cellComponent = DataService.instance.getComponents()[indexPath.row]
             cell.updateViews(components: cellComponent)
+            if indexPath.row == 3{
+                cell.homeView.alpha = 0.3
+            }
+            if indexPath.row == 4{
+                cell.homeView.alpha = 0.3
+            }
+            if indexPath.row == 5{
+                cell.homeView.alpha = 0.3
+            }
+            if indexPath.row == 6{
+                cell.homeView.alpha = 0.3
+            }
+            if indexPath.row == 8{
+                cell.homeView.alpha = 0.3
+            }
+            if indexPath.row == 9{
+                cell.homeView.alpha = 0.3
+            }
+            if indexPath.row == 10{
+                cell.homeView.alpha = 0.3
+            }
+            if indexPath.row == 11{
+                cell.homeView.alpha = 0.3
+            }
             return cell
         }
         return HomeCell()
@@ -348,9 +372,42 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                 let next = self.storyboard?.instantiateViewController(withIdentifier: "gamePad") as! GamePadVC
                 self.present(next, animated: true, completion: nil)
             }
+            if indexPath.row == 3{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+                Crashlytics.sharedInstance().crash()
+            }
+            if indexPath.row == 4{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+
+            }
+            if indexPath.row == 5{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+
+            }
+            if indexPath.row == 6{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+
+            }
             if indexPath.row == 7{
                 performSegue(withIdentifier: "phoneSensors", sender: self)
             }
+            if indexPath.row == 8{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+
+            }
+            if indexPath.row == 9{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+
+            }
+            if indexPath.row == 10{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+
+            }
+            if indexPath.row == 11{
+                self.view.makeToast("Coming Soon", duration: 2.0, position: .bottom)
+
+            }
+            
         }
        
 
@@ -463,6 +520,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true, completion: nil)
     }
+
     
     @IBAction func settingsButtonPressed(_ sender: Any) {
         if navDrawer.isHidden == true{

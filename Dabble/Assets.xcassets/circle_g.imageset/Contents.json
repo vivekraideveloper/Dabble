@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Circle_1x.png",
+      "filename" : "Gamepad_Circle_1x-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Circle_2x.png",
+      "filename" : "Gamepad_Circle_2x-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Gamepad_Circle_3x.png",
+      "filename" : "Gamepad_Circle_3x-2.png",
       "scale" : "3x"
     }
   ],

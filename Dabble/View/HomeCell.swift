@@ -21,7 +21,6 @@ class HomeCell: UICollectionViewCell {
         homeImage.image = UIImage(named: components.imageName)
         homeView.backgroundColor = UIColor(gradientStyle:UIGradientStyle.topToBottom, withFrame:frame  , andColors:[UIColor(rgb: components.color1), UIColor(rgb: components.color2)])
         
-        
     }
     
     

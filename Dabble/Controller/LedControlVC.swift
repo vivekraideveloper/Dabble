@@ -198,7 +198,29 @@ class LedControlVC: UIViewController, BluetoothSerialDelegate {
         let menuPopUp = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let help = UIAlertAction(title: "Help", style: .default) { (buttonTapped) in
+            let myAlert = UIAlertController(title: "LED Brightness Control", message: nil, preferredStyle: .alert)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = NSTextAlignment.left
+            let messageText = NSMutableAttributedString(
+                string: "\nThis module allows you to control the brightness of devices such as LEDs. You can enter the pin number to which your device is connected and vary the brightness.\n\nIf your device is connected to a digital pin, you can turn it ON or OFF by pressing the power button in the centre of the screen.\n\nIf your device is connected to a PWM pin, you can vary its brightness by sliding the green bar in the clockwise direction.",
+                attributes: [
+                    NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                    NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body),
+                    NSAttributedString.Key.foregroundColor : UIColor.black
+                ]
+            )
             
+            myAlert.setValue(messageText, forKey: "attributedMessage")
+            let knowMore = UIAlertAction(title: "More Info", style: .default) { action in
+                UIApplication.shared.open(URL(string: "https://thestempedia.com/docs/dabble/led-brightness-control-module/")!, options: [:], completionHandler: nil)
+            }
+            let close = UIAlertAction(title: "Close", style: .default) { action in
+            }
+            myAlert.addAction(knowMore)
+            myAlert.addAction(close)
+            self.present(myAlert, animated: true, completion: nil)
+            
+            print("Help")
         }
         menuPopUp.addAction(help)
         present(menuPopUp, animated: true, completion: nil)

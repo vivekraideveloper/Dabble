@@ -56,7 +56,7 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
         view.addSubview(connectedLabel)
         connectedLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 5, paddingRight: 0, width: view.bounds.width, height: 20)
         let boardLabel = UILabel()
-        if DataService.instance.boardName != ""{
+        if DataService.instance.boardName != "" && serial.isReady{
             boardLabel.text = DataService.instance.boardName
         }else{
             boardLabel.text = "No Board Connected"
@@ -83,8 +83,8 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
         view.addSubview(libraryLabel)
         libraryLabel.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 20, paddingLeft: 20, paddingBottom: 5, paddingRight: 0, width: view.bounds.width, height: 20)
         let versionLabel = UILabel()
-        if DataService.instance.versionNumber != ""{
-            versionLabel.text = DataService.instance.boardName
+        if DataService.instance.versionNumber != "" && serial.isReady{
+            versionLabel.text = DataService.instance.versionNumber
         }else{
             versionLabel.text = "No Board Connected"
         }
@@ -129,6 +129,7 @@ class SettingsVC: UIViewController, BluetoothSerialDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         let stackView = UIStackView(arrangedSubviews: [autoConnectedView ,connectedView, libraryView, notification])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually

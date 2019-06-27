@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Terminal_Connect_1x.png",
+      "filename" : "Home_Connect_1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Home_Connect_2x.png",
+      "filename" : "Home_Connect_2x-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Home_Connect_3x.png",
+      "filename" : "Home_Connect_3x-2.png",
       "scale" : "3x"
     }
   ],

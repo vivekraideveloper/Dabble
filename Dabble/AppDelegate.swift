@@ -10,10 +10,9 @@ import UIKit
 import CoreBluetooth
 import MBProgressHUD
 import Intents
-import Instabug
 import UserNotifications
 import SafariServices
-
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let notificationCenter = UNUserNotificationCenter.current()
     let notificationDelegate = SampleNotificationDelegate()
+    var locationManager: CLLocationManager!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -29,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
-        // Instabug
-        Instabug.start(withToken: "76b226e305dd9846a8f0de2fec737054", invocationEvents: [.shake, .screenshot])
+        FirebaseApp.configure()
         
         notificationCenter.delegate = self
         
@@ -40,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             (didAllow, error) in
             if !didAllow {
                 print("User has declined notifications")
+            }else{
+                UserDefaults.standard.set(true, forKey: "dabbleNotifications")
+                UserDefaults.standard.set(true, forKey: "projectNotifications")
             }
         }
         
@@ -118,8 +120,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("Handling notifications with the Local Notification Identifier")
         }
         
-        
-        
         completionHandler()
     }
     
@@ -129,7 +129,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let categoryIdentifire = "Delete Notification Type"
         
         content.title = notificationType
-        content.body = "Acquiring connected device detail"
+        content.body = "Acquiring connected board detail"
         content.sound = UNNotificationSound.default
         content.badge = 1
         content.categoryIdentifier = categoryIdentifire
